@@ -2,17 +2,17 @@
   "metadata": {
     "notebook": "03_Data_Cleaning_and_Standardization",
     "section": "Section 1",
-    "created_at_utc": "2026-07-16T21:24:12.867627+00:00",
-    "target_month": "2024-07",
-    "input_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-07.parquet",
-    "output_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-07.parquet",
+    "created_at_utc": "2026-07-16T21:24:13.409171+00:00",
+    "target_month": "2024-08",
+    "input_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-08.parquet",
+    "output_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-08.parquet",
     "timezone": "Europe/Berlin",
     "primary_target": "delay_in_min",
     "primary_metric": "mae"
   },
   "rows": {
-    "before": 157886,
-    "after": 157886,
+    "before": 150289,
+    "after": 150289,
     "unchanged": true
   },
   "dtypes_before": {
@@ -31,41 +31,41 @@
   },
   "timestamp_null_counts": {
     "time": 0,
-    "arrival_planned_time": 15310,
-    "arrival_change_time": 15307,
-    "departure_planned_time": 15452,
-    "departure_change_time": 15441
+    "arrival_planned_time": 15073,
+    "arrival_change_time": 15058,
+    "departure_planned_time": 15163,
+    "departure_change_time": 15130
   },
   "dst_issues_new_nats": {},
   "merge_key": {
     "column": "departure_planned_hour",
     "naive_column": "departure_planned_hour_naive",
-    "null_count": 15452,
-    "null_pct": 9.79,
-    "unique_hours": 744,
+    "null_count": 15163,
+    "null_pct": 10.09,
+    "unique_hours": 747,
     "rounding_examples": [
       {
-        "departure_planned_time": "2024-07-01 00:01:00+02:00",
-        "departure_planned_hour": "2024-07-01 00:00:00+02:00",
-        "departure_planned_hour_naive": "2024-07-01 00:00:00"
+        "departure_planned_time": "2024-08-01 00:01:00+02:00",
+        "departure_planned_hour": "2024-08-01 00:00:00+02:00",
+        "departure_planned_hour_naive": "2024-08-01 00:00:00"
       },
       {
-        "departure_planned_time": "2024-07-01 00:01:00+02:00",
-        "departure_planned_hour": "2024-07-01 00:00:00+02:00",
-        "departure_planned_hour_naive": "2024-07-01 00:00:00"
+        "departure_planned_time": "2024-07-31 23:57:00+02:00",
+        "departure_planned_hour": "2024-07-31 23:00:00+02:00",
+        "departure_planned_hour_naive": "2024-07-31 23:00:00"
       },
       {
-        "departure_planned_time": "2024-07-01 00:01:00+02:00",
-        "departure_planned_hour": "2024-07-01 00:00:00+02:00",
-        "departure_planned_hour_naive": "2024-07-01 00:00:00"
+        "departure_planned_time": "2024-07-31 21:06:00+02:00",
+        "departure_planned_hour": "2024-07-31 21:00:00+02:00",
+        "departure_planned_hour_naive": "2024-07-31 21:00:00"
       }
     ]
   },
   "validations": {
     "row_count_unchanged": {
       "pass": true,
-      "before": 157886,
-      "after": 157886
+      "before": 150289,
+      "after": 150289
     },
     "tz_aware_time": {
       "pass": true,

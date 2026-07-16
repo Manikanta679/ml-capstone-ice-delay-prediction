@@ -2,103 +2,92 @@
   "metadata": {
     "notebook": "01_Project_Definition_and_Data_Understanding",
     "section": "Section 2",
-    "created_at_utc": "2026-07-05T11:30:18.443986+00:00",
-    "depends_on": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\project_config.json"
+    "created_at_utc": "2026-07-16T20:22:26.991378+00:00",
+    "depends_on": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\project_config.json",
+    "revision_note": "Regression-only; MAE as sole primary metric; multi-month scope (2024-07 to 2024-09)"
   },
   "research_questions": {
     "RQ1": {
-      "question": "Can operational features alone predict ICE train stop delays?",
+      "question": "Can operational features alone predict ICE stop delay in minutes?",
       "answered_in": [
         "Notebook 07",
         "Notebook 09"
       ],
-      "method": "Train baseline models using only railway features."
+      "method": "Train regression baselines using only railway features; evaluate with MAE."
     },
     "RQ2": {
-      "question": "Does adding historical weather data improve delay prediction?",
+      "question": "Does adding historical weather data improve delay (minutes) prediction?",
       "answered_in": [
         "Notebook 07",
         "Notebook 09"
       ],
-      "method": "Compare models with vs without weather features (ablation)."
+      "method": "Weather ablation: same regressor with vs without weather features; compare MAE."
     },
     "RQ3": {
-      "question": "Which weather variables are most associated with ICE delays?",
+      "question": "Which weather variables are most associated with ICE delay magnitude?",
       "answered_in": [
         "Notebook 05",
         "Notebook 09"
       ],
-      "method": "EDA correlations + feature importance / SHAP in final models."
+      "method": "EDA correlations/bin analysis + feature importance in final regressors."
     }
   },
-  "classification": {
-    "target_column": "is_delayed",
-    "derivation": {
-      "source_column": "delay_in_min",
-      "rule": "is_delayed = 1 if delay_in_min >= 6, else 0",
-      "early_arrival_rule": "delay_in_min < 0 treated as on-time (is_delayed = 0)",
-      "canceled_rule": "is_canceled == True rows excluded in Notebook 03 (documented there)"
-    },
-    "delay_threshold_minutes": 6,
-    "threshold_justification": "6 minutes aligns with Deutsche Bahn significant-delay reporting. Final value validated in Notebook 05 EDA.",
-    "primary_metrics": [
-      "f1_score",
-      "roc_auc",
-      "confusion_matrix"
-    ],
-    "secondary_metrics": [
-      "precision",
-      "recall",
-      "accuracy"
-    ],
-    "metric_rationale": "ICE stops are mostly on-time (class imbalance). F1 and ROC-AUC are more informative than accuracy alone."
-  },
   "regression": {
+    "task_type": "regression",
     "target_column": "delay_in_min",
     "target_filter": "Non-canceled stops; delay can be negative (early) or positive (late).",
-    "primary_metrics": [
-      "mae",
-      "rmse"
-    ],
-    "secondary_metrics": [
-      "r2_score",
-      "median_absolute_error"
-    ],
-    "metric_rationale": "MAE is interpretable in minutes. RMSE penalizes large prediction errors (severe delays)."
+    "primary_metric": "mae",
+    "secondary_metrics": [],
+    "metric_rationale": "MAE (Mean Absolute Error) is the average absolute error in minutes. It is interpretable and is the single metric we optimize and report.",
+    "naive_baselines": {
+      "mean_predictor": "always predict mean delay_in_min on the training period",
+      "median_predictor": "always predict median delay_in_min on the training period"
+    }
+  },
+  "not_in_scope": {
+    "classification": {
+      "reason": "Removed as a primary ML task after mid-presentation feedback. Predicting delay magnitude (minutes) is sufficient and clearer.",
+      "note": "EDA may still describe the delay distribution; no binary classification models will be trained."
+    },
+    "rmse": {
+      "reason": "Not used as a primary or required metric; MAE alone is the evaluation criterion."
+    }
   },
   "hypotheses": {
     "H1": {
-      "statement": "Higher hourly precipitation increases ICE delay probability.",
-      "type": "classification",
-      "test": "Compare delay rate across precipitation bins in EDA; check weather feature importance in classifier."
+      "statement": "Higher hourly precipitation is associated with higher expected delay (minutes).",
+      "type": "regression",
+      "test": "Compare mean/median delay across precipitation bins in EDA; check precipitation importance in regressors."
     },
     "H2": {
       "statement": "Higher wind gusts increase expected delay magnitude.",
       "type": "regression",
-      "test": "Correlation/regression EDA; wind feature coefficient/importance."
+      "test": "Correlation/EDA vs delay_in_min; wind feature importance in final models."
     },
     "H3": {
-      "statement": "Models with weather features outperform operational-only baselines.",
-      "type": "both",
-      "test": "Ablation study: same algorithm, with vs without weather columns."
+      "statement": "Models with weather features achieve lower MAE than operational-only models.",
+      "type": "regression",
+      "test": "Ablation study: same algorithm, with vs without weather columns; compare MAE."
     }
   },
   "evaluation_protocol": {
     "train_test_split": "time-based (no random shuffle) — implemented in Notebook 07",
-    "baseline_requirement": "Must beat naive baseline before using advanced models",
-    "naive_baselines": {
-      "classification": "always predict majority class (on-time)",
-      "regression": "always predict mean delay_in_min"
-    },
+    "primary_metric": "mae",
+    "baseline_requirement": "Must beat naive mean/median MAE before using advanced models",
     "weather_ablation": {
-      "description": "Train identical model twice: with and without weather features",
-      "purpose": "Directly answers RQ2"
+      "description": "Train identical regressor twice: with and without weather features",
+      "purpose": "Directly answers RQ2 using MAE"
     }
   },
   "alternatives_considered": {
-    "delay_threshold_5_min": "Rejected as default — more noise from minor timing differences",
-    "delay_threshold_15_min": "Rejected — too few positive cases for classification",
-    "accuracy_only": "Rejected — misleading under class imbalance",
+    "classification_as_primary_task": "Rejected after mid-presentation — delay minutes are the natural continuous target",
+    "rmse_as_co_primary_metric": "Rejected — MAE alone is sufficient and clearer for evaluation",
+    "single_month_only": "Expanded to July–September 2024 for stronger, more general results",
     "random_train_test_split": "Rejected — causes temporal data leakage"
-  }
+  },
+  "target_months": [
+    "2024-07",
+    "2024-08",
+    "2024-09"
+  ]
 }

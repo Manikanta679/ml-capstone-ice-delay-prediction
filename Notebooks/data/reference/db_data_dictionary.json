@@ -2,13 +2,20 @@
   "metadata": {
     "notebook": "01_Project_Definition_and_Data_Understanding",
     "section": "Section 3",
-    "created_at_utc": "2026-07-05T11:36:22.428437+00:00",
+    "created_at_utc": "2026-07-16T20:25:58.210408+00:00",
     "hf_dataset_id": "piebro/deutsche-bahn-data",
     "hf_url": "https://huggingface.co/datasets/piebro/deutsche-bahn-data",
     "sample_source": "HF Dataset Viewer API (offset=0, length=100)",
     "sample_rows_total": 100,
     "sample_rows_ice": 5,
-    "ice_filter": "ICE"
+    "ice_filter": "ICE",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae"
   },
   "columns": {
     "station_name": {
@@ -28,7 +35,7 @@
     "eva": {
       "dtype": "string",
       "nullable": false,
-      "description": "EVA number — official German station identifier (8-digit style, e.g. 08000207).",
+      "description": "EVA number — official German station identifier.",
       "ml_role": "key",
       "merge_key": true,
       "note": "Primary station key for geocoding before weather merge."
@@ -36,7 +43,7 @@
     "train_number": {
       "dtype": "string",
       "nullable": false,
-      "description": "Train service number (e.g. 292, 618, 892 for ICE services).",
+      "description": "Train service number.",
       "ml_role": "feature",
       "merge_key": false
     },
@@ -60,7 +67,7 @@
       "description": "Delay in minutes. Negative = early; 0 = on time; positive = late.",
       "ml_role": "target",
       "merge_key": false,
-      "note": "Regression target. Source for is_delayed in classification."
+      "note": "Primary regression target for this project. Evaluated with MAE."
     },
     "time": {
       "dtype": "timestamp[ns]",
@@ -68,7 +75,7 @@
       "description": "Reference timestamp for the record.",
       "ml_role": "feature",
       "merge_key": false,
-      "note": "Standardize to 24h datetime in Notebook 03."
+      "note": "Standardize to Europe/Berlin in Notebook 03."
     },
     "is_canceled": {
       "dtype": "bool",
@@ -76,7 +83,7 @@
       "description": "True if this train stop was canceled.",
       "ml_role": "filter",
       "merge_key": false,
-      "note": "Typically excluded from modeling in Notebook 03."
+      "note": "Excluded from modeling in Notebook 03 (no valid delay outcome)."
     },
     "train_type": {
       "dtype": "string",
@@ -91,8 +98,7 @@
       "nullable": false,
       "description": "Unique identifier for one complete train journey.",
       "ml_role": "identifier",
-      "merge_key": false,
-      "note": "Useful for grouping stops; not a direct weather merge key."
+      "merge_key": false
     },
     "train_line_station_num": {
       "dtype": "int32",
@@ -106,8 +112,7 @@
       "nullable": true,
       "description": "Scheduled arrival at this station.",
       "ml_role": "feature",
-      "merge_key": false,
-      "note": "Nullable at first stop / departure-only rows."
+      "merge_key": false
     },
     "arrival_change_time": {
       "dtype": "timestamp[ns]",
@@ -122,7 +127,7 @@
       "description": "Scheduled departure from this station.",
       "ml_role": "feature",
       "merge_key": true,
-      "note": "Primary candidate for hour-level weather merge key (Notebook 04)."
+      "note": "Primary temporal anchor for hour-level weather merge (Notebook 04)."
     },
     "departure_change_time": {
       "dtype": "timestamp[ns]",
@@ -460,6 +465,8 @@
   "ice_scope_notes": [
     "One row = one train stop at one station.",
     "Filter: train_type == 'ICE'.",
+    "Primary ML task: regression on delay_in_min; metric = MAE.",
+    "Target months: 2024-07, 2024-08, 2024-09.",
     "line_number is frequently null for ICE — expected, not a data error.",
     "departure_planned_time is the primary temporal anchor for weather merge.",
     "No latitude/longitude — geocode eva in Notebook 04."

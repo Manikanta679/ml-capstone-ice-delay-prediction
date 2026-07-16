@@ -1,76 +1,183 @@
 {
   "metadata": {
     "notebook": "03_Data_Cleaning_and_Standardization",
-    "section": "Section 3 — Close-Out",
-    "created_at_utc": "2026-07-05T13:37:26.077426+00:00",
-    "target_month": "2024-07",
-    "status": "COMPLETE"
+    "section": "Section 3",
+    "created_at_utc": "2026-07-16T21:35:36.488029+00:00",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression"
   },
-  "pipeline_steps": [
+  "checklist": [
     {
-      "step": 1,
-      "section": "Section 1",
-      "action": "Timestamp standardization → Europe/Berlin",
-      "rows_in": 157886,
-      "rows_out": 157886,
-      "output_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-07.parquet"
+      "label": "ice_standardized_2024-07.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-07.parquet",
+      "exists": true,
+      "size_bytes": 5665431,
+      "size_mb": 5.67
     },
     {
-      "step": 2,
-      "section": "Section 2",
-      "action": "Remove canceled, fill station_name, flag mergeable",
-      "rows_in": 157886,
-      "rows_out": 146389,
-      "rows_removed": 11497,
-      "output_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-07.parquet"
+      "label": "ice_cleaned_2024-07.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-07.parquet",
+      "exists": true,
+      "size_bytes": 5457048,
+      "size_mb": 5.46
+    },
+    {
+      "label": "timestamp_standardize_report_2024-07.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\timestamp_standardize_report_2024-07.json",
+      "exists": true,
+      "size_bytes": 3029,
+      "size_mb": 0.0
+    },
+    {
+      "label": "cleaning_report_2024-07.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\cleaning_report_2024-07.json",
+      "exists": true,
+      "size_bytes": 3189,
+      "size_mb": 0.0
+    },
+    {
+      "label": "ice_standardized_2024-08.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-08.parquet",
+      "exists": true,
+      "size_bytes": 5464738,
+      "size_mb": 5.46
+    },
+    {
+      "label": "ice_cleaned_2024-08.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-08.parquet",
+      "exists": true,
+      "size_bytes": 5102527,
+      "size_mb": 5.1
+    },
+    {
+      "label": "timestamp_standardize_report_2024-08.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\timestamp_standardize_report_2024-08.json",
+      "exists": true,
+      "size_bytes": 3030,
+      "size_mb": 0.0
+    },
+    {
+      "label": "cleaning_report_2024-08.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\cleaning_report_2024-08.json",
+      "exists": true,
+      "size_bytes": 3189,
+      "size_mb": 0.0
+    },
+    {
+      "label": "ice_standardized_2024-09.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-09.parquet",
+      "exists": true,
+      "size_bytes": 5444330,
+      "size_mb": 5.44
+    },
+    {
+      "label": "ice_cleaned_2024-09.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-09.parquet",
+      "exists": true,
+      "size_bytes": 5056791,
+      "size_mb": 5.06
+    },
+    {
+      "label": "timestamp_standardize_report_2024-09.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\timestamp_standardize_report_2024-09.json",
+      "exists": true,
+      "size_bytes": 3030,
+      "size_mb": 0.0
+    },
+    {
+      "label": "cleaning_report_2024-09.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\cleaning_report_2024-09.json",
+      "exists": true,
+      "size_bytes": 3190,
+      "size_mb": 0.0
+    },
+    {
+      "label": "timestamp_standardize_summary_multi_month.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\timestamp_standardize_summary_multi_month.json",
+      "exists": true,
+      "size_bytes": 1608,
+      "size_mb": 0.0
+    },
+    {
+      "label": "cleaning_summary_multi_month.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\cleaning_summary_multi_month.json",
+      "exists": true,
+      "size_bytes": 2164,
+      "size_mb": 0.0
     }
   ],
-  "cleaned_dataset": {
-    "rows": 146389,
-    "columns": 20,
-    "unique_eva_stations": 95,
-    "mergeable_rows": 132268,
-    "non_mergeable_rows": 14121,
-    "non_mergeable_pct": 9.65,
-    "delay_mean_min": 10.92,
-    "delayed_gte_6_pct": 43.38,
-    "timezone": "Europe/Berlin",
-    "merge_key": "departure_planned_hour_naive",
-    "parquet_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-07.parquet"
-  },
-  "artifacts": {
-    "ice_raw": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-07.parquet",
-      "size_mb": 5.24
+  "all_files_ok": true,
+  "months": [
+    {
+      "month": "2024-07",
+      "standardized_rows": 157886,
+      "cleaned_rows": 146389,
+      "removed": 11497,
+      "removal_pct": 7.28,
+      "mergeable_rows": 132268,
+      "delay_mean": 10.92,
+      "delay_median": 4.0,
+      "cleaned_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-07.parquet",
+      "cleaned_rows_on_disk": 146389
     },
-    "ice_standardized": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-07.parquet",
-      "size_mb": 5.4
+    {
+      "month": "2024-08",
+      "standardized_rows": 150289,
+      "cleaned_rows": 136321,
+      "removed": 13968,
+      "removal_pct": 9.29,
+      "mergeable_rows": 122812,
+      "delay_mean": 12.08,
+      "delay_median": 4.0,
+      "cleaned_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-08.parquet",
+      "cleaned_rows_on_disk": 136321
     },
-    "ice_cleaned": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-07.parquet",
-      "size_mb": 5.2
-    },
-    "timestamp_report": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\timestamp_standardize_report_2024-07.json",
-      "size_mb": 0.0
-    },
-    "cleaning_report": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\cleaning_report_2024-07.json",
-      "size_mb": 0.0
+    {
+      "month": "2024-09",
+      "standardized_rows": 149218,
+      "cleaned_rows": 135547,
+      "removed": 13671,
+      "removal_pct": 9.16,
+      "mergeable_rows": 121975,
+      "delay_mean": 10.86,
+      "delay_median": 4.0,
+      "cleaned_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-09.parquet",
+      "cleaned_rows_on_disk": 135547
     }
+  ],
+  "totals": {
+    "rows_in_all": 457393,
+    "rows_out_all": 418257,
+    "removed_all": 39136,
+    "mergeable_all": 377055
   },
-  "ready_for_notebook_04": true,
-  "notebook_04_tasks": [
-    "Geocode 95 eva stations → latitude/longitude",
-    "Fetch hourly weather per station for July 2024",
-    "Left join weather on lat/lon + departure_planned_hour_naive",
-    "Run merge validation checks from merge_strategy.json",
-    "Save ice_weather_merged_2024-07.parquet"
-  ]
+  "timestamp_summary_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\timestamp_standardize_summary_multi_month.json",
+  "cleaning_summary_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\cleaning_summary_multi_month.json",
+  "cleaned_data_location": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed",
+  "cleaned_files": [
+    "ice_cleaned_2024-07.parquet",
+    "ice_cleaned_2024-08.parquet",
+    "ice_cleaned_2024-09.parquet"
+  ],
+  "next_notebook": {
+    "id": "04",
+    "goal": "Geocode eva → fetch Open-Meteo weather → left-join → save merged Parquet on disk",
+    "inputs": [
+      "ice_cleaned_2024-07.parquet",
+      "ice_cleaned_2024-08.parquet",
+      "ice_cleaned_2024-09.parquet"
+    ],
+    "expected_outputs": [
+      "station_coordinates.json",
+      "weather_by_station_YYYY-MM.parquet",
+      "ice_weather_merged_YYYY-MM.parquet"
+    ]
+  },
+  "ready_for_notebook_04": true
 }

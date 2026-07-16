@@ -2,34 +2,51 @@
   "metadata": {
     "notebook": "01_Project_Definition_and_Data_Understanding",
     "section": "Section 5",
-    "created_at_utc": "2026-07-05T12:10:38.478904+00:00",
+    "created_at_utc": "2026-07-16T20:30:35.348133+00:00",
     "implemented_in": "Notebook 04 — Data Integration",
     "depends_on": [
       "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\project_config.json",
       "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\research_framework.json",
       "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\db_data_dictionary.json",
       "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\weather_data_dictionary.json"
+    ],
+    "primary_task": "regression",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "authors": [
+      "Manikanta Engalligi",
+      "abhinay-sambherao"
     ]
   },
   "pipeline_steps": [
     {
       "step": 1,
       "notebook": "02",
-      "action": "Load monthly Parquet from Hugging Face",
+      "action": "Load monthly Parquet from Hugging Face for each target month",
+      "months": [
+        "2024-07",
+        "2024-08",
+        "2024-09"
+      ],
       "input": "hf://datasets/piebro/deutsche-bahn-data/monthly_processed_data/data-YYYY-MM.parquet",
       "output": "data/processed/ice_raw_YYYY-MM.parquet"
     },
     {
       "step": 2,
       "notebook": "02",
-      "action": "Filter train_type == 'ICE'",
+      "action": "Filter train_type == 'ICE' (per month)",
       "input": "raw monthly parquet",
       "output": "ICE-only subset saved to disk"
     },
     {
       "step": 3,
       "notebook": "03",
-      "action": "Standardize all timestamps to 24h datetime, timezone Europe/Berlin",
+      "action": "Standardize timestamps to Europe/Berlin; create departure_planned_hour_naive",
       "columns": [
         "time",
         "arrival_planned_time",
@@ -43,36 +60,36 @@
       "step": 4,
       "notebook": "04",
       "action": "Geocode unique eva station IDs to latitude/longitude",
-      "input": "unique eva values from ICE data",
+      "input": "unique eva values from ICE data (across months)",
       "output": "data/reference/station_coordinates.json",
-      "api": "Open-Meteo Geocoding API or Nominatim (documented in Notebook 04)"
+      "api": "Nominatim / OpenStreetMap (documented in Notebook 04)"
     },
     {
       "step": 5,
       "notebook": "04",
       "action": "Fetch hourly weather per station-month from Open-Meteo Archive",
-      "input": "station coordinates + date range",
-      "output": "data/processed/weather_YYYY-MM.parquet",
+      "input": "station coordinates + month date range",
+      "output": "data/processed/weather_by_station_YYYY-MM.parquet",
       "cache_rule": "Cache per station-month to avoid repeated API calls"
     },
     {
       "step": 6,
       "notebook": "04",
       "action": "Create merge keys on both sides",
-      "railway_key": "eva + departure_planned_hour",
-      "weather_key": "latitude + longitude + hourly.time"
+      "railway_key": "eva + departure_planned_hour_naive",
+      "weather_key": "eva + weather_time (hourly)"
     },
     {
       "step": 7,
       "notebook": "04",
-      "action": "Left join weather onto railway rows",
+      "action": "Left join weather onto railway rows (per month)",
       "output": "data/processed/ice_weather_merged_YYYY-MM.parquet"
     },
     {
       "step": 8,
       "notebook": "04",
-      "action": "Run validation checks (see validation_checks below)",
-      "output": "data/reference/merge_validation_report.json"
+      "action": "Run validation checks; optionally concat months for EDA/ML",
+      "output": "data/reference/merge_validation_report_YYYY-MM.json"
     }
   ],
   "merge_keys": {
@@ -85,38 +102,35 @@
       "time_key": {
         "source_column": "departure_planned_time",
         "transform": "floor to hour in Europe/Berlin timezone",
-        "output_column": "departure_planned_hour",
+        "output_column": "departure_planned_hour_naive",
         "why": "Open-Meteo returns hourly data. Planned departure (not actual) avoids target leakage."
       }
     },
     "weather_side": {
-      "location_key": {
-        "columns": [
-          "latitude",
-          "longitude"
-        ],
-        "note": "API may snap coords to weather grid — use returned values"
+      "station_key": {
+        "column": "eva",
+        "note": "Weather fetched and stored per eva after geocoding"
       },
       "time_key": {
-        "column": "time",
+        "column": "weather_time",
         "format": "YYYY-MM-DDTHH:00 in Europe/Berlin",
         "source": "hourly.time from Open-Meteo response"
       }
     },
-    "join_condition": "railway.latitude  == weather.latitude AND railway.longitude == weather.longitude AND railway.departure_planned_hour == weather.time",
+    "join_condition": "railway.eva == weather.eva AND railway.departure_planned_hour_naive == weather.weather_time",
     "join_type": "left",
     "join_type_rationale": "Keep all ICE railway rows. Rows without weather match are flagged, not dropped."
   },
   "merge_key_justification": {
-    "eva_not_station_name": "eva is a standardized numeric ID; station_name can be null or inconsistent",
-    "departure_planned_not_actual": "Using arrival_change_time or departure_change_time would leak the delay outcome into the features — the actual time IS the delay",
-    "hour_not_minute": "Weather variables are hourly aggregates; minute-level join would require interpolation not supported by the API",
-    "left_not_inner": "Inner join would silently drop stops with missing weather, hiding data quality problems"
+    "eva_not_station_name": "eva is a standardized ID; station_name can be null or inconsistent",
+    "departure_planned_not_actual": "Using arrival_change_time or departure_change_time would leak the delay outcome into the features",
+    "hour_not_minute": "Weather variables are hourly; minute-level join is not supported cleanly",
+    "left_not_inner": "Inner join would silently drop stops with missing weather"
   },
   "validation_checks": [
     {
       "check": "merge_rate",
-      "rule": "≥ 90% of ICE rows have non-null weather values",
+      "rule": "≥ 90% of mergeable ICE rows have non-null weather values",
       "action_if_fail": "Investigate missing geocoding or date range gaps"
     },
     {
@@ -136,7 +150,7 @@
     },
     {
       "check": "weather_null_pattern",
-      "rule": "Null weather should be random (geocoding gaps), not systematic by route",
+      "rule": "Null weather should not be systematically missing by station",
       "action_if_fail": "Fix geocoding for affected stations"
     },
     {
@@ -245,9 +259,11 @@
     ],
     "derived_columns": [
       "departure_planned_hour",
+      "departure_planned_hour_naive",
       "latitude",
       "longitude",
-      "is_delayed"
+      "weather_matched",
+      "mergeable"
     ]
   },
   "columns_excluded_from_features": [
@@ -256,12 +272,25 @@
     "delay_in_min",
     "arrival_change_time",
     "departure_change_time",
-    "is_delayed",
-    "note: delay_in_min is regression TARGET; change times leak the outcome"
+    "note: delay_in_min is the regression TARGET (MAE); change times leak the outcome"
   ],
+  "modeling_plan": {
+    "task": "regression",
+    "target": "delay_in_min",
+    "primary_metric": "mae",
+    "not_in_scope": [
+      "classification models",
+      "RMSE as required metric"
+    ],
+    "months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ]
+  },
   "output_files": {
     "merged_data_pattern": "data/processed/ice_weather_merged_YYYY-MM.parquet",
     "station_coords": "data/reference/station_coordinates.json",
-    "validation_report": "data/reference/merge_validation_report.json"
+    "validation_report_pattern": "data/reference/merge_validation_report_YYYY-MM.json"
   }
 }

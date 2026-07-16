@@ -19,889 +19,1193 @@
     "primary_target": "delay_in_min",
     "primary_metric": "mae"
   },
-  "stations": {
-    "08000105": {
-      "latitude": 50.1066539,
-      "longitude": 8.6625808,
+  "results": [
+    {
+      "eva": "08000105",
       "xml_station_name": "Frankfurt(Main)Hbf",
       "station_name": "Frankfurt (Main) Hbf",
+      "status": "success",
+      "latitude": 50.1066539,
+      "longitude": 8.6625808,
       "display_name": "Frankfurt (Main) Hauptbahnhof, Mannheimer Straße, Gallus, Innenstadt 1, Frankfurt am Main, Hessen, 60329, Deutschland",
       "query_used": "Frankfurt(Main)Hbf, Germany",
-      "stop_count": 19382
+      "stop_count": 19382,
+      "from_cache": true
     },
-    "08000261": {
-      "latitude": 48.1407253,
-      "longitude": 11.5569426,
+    {
+      "eva": "08000261",
       "xml_station_name": "München Hbf",
       "station_name": "München Hbf",
+      "status": "success",
+      "latitude": 48.1407253,
+      "longitude": 11.5569426,
       "display_name": "München Hauptbahnhof, Paul-Heyse-Unterführung, Klinikviertel, Ludwigsvorstadt, Ludwigsvorstadt-Isarvorstadt, München, Bayern, 80335, Deutschland",
       "query_used": "München Hbf, Germany",
-      "stop_count": 17665
+      "stop_count": 17665,
+      "from_cache": true
     },
-    "08000152": {
-      "latitude": 52.3770908,
-      "longitude": 9.7418374,
+    {
+      "eva": "08000152",
       "xml_station_name": "Hannover Hbf",
       "station_name": "Hannover Hbf",
+      "status": "success",
+      "latitude": 52.3770908,
+      "longitude": 9.7418374,
       "display_name": "Hannover Hauptbahnhof, Niki-de-Saint-Phalle-Promenade, Mitte, Hannover, Region Hannover, Niedersachsen, 30161, Deutschland",
       "query_used": "Hannover Hbf, Germany",
-      "stop_count": 14614
+      "stop_count": 14614,
+      "from_cache": true
     },
-    "08002549": {
-      "latitude": 53.5531993,
-      "longitude": 10.0064364,
+    {
+      "eva": "08002549",
       "xml_station_name": "Hamburg Hbf",
       "station_name": "Hamburg Hbf",
+      "status": "success",
+      "latitude": 53.5531993,
+      "longitude": 10.0064364,
       "display_name": "Hamburg Hauptbahnhof, Glockengießerwall, St. Georg, Hamburg-Mitte, Hamburg, 20095, Deutschland",
       "query_used": "Hamburg Hbf, Germany",
-      "stop_count": 13130
+      "stop_count": 13130,
+      "from_cache": true
     },
-    "08010404": {
-      "latitude": 52.5347694,
-      "longitude": 13.1956287,
+    {
+      "eva": "08010404",
       "xml_station_name": "Berlin-Spandau",
       "station_name": "Berlin-Spandau",
+      "status": "success",
+      "latitude": 52.5347694,
+      "longitude": 13.1956287,
       "display_name": "Berlin-Spandau, Am Bahnhof Spandau, Georg-Ramin-Siedlung, Klosterfelde, Spandau, Berlin, 13597, Deutschland",
       "query_used": "Berlin-Spandau, Germany",
-      "stop_count": 13125
+      "stop_count": 13125,
+      "from_cache": true
     },
-    "08000284": {
-      "latitude": 49.4462031,
-      "longitude": 11.0818654,
+    {
+      "eva": "08000284",
       "xml_station_name": "Nürnberg Hbf",
       "station_name": "Nürnberg Hbf",
+      "status": "success",
+      "latitude": 49.4462031,
+      "longitude": 11.0818654,
       "display_name": "Nürnberg Hauptbahnhof, 9, Bahnhofsplatz, Tafelhof, Altstadt und engere Innenstadt, Nürnberg, Bayern, 90443, Deutschland",
       "query_used": "Nürnberg Hbf, Germany",
-      "stop_count": 12712
+      "stop_count": 12712,
+      "from_cache": true
     },
-    "08000207": {
-      "latitude": 50.9427839,
-      "longitude": 6.9590705,
+    {
+      "eva": "08000207",
       "xml_station_name": "Köln Hbf",
       "station_name": "Köln Hbf",
+      "status": "success",
+      "latitude": 50.9427839,
+      "longitude": 6.9590705,
       "display_name": "Köln Hauptbahnhof, 11, Trankgasse, Martinsviertel, Altstadt-Nord, Innenstadt, Köln, Nordrhein-Westfalen, 50667, Deutschland",
       "query_used": "Köln Hbf, Germany",
-      "stop_count": 11678
+      "stop_count": 11678,
+      "from_cache": true
     },
-    "08003200": {
-      "latitude": 51.3113881,
-      "longitude": 9.4477049,
+    {
+      "eva": "08003200",
       "xml_station_name": "Kassel-Wilhelmshöhe",
       "station_name": "Kassel-Wilhelmshöhe",
+      "status": "success",
+      "latitude": 51.3113881,
+      "longitude": 9.4477049,
       "display_name": "Kassel-Wilhelmshöhe, Bertha-von-Suttner-Straße, Bad Wilhelmshöhe, Kassel, Hessen, 34131, Deutschland",
       "query_used": "Kassel-Wilhelmshöhe, Germany",
-      "stop_count": 10991
+      "stop_count": 10991,
+      "from_cache": true
     },
-    "08000128": {
-      "latitude": 51.5328328,
-      "longitude": 9.9351811,
+    {
+      "eva": "08000128",
       "xml_station_name": "Göttingen",
       "station_name": "Göttingen",
+      "status": "success",
+      "latitude": 51.5328328,
+      "longitude": 9.9351811,
       "display_name": "Göttingen, Landkreis Göttingen, Niedersachsen, Deutschland",
       "query_used": "Göttingen, Germany",
-      "stop_count": 10663
+      "stop_count": 10663,
+      "from_cache": true
     },
-    "08000085": {
-      "latitude": 51.219734,
-      "longitude": 6.7943015,
+    {
+      "eva": "08000085",
       "xml_station_name": "Düsseldorf Hbf",
       "station_name": "Düsseldorf Hbf",
+      "status": "success",
+      "latitude": 51.219734,
+      "longitude": 6.7943015,
       "display_name": "Düsseldorf Hauptbahnhof, Weg Gleis 12, Stadtmitte, Stadtbezirk 1, Düsseldorf, Nordrhein-Westfalen, 40210, Deutschland",
       "query_used": "Düsseldorf Hbf, Germany",
-      "stop_count": 10498
+      "stop_count": 10498,
+      "from_cache": true
     },
-    "08000115": {
-      "latitude": 50.5514658,
-      "longitude": 9.6762161,
+    {
+      "eva": "08000115",
       "xml_station_name": "Fulda",
       "station_name": "Fulda",
+      "status": "success",
+      "latitude": 50.5514658,
+      "longitude": 9.6762161,
       "display_name": "Fulda, Landkreis Fulda, Hessen, Deutschland",
       "query_used": "Fulda, Germany",
-      "stop_count": 9689
+      "stop_count": 9689,
+      "from_cache": true
     },
-    "08098160": {
-      "latitude": 52.5250175,
-      "longitude": 13.369448,
+    {
+      "eva": "08098160",
       "xml_station_name": "Berlin Hbf",
       "station_name": "Berlin Hauptbahnhof",
+      "status": "success",
+      "latitude": 52.5250175,
+      "longitude": 13.369448,
       "display_name": "Berlin Hauptbahnhof, Eingangsebene, Europacity, Moabit, Mitte, Berlin, 10557, Deutschland",
       "query_used": "Berlin Hbf, Germany",
-      "stop_count": 9571
+      "stop_count": 9571,
+      "from_cache": true
     },
-    "08000244": {
-      "latitude": 49.4796632,
-      "longitude": 8.4698178,
+    {
+      "eva": "08000244",
       "xml_station_name": "Mannheim Hbf",
       "station_name": "Mannheim Hbf",
+      "status": "success",
+      "latitude": 49.4796632,
+      "longitude": 8.4698178,
       "display_name": "Mannheim Hauptbahnhof, 17, Willy-Brandt-Platz, Fahrlach, Schwetzingerstadt, Schwetzingerstadt/Oststadt, Mannheim, Baden-Württemberg, 68161, Deutschland",
       "query_used": "Mannheim Hbf, Germany",
-      "stop_count": 9430
+      "stop_count": 9430,
+      "from_cache": true
     },
-    "08000096": {
-      "latitude": 48.7856099,
-      "longitude": 9.1833959,
+    {
+      "eva": "08000096",
       "xml_station_name": "Stuttgart Hbf",
       "station_name": "Stuttgart Hbf",
+      "status": "success",
+      "latitude": 48.7856099,
+      "longitude": 9.1833959,
       "display_name": "Stuttgart Hauptbahnhof, 2, Arnulf-Klett-Platz, Hauptbahnhof, Stuttgart-Mitte, Stuttgart, Baden-Württemberg, 70173, Deutschland",
       "query_used": "Stuttgart Hbf, Germany",
-      "stop_count": 9103
+      "stop_count": 9103,
+      "from_cache": true
     },
-    "08000260": {
-      "latitude": 49.8015215,
-      "longitude": 9.9359849,
+    {
+      "eva": "08000260",
       "xml_station_name": "Würzburg Hbf",
       "station_name": "Würzburg Hbf",
+      "status": "success",
+      "latitude": 49.8015215,
+      "longitude": 9.9359849,
       "display_name": "Würzburg Hauptbahnhof, 4, Bahnhofplatz, Innenstadt, Würzburg Altstadt, Würzburg, Bayern, 97070, Deutschland",
       "query_used": "Würzburg Hbf, Germany",
-      "stop_count": 8988
+      "stop_count": 8988,
+      "from_cache": true
     },
-    "08011160": {
-      "latitude": 52.5250175,
-      "longitude": 13.369448,
+    {
+      "eva": "08011160",
       "xml_station_name": "Berlin Hbf",
       "station_name": "Berlin Hauptbahnhof",
+      "status": "success",
+      "latitude": 52.5250175,
+      "longitude": 13.369448,
       "display_name": "Berlin Hauptbahnhof, Eingangsebene, Europacity, Moabit, Mitte, Berlin, 10557, Deutschland",
       "query_used": "Berlin Hbf, Germany",
-      "stop_count": 8956
+      "stop_count": 8956,
+      "from_cache": true
     },
-    "08000086": {
-      "latitude": 51.4296701,
-      "longitude": 6.7761771,
+    {
+      "eva": "08000086",
       "xml_station_name": "Duisburg Hbf",
       "station_name": "Duisburg Hbf",
+      "status": "success",
+      "latitude": 51.4296701,
+      "longitude": 6.7761771,
       "display_name": "Duisburg Hauptbahnhof, Bahnhofspassage, Dellviertel, Duisburg-Mitte, Duisburg, Nordrhein-Westfalen, 47051, Deutschland",
       "query_used": "Duisburg Hbf, Germany",
-      "stop_count": 8933
+      "stop_count": 8933,
+      "from_cache": true
     },
-    "08010255": {
-      "latitude": 52.5103817,
-      "longitude": 13.4349112,
+    {
+      "eva": "08010255",
       "xml_station_name": "Berlin Ostbahnhof",
       "station_name": "Berlin Ostbahnhof",
+      "status": "success",
+      "latitude": 52.5103817,
+      "longitude": 13.4349112,
       "display_name": "Berlin Ostbahnhof, Mitteltunnel, Andreasviertel, Friedrichshain, Friedrichshain-Kreuzberg, Berlin, 10243, Deutschland",
       "query_used": "Berlin Ostbahnhof, Germany",
-      "stop_count": 8918
+      "stop_count": 8918,
+      "from_cache": true
     },
-    "08010101": {
-      "latitude": 50.9727731,
-      "longitude": 11.0378865,
+    {
+      "eva": "08010101",
       "xml_station_name": "Erfurt Hbf",
       "station_name": "Erfurt Hbf",
+      "status": "success",
+      "latitude": 50.9727731,
+      "longitude": 11.0378865,
       "display_name": "Erfurt Hauptbahnhof, 12, Willy-Brandt-Platz, Altstadt, Erfurt, Thüringen, 99084, Deutschland",
       "query_used": "Erfurt Hbf, Germany",
-      "stop_count": 8407
+      "stop_count": 8407,
+      "from_cache": true
     },
-    "08011113": {
-      "latitude": 52.4759806,
-      "longitude": 13.3650726,
+    {
+      "eva": "08011113",
       "xml_station_name": "Berlin Südkreuz",
       "station_name": "Berlin Südkreuz",
+      "status": "success",
+      "latitude": 52.4759806,
+      "longitude": 13.3650726,
       "display_name": "Südkreuz (Ringbahn), Hildegard-Knef-Platz, Rote Insel, Schöneberg, Tempelhof-Schöneberg, Berlin, 10829, Deutschland",
       "query_used": "Berlin Südkreuz, Germany",
-      "stop_count": 8347
+      "stop_count": 8347,
+      "from_cache": true
     },
-    "08000080": {
-      "latitude": 51.5178935,
-      "longitude": 7.4592831,
+    {
+      "eva": "08000080",
       "xml_station_name": "Dortmund Hbf",
       "station_name": "Dortmund Hbf",
+      "status": "success",
+      "latitude": 51.5178935,
+      "longitude": 7.4592831,
       "display_name": "Dortmund Hbf, Paul-Winzen-Straße, Innenstadt Nord, Dortmund, Nordrhein-Westfalen, 44147, Deutschland",
       "query_used": "Dortmund Hbf, Germany",
-      "stop_count": 8250
+      "stop_count": 8250,
+      "from_cache": true
     },
-    "08000147": {
-      "latitude": 53.4557227,
-      "longitude": 9.9917669,
+    {
+      "eva": "08000147",
       "xml_station_name": "Hamburg-Harburg",
       "station_name": "Hamburg-Harburg",
+      "status": "success",
+      "latitude": 53.4557227,
+      "longitude": 9.9917669,
       "display_name": "Hamburg-Harburg, Hörstener Straße, Harburg, Hamburg, 21079, Deutschland",
       "query_used": "Hamburg-Harburg, Germany",
-      "stop_count": 8105
+      "stop_count": 8105,
+      "from_cache": true
     },
-    "08000013": {
-      "latitude": 48.3656702,
-      "longitude": 10.8862827,
+    {
+      "eva": "08000013",
       "xml_station_name": "Augsburg Hbf",
       "station_name": "Augsburg Hbf",
+      "status": "success",
+      "latitude": 48.3656702,
+      "longitude": 10.8862827,
       "display_name": "Augsburg Hauptbahnhof, Viktoriastraße, Bahnhofsviertel, Bahnhofs- und Bismarckviertel, Innenstadt, Augsburg, Bayern, 86150, Deutschland",
       "query_used": "Augsburg Hbf, Germany",
-      "stop_count": 7992
+      "stop_count": 7992,
+      "from_cache": true
     },
-    "08000098": {
-      "latitude": 51.4514769,
-      "longitude": 7.0144679,
+    {
+      "eva": "08000098",
       "xml_station_name": "Essen Hbf",
       "station_name": "Essen Hbf",
+      "status": "success",
+      "latitude": 51.4514769,
+      "longitude": 7.0144679,
       "display_name": "Essen Hauptbahnhof, Am Hauptbahnhof, Stadtkern, Stadtbezirk I, Essen, Nordrhein-Westfalen, 45127, Deutschland",
       "query_used": "Essen Hbf, Germany",
-      "stop_count": 7828
+      "stop_count": 7828,
+      "from_cache": true
     },
-    "08006552": {
-      "latitude": 52.4291611,
-      "longitude": 10.7878068,
+    {
+      "eva": "08006552",
       "xml_station_name": "Wolfsburg Hbf",
       "station_name": "Wolfsburg Hbf",
+      "status": "success",
+      "latitude": 52.4291611,
+      "longitude": 10.7878068,
       "display_name": "Wolfsburg Hauptbahnhof, 3, Willy-Brandt-Platz, Stadtmitte, Wolfsburg, Niedersachsen, 38440, Deutschland",
       "query_used": "Wolfsburg Hbf, Germany",
-      "stop_count": 6751
+      "stop_count": 6751,
+      "from_cache": true
     },
-    "08002553": {
-      "latitude": 53.5521527,
-      "longitude": 9.9345653,
+    {
+      "eva": "08002553",
       "xml_station_name": "Hamburg-Altona",
       "station_name": "Hamburg-Altona",
+      "status": "success",
+      "latitude": 53.5521527,
+      "longitude": 9.9345653,
       "display_name": "Hamburg-Altona, Paul-Nevermann-Platz, Altona-Nord, Altona, Hamburg, 22765, Deutschland",
       "query_used": "Hamburg-Altona, Germany",
-      "stop_count": 6622
+      "stop_count": 6622,
+      "from_cache": true
     },
-    "08000191": {
-      "latitude": 48.9936164,
-      "longitude": 8.4020518,
+    {
+      "eva": "08000191",
       "xml_station_name": "Karlsruhe Hbf",
       "station_name": "Karlsruhe Hbf",
+      "status": "success",
+      "latitude": 48.9936164,
+      "longitude": 8.4020518,
       "display_name": "Karlsruhe Hauptbahnhof, Bahnhofplatz, Südweststadt Östlicher Teil, Südweststadt, Karlsruhe, Baden-Württemberg, 76137, Deutschland",
       "query_used": "Karlsruhe Hbf, Germany",
-      "stop_count": 6139
+      "stop_count": 6139,
+      "from_cache": true
     },
-    "08002548": {
-      "latitude": 53.5611812,
-      "longitude": 9.9890232,
+    {
+      "eva": "08002548",
       "xml_station_name": "Hamburg Dammtor",
       "station_name": "Hamburg Dammtor",
+      "status": "success",
+      "latitude": 53.5611812,
+      "longitude": 9.9890232,
       "display_name": "Hamburg Dammtor, 1, Theodor-Heuss-Platz, Rotherbaum, Eimsbüttel, Hamburg, 20354, Deutschland",
       "query_used": "Hamburg Dammtor, Germany",
-      "stop_count": 6084
+      "stop_count": 6084,
+      "from_cache": true
     },
-    "08000170": {
-      "latitude": 48.3994159,
-      "longitude": 9.9826024,
+    {
+      "eva": "08000170",
       "xml_station_name": "Ulm Hbf",
       "station_name": "Ulm Hbf",
+      "status": "success",
+      "latitude": 48.3994159,
+      "longitude": 9.9826024,
       "display_name": "Ulm Hauptbahnhof, 1, Bahnhofplatz, Fischerviertel, Mitte, Ulm, Baden-Württemberg, 89073, Deutschland",
       "query_used": "Ulm Hbf, Germany",
-      "stop_count": 5894
+      "stop_count": 5894,
+      "from_cache": true
     },
-    "08004158": {
-      "latitude": 48.1499561,
-      "longitude": 11.4617667,
+    {
+      "eva": "08004158",
       "xml_station_name": "München-Pasing",
       "station_name": "München-Pasing",
+      "status": "success",
+      "latitude": 48.1499561,
+      "longitude": 11.4617667,
       "display_name": "München-Pasing, Josef-Felder-Straße, Neupasing, Pasing, Pasing-Obermenzing, München, Bayern, 81241, Deutschland",
       "query_used": "München-Pasing, Germany",
-      "stop_count": 5619
+      "stop_count": 5619,
+      "from_cache": true
     },
-    "08000041": {
-      "latitude": 51.4785335,
-      "longitude": 7.2232341,
+    {
+      "eva": "08000041",
       "xml_station_name": "Bochum Hbf",
       "station_name": "Bochum Hbf",
+      "status": "success",
+      "latitude": 51.4785335,
+      "longitude": 7.2232341,
       "display_name": "Bochum Hauptbahnhof, Kurt-Schumacher-Platz, Gerberviertel, Mosaikviertel, Innenstadt, Bochum-Mitte, Bochum, Nordrhein-Westfalen, 44787, Deutschland",
       "query_used": "Bochum Hbf, Germany",
-      "stop_count": 5606
+      "stop_count": 5606,
+      "from_cache": true
     },
-    "08000240": {
-      "latitude": 50.0013856,
-      "longitude": 8.2586022,
+    {
+      "eva": "08000240",
       "xml_station_name": "Mainz Hbf",
       "station_name": "Mainz Hbf",
+      "status": "success",
+      "latitude": 50.0013856,
+      "longitude": 8.2586022,
       "display_name": "Mainz Hbf, Bahnhofplatz, Neustadt, Mainz, Rheinland-Pfalz, 55116, Deutschland",
       "query_used": "Mainz Hbf, Germany",
-      "stop_count": 5280
+      "stop_count": 5280,
+      "from_cache": true
     },
-    "08010205": {
-      "latitude": 51.3465518,
-      "longitude": 12.3830858,
+    {
+      "eva": "08010205",
       "xml_station_name": "Leipzig Hbf",
       "station_name": "Leipzig Hbf",
+      "status": "success",
+      "latitude": 51.3465518,
+      "longitude": 12.3830858,
       "display_name": "Leipzig Hauptbahnhof, 5, Willy-Brandt-Platz, Zentrum-Ost, Mitte, Leipzig, Sachsen, 04109, Deutschland",
       "query_used": "Leipzig Hbf, Germany",
-      "stop_count": 4761
+      "stop_count": 4761,
+      "from_cache": true
     },
-    "08000150": {
-      "latitude": 50.1210733,
-      "longitude": 8.9292147,
+    {
+      "eva": "08000150",
       "xml_station_name": "Hanau Hbf",
       "station_name": "Hanau Hbf",
+      "status": "success",
+      "latitude": 50.1210733,
+      "longitude": 8.9292147,
       "display_name": "Hanau Hbf, Auheimer Straße, Südost, Hanau, Hessen, 63450, Deutschland",
       "query_used": "Hanau Hbf, Germany",
-      "stop_count": 4664
+      "stop_count": 4664,
+      "from_cache": true
     },
-    "08000149": {
-      "latitude": 51.6785747,
-      "longitude": 7.807713,
+    {
+      "eva": "08000149",
       "xml_station_name": "Hamm(Westf)Hbf",
       "station_name": "Hamm (Westf) Hbf",
+      "status": "success",
+      "latitude": 51.6785747,
+      "longitude": 7.807713,
       "display_name": "Hamm (Westf) Hbf, 1, Willy-Brandt-Platz, Hamm-Mitte, Hamm, Nordrhein-Westfalen, 59065, Deutschland",
       "query_used": "Hamm(Westf)Hbf, Germany",
-      "stop_count": 4532
+      "stop_count": 4532,
+      "from_cache": true
     },
-    "08073368": {
-      "latitude": 50.9412305,
-      "longitude": 6.9754558,
+    {
+      "eva": "08073368",
       "xml_station_name": "Köln Messe/Deutz Gl.11-12",
       "station_name": "Köln Messe/Deutz",
-      "display_name": "Köln Messe/Deutz, Luise-Straus-Ernst-Straße, Zurich Campus Köln, Deutz, Innenstadt, Köln, Nordrhein-Westfalen, 50679, Deutschland",
-      "query_used": "Köln Messe/Deutz, Germany",
-      "stop_count": 4366
-    },
-    "08000050": {
-      "latitude": 53.0831456,
-      "longitude": 8.8135421,
-      "xml_station_name": "Bremen Hbf",
-      "station_name": "Bremen Hbf",
-      "display_name": "Bremen Hauptbahnhof, 15, 16, Bahnhofsplatz, Bahnhofsvorstadt, Mitte, Bremen-Mitte, Bremen, 28195, Deutschland",
-      "query_used": "Bremen Hbf, Germany",
-      "stop_count": 4341
-    },
-    "08000036": {
-      "latitude": 52.0293323,
-      "longitude": 8.5327135,
-      "xml_station_name": "Bielefeld Hbf",
-      "station_name": "Bielefeld Hbf",
-      "display_name": "Bielefeld Hauptbahnhof, Am Bahnhof, Bahnhofsviertel, Mitte, Bielefeld, Nordrhein-Westfalen, 33602, Deutschland",
-      "query_used": "Bielefeld Hbf, Germany",
-      "stop_count": 4332
-    },
-    "08000068": {
-      "latitude": 49.872636,
-      "longitude": 8.6307431,
-      "xml_station_name": "Darmstadt Hbf",
-      "station_name": "Darmstadt Hbf",
-      "display_name": "Darmstadt Hauptbahnhof, 20, Am Hauptbahnhof, Mornewegviertel, Darmstadt-Nord, Darmstadt, Hessen, 64293, Deutschland",
-      "query_used": "Darmstadt Hbf, Germany",
-      "stop_count": 3940
-    },
-    "08010159": {
-      "latitude": 51.4774872,
-      "longitude": 11.9872964,
-      "xml_station_name": "Halle(Saale)Hbf",
-      "station_name": "Halle (Saale) Hbf",
-      "display_name": "Halle (Saale) Hauptbahnhof, 1, Hans-Dietrich-Genscher-Platz, Freiimfelde/Kanenaer Weg, Halle (Saale), Sachsen-Anhalt, 06112, Deutschland",
-      "query_used": "Halle(Saale)Hbf, Germany",
-      "stop_count": 3937
-    },
-    "08000263": {
-      "latitude": 51.9564055,
-      "longitude": 7.635792,
-      "xml_station_name": "Münster(Westf)Hbf",
-      "station_name": "Münster (Westf) Hbf",
-      "display_name": "Münster (Westf) Hauptbahnhof, Hamburger Straße, Bahnhof, Innenstadtring, Münster-Mitte, Münster, Nordrhein-Westfalen, 48143, Deutschland",
-      "query_used": "Münster(Westf)Hbf, Germany",
-      "stop_count": 3923
-    },
-    "08000142": {
-      "latitude": 51.36296,
-      "longitude": 7.4606062,
-      "xml_station_name": "Hagen Hbf",
-      "station_name": "Hagen Hbf",
-      "display_name": "Hagen Hbf, 1, Berliner Platz, Oberhagen, Mittelstadt, Hagen-Mitte, Hagen, Nordrhein-Westfalen, 58089, Deutschland",
-      "query_used": "Hagen Hbf, Germany",
-      "stop_count": 3896
-    },
-    "08000266": {
-      "latitude": 51.2544211,
-      "longitude": 7.1501208,
-      "xml_station_name": "Wuppertal Hbf",
-      "station_name": "Wuppertal Hbf",
-      "display_name": "Wuppertal Hauptbahnhof, Distelbeck, Südstadt, Gemarkung Elberfeld, Elberfeld, Wuppertal, Nordrhein-Westfalen, 42119, Deutschland",
-      "query_used": "Wuppertal Hbf, Germany",
-      "stop_count": 3872
-    },
-    "08000183": {
-      "latitude": 48.7441209,
-      "longitude": 11.4374252,
-      "xml_station_name": "Ingolstadt Hbf",
-      "station_name": "Ingolstadt Hbf",
-      "display_name": "Ingolstadt Hbf, Elisabethstraße, Antonviertel, Münchener Straße, Ingolstadt, Bayern, 85051, Deutschland",
-      "query_used": "Ingolstadt Hbf, Germany",
-      "stop_count": 3826
-    },
-    "08000010": {
-      "latitude": 49.9806657,
-      "longitude": 9.1438818,
-      "xml_station_name": "Aschaffenburg Hbf",
-      "station_name": "Aschaffenburg Hbf",
-      "display_name": "Aschaffenburg Hbf, Nordring, Damm, Aschaffenburg, Bayern, 63741, Deutschland",
-      "query_used": "Aschaffenburg Hbf, Germany",
-      "stop_count": 3693
-    },
-    "08000107": {
-      "latitude": 47.9977308,
-      "longitude": 7.8412948,
-      "xml_station_name": "Freiburg(Breisgau) Hbf",
-      "station_name": "Freiburg (Breisgau) Hbf",
-      "display_name": "Freiburg (Breisgau) Hauptbahnhof, 5-7, Bismarckallee, Altstadt-Ring, Altstadt, Freiburg im Breisgau, Baden-Württemberg, 79098, Deutschland",
-      "query_used": "Freiburg(Breisgau) Hbf, Germany",
-      "stop_count": 3507
-    },
-    "08000294": {
-      "latitude": 52.2729063,
-      "longitude": 8.0615665,
-      "xml_station_name": "Osnabrück Hbf",
-      "station_name": "Osnabrück Hbf",
-      "display_name": "Osnabrück Hauptbahnhof, 2, Theodor-Heuss-Platz, Neustadt, Innenstadt, Osnabrück, Niedersachsen, 49074, Deutschland",
-      "query_used": "Osnabrück Hbf, Germany",
-      "stop_count": 3377
-    },
-    "08011102": {
-      "latitude": 52.5486453,
-      "longitude": 13.3902169,
-      "xml_station_name": "Berlin Gesundbrunnen",
-      "station_name": "Berlin Gesundbrunnen",
-      "display_name": "Berlin Gesundbrunnen, Ramlerstraße, Brunnenviertel, Gesundbrunnen, Mitte, Berlin, 13355, Deutschland",
-      "query_used": "Berlin Gesundbrunnen, Germany",
-      "stop_count": 3039
-    },
-    "08000049": {
-      "latitude": 52.2527621,
-      "longitude": 10.5398097,
-      "xml_station_name": "Braunschweig Hbf",
-      "station_name": "Braunschweig Hbf",
-      "display_name": "Braunschweig Hauptbahnhof, 1, Willy-Brandt-Platz, Mitte, Braunschweig, Niedersachsen, 38102, Deutschland",
-      "query_used": "Braunschweig Hbf, Germany",
-      "stop_count": 2912
-    },
-    "08000290": {
-      "latitude": 48.4695984,
-      "longitude": 7.9429235,
-      "xml_station_name": "Offenburg",
-      "station_name": "Offenburg",
-      "display_name": "Offenburg, VVG der Stadt Offenburg, Ortenaukreis, Baden-Württemberg, Deutschland",
-      "query_used": "Offenburg, Germany",
-      "stop_count": 2835
-    },
-    "08000238": {
-      "latitude": 53.248706,
-      "longitude": 10.407855,
-      "xml_station_name": "Lüneburg",
-      "station_name": "Lüneburg",
-      "display_name": "Lüneburg, Landkreis Lüneburg, Niedersachsen, Deutschland",
-      "query_used": "Lüneburg, Germany",
-      "stop_count": 2774
-    },
-    "08000168": {
-      "latitude": 52.9840746,
-      "longitude": 10.5385869,
-      "xml_station_name": "Uelzen",
-      "station_name": "Uelzen",
-      "display_name": "Landkreis Uelzen, Niedersachsen, Deutschland",
-      "query_used": "Uelzen, Germany",
-      "stop_count": 2659
-    },
-    "08000169": {
-      "latitude": 52.1597233,
-      "longitude": 9.9526525,
-      "xml_station_name": "Hildesheim Hbf",
-      "station_name": "Hildesheim Hbf",
-      "display_name": "Hildesheim Hauptbahnhof, Bahnhofsunterführung, Nordstadt, Stadtmitte/Neustadt, Hildesheim, Landkreis Hildesheim, Niedersachsen, 31137, Deutschland",
-      "query_used": "Hildesheim Hbf, Germany",
-      "stop_count": 2628
-    },
-    "08000206": {
-      "latitude": 50.3508227,
-      "longitude": 7.5892636,
-      "xml_station_name": "Koblenz Hbf",
-      "station_name": "Koblenz Hbf",
-      "display_name": "Koblenz Hbf, Bahnhofplatz, Mitte, Koblenz, Rheinland-Pfalz, 56068, Deutschland",
-      "query_used": "Koblenz Hbf, Germany",
-      "stop_count": 2455
-    },
-    "08000250": {
-      "latitude": 50.0698313,
-      "longitude": 8.2439848,
-      "xml_station_name": "Wiesbaden Hbf",
-      "station_name": "Wiesbaden Hbf",
-      "display_name": "Wiesbaden Hauptbahnhof, Bahnhofsplatz, Südost, Wiesbaden, Hessen, 65189, Deutschland",
-      "query_used": "Wiesbaden Hbf, Germany",
-      "stop_count": 2385
-    },
-    "08000025": {
-      "latitude": 49.8916044,
-      "longitude": 10.8868478,
-      "xml_station_name": "Bamberg",
-      "station_name": "Bamberg",
-      "display_name": "Bamberg, Bayern, Deutschland",
-      "query_used": "Bamberg, Germany",
-      "stop_count": 2358
-    },
-    "08000082": {
-      "latitude": 51.2915724,
-      "longitude": 6.7869558,
-      "xml_station_name": "Düsseldorf Flughafen",
-      "station_name": "Düsseldorf Flughafen",
-      "display_name": "Düsseldorf Flughafen, Tiefenbroicher Weg, Lohausen, Stadtbezirk 5, Düsseldorf, Nordrhein-Westfalen, 40474, Deutschland",
-      "query_used": "Düsseldorf Flughafen, Germany",
-      "stop_count": 2324
-    },
-    "08000156": {
-      "latitude": 49.4034737,
-      "longitude": 8.6754223,
-      "xml_station_name": "Heidelberg Hbf",
-      "station_name": "Heidelberg Hbf",
-      "display_name": "Heidelberg Hauptbahnhof, 5, Willy-Brandt-Platz, Weststadt, Heidelberg, Baden-Württemberg, 69115, Deutschland",
-      "query_used": "Heidelberg Hbf, Germany",
-      "stop_count": 2298
-    },
-    "08000044": {
-      "latitude": 50.7320436,
-      "longitude": 7.0967647,
-      "xml_station_name": "Bonn Hbf",
-      "station_name": "Bonn Hbf",
-      "display_name": "Bonn Hauptbahnhof, 1, Am Hauptbahnhof, Bonn-Zentrum, Stadtbezirk Bonn, Bonn, Nordrhein-Westfalen, 53111, Deutschland",
-      "query_used": "Bonn Hbf, Germany",
-      "stop_count": 2141
-    },
-    "08000001": {
-      "latitude": 50.7677663,
-      "longitude": 6.0913818,
-      "xml_station_name": "Aachen Hbf",
-      "station_name": "Aachen Hbf",
-      "display_name": "Aachen Hauptbahnhof, 2a, Bahnhofstraße, Kaiserplatz, Burtscheid, Aachen-Mitte, Aachen, Städteregion Aachen, Nordrhein-Westfalen, 52064, Deutschland",
-      "query_used": "Aachen Hbf, Germany",
-      "stop_count": 1738
-    },
-    "08000309": {
-      "latitude": 49.0122056,
-      "longitude": 12.0997326,
-      "xml_station_name": "Regensburg Hbf",
-      "station_name": "Regensburg Hbf",
-      "display_name": "Regensburg Hauptbahnhof, 18, Bahnhofstraße, Galgenberg, Regensburg, Bayern, 93047, Deutschland",
-      "query_used": "Regensburg Hbf, Germany",
-      "stop_count": 1730
-    },
-    "08000087": {
-      "latitude": 51.1611221,
-      "longitude": 7.004223,
-      "xml_station_name": "Solingen Hbf",
-      "station_name": "Solingen Hbf",
-      "display_name": "Solingen Hauptbahnhof, Bahnhofstunnel, Keldersquartier, Nassenweg, Ohligs/Aufderhöhe/Merscheid, Solingen, Nordrhein-Westfalen, 42697, Deutschland",
-      "query_used": "Solingen Hbf, Germany",
-      "stop_count": 1653
-    },
-    "08002041": {
-      "latitude": 50.099356,
-      "longitude": 8.6863016,
-      "xml_station_name": "Frankfurt(Main)Süd",
-      "station_name": "Frankfurt (Main) Süd",
-      "display_name": "Frankfurt (Main) Süd, Diesterwegplatz, Sachsenhausen Nord, Sachsenhausen, Süd, Frankfurt am Main, Hessen, 60594, Deutschland",
-      "query_used": "Frankfurt(Main)Süd, Germany",
-      "stop_count": 1406
-    },
-    "08000055": {
-      "latitude": 49.124118,
-      "longitude": 8.5980244,
-      "xml_station_name": "Bruchsal",
-      "station_name": "Bruchsal",
-      "display_name": "Bruchsal, VVG der Stadt Bruchsal, Landkreis Karlsruhe, Baden-Württemberg, Deutschland",
-      "query_used": "Bruchsal, Germany",
-      "stop_count": 1330
-    },
-    "08010085": {
-      "latitude": 51.0402452,
-      "longitude": 13.7320768,
-      "xml_station_name": "Dresden Hbf",
-      "station_name": "Dresden Hbf",
-      "display_name": "Dresden Hbf, 4, Wiener Platz, Seevorstadt-Ost/Großer Garten, Seevorstadt, Altstadt, Dresden, Sachsen, 01069, Deutschland",
-      "query_used": "Dresden Hbf, Germany",
-      "stop_count": 1285
-    },
-    "08010089": {
-      "latitude": 51.0658669,
-      "longitude": 13.7405404,
-      "xml_station_name": "Dresden-Neustadt",
-      "station_name": "Dresden-Neustadt",
-      "display_name": "Dresden-Neustadt, 1, Schlesischer Platz, Innere Neustadt, Neustadt, Dresden, Sachsen, 01097, Deutschland",
-      "query_used": "Dresden-Neustadt, Germany",
-      "stop_count": 1281
-    },
-    "08000286": {
-      "latitude": 51.4749062,
-      "longitude": 6.8516806,
-      "xml_station_name": "Oberhausen Hbf",
-      "station_name": "Oberhausen Hbf",
-      "display_name": "Oberhausen Hbf, Gepäcktunnel Oberhausen Hbf, Lirich, Alt-Oberhausen, Oberhausen, Nordrhein-Westfalen, 46045, Deutschland",
-      "query_used": "Oberhausen Hbf, Germany",
-      "stop_count": 1256
-    },
-    "08000271": {
-      "latitude": 54.0703296,
-      "longitude": 9.9884451,
-      "xml_station_name": "Neumünster",
-      "station_name": "Neumünster",
-      "display_name": "Neumünster, Schleswig-Holstein, Deutschland",
-      "query_used": "Neumünster, Germany",
-      "stop_count": 1141
-    },
-    "08000199": {
-      "latitude": 54.3134725,
-      "longitude": 10.130965,
-      "xml_station_name": "Kiel Hbf",
-      "station_name": "Kiel Hbf",
-      "display_name": "Kiel Hauptbahnhof, 25-27, Sophienblatt, Südfriedhof, Kiel, Schleswig-Holstein, 24114, Deutschland",
-      "query_used": "Kiel Hbf, Germany",
-      "stop_count": 1141
-    },
-    "08000189": {
-      "latitude": 49.4359636,
-      "longitude": 7.7680865,
-      "xml_station_name": "Kaiserslautern Hbf",
-      "station_name": "Kaiserslautern Hbf",
-      "display_name": "Kaiserslautern Hauptbahnhof, Guimarães-Platz, Lämmchesberg, Kaiserslautern, Rheinland-Pfalz, 67655, Deutschland",
-      "query_used": "Kaiserslautern Hbf, Germany",
-      "stop_count": 889
-    },
-    "08000323": {
-      "latitude": 49.2411972,
-      "longitude": 6.990794,
-      "xml_station_name": "Saarbrücken Hbf",
-      "station_name": "Saarbrücken Hbf",
-      "display_name": "Saarbrücken Hauptbahnhof, Am Hauptbahnhof, Hauptbahnhof, St. Johann, Bezirk Mitte, Saarbrücken, Regionalverband Saarbrücken, Saarland, 66111, Deutschland",
-      "query_used": "Saarbrücken Hbf, Germany",
-      "stop_count": 887
-    },
-    "08000124": {
-      "latitude": 50.5862066,
-      "longitude": 8.6742306,
-      "xml_station_name": "Gießen",
-      "station_name": "Gießen",
-      "display_name": "Gießen, Landkreis Gießen, Hessen, Deutschland",
-      "query_used": "Gießen, Germany",
-      "stop_count": 788
-    },
-    "08010304": {
-      "latitude": 54.0781503,
-      "longitude": 12.1311246,
-      "xml_station_name": "Rostock Hbf",
-      "station_name": "Rostock Hbf",
-      "display_name": "Rostock Hauptbahnhof, Bahnhofvorplatz, Steintor-Vorstadt, Stadtmitte, Ortsbeirat 14 : Stadtmitte, Rostock, Mecklenburg-Vorpommern, 18055, Deutschland",
-      "query_used": "Rostock Hbf, Germany",
-      "stop_count": 622
-    },
-    "08000162": {
-      "latitude": 52.1152245,
-      "longitude": 8.6711118,
-      "xml_station_name": "Herford",
-      "station_name": "Herford",
-      "display_name": "Herford, Kreis Herford, Nordrhein-Westfalen, Deutschland",
-      "query_used": "Herford, Germany",
-      "stop_count": 485
-    },
-    "08000291": {
-      "latitude": 53.144191,
-      "longitude": 8.2231132,
-      "xml_station_name": "Oldenburg(Oldb)Hbf",
-      "station_name": "Oldenburg (Oldb) Hbf",
-      "display_name": "Oldenburg (Oldb) Hbf, Bahnhofsplatz, Bahnhofsviertel, Oldenburg, Niedersachsen, 26122, Deutschland",
-      "query_used": "Oldenburg(Oldb)Hbf, Germany",
-      "stop_count": 426
-    },
-    "08010406": {
-      "latitude": 52.5074342,
-      "longitude": 13.3325608,
-      "xml_station_name": "Berlin Zoologischer Garten",
-      "station_name": "Berlin Zoologischer Garten",
-      "display_name": "Berlin Zoologischer Garten, Hardenbergplatz, City West, Charlottenburg, Charlottenburg-Wilmersdorf, Berlin, 10623, Deutschland",
-      "query_used": "Berlin Zoologischer Garten, Germany",
-      "stop_count": 388
-    },
-    "08000118": {
-      "latitude": 51.5047677,
-      "longitude": 7.1022983,
-      "xml_station_name": "Gelsenkirchen Hbf",
-      "station_name": "Gelsenkirchen Hbf",
-      "display_name": "Gelsenkirchen Hauptbahnhof, Hiberniastraße, Altstadt, Gelsenkirchen-Mitte, Gelsenkirchen, Nordrhein-Westfalen, 45879, Deutschland",
-      "query_used": "Gelsenkirchen Hbf, Germany",
-      "stop_count": 378
-    },
-    "08000275": {
-      "latitude": 49.3495669,
-      "longitude": 8.1403886,
-      "xml_station_name": "Neustadt(Weinstr)Hbf",
-      "station_name": "Neustadt (Weinstr) Hbf",
-      "display_name": "Neustadt (Weinstraße) Hauptbahnhof, Schillerstraße, Neustadt an der Weinstraße, Rheinland-Pfalz, 67434, Deutschland",
-      "query_used": "Neustadt(Weinstr)Hbf, Germany",
-      "stop_count": 327
-    },
-    "08000320": {
-      "latitude": 47.8557873,
-      "longitude": 12.1272983,
-      "xml_station_name": "Rosenheim",
-      "station_name": "Rosenheim",
-      "display_name": "Rosenheim, Bayern, Deutschland",
-      "query_used": "Rosenheim, Germany",
-      "stop_count": 284
-    },
-    "08000262": {
-      "latitude": 48.1277214,
-      "longitude": 11.6055187,
-      "xml_station_name": "München Ost",
-      "station_name": "München Ost",
-      "display_name": "München Ost, Orleansplatz, Haidhausen-Nord, Haidhausen, Au-Haidhausen, München, Bayern, 81667, Deutschland",
-      "query_used": "München Ost, Germany",
-      "stop_count": 256
-    },
-    "08000237": {
-      "latitude": 53.8671234,
-      "longitude": 10.6704782,
-      "xml_station_name": "Lübeck Hbf",
-      "station_name": "Lübeck Hbf",
-      "display_name": "Lübeck Hauptbahnhof, 2-6, Am Bahnhof, Sankt Lorenz Süd, Lübeck, Schleswig-Holstein, 23558, Deutschland",
-      "query_used": "Lübeck Hbf, Germany",
-      "stop_count": 238
-    },
-    "08010224": {
-      "latitude": 52.1305167,
-      "longitude": 11.6267187,
-      "xml_station_name": "Magdeburg Hbf",
-      "station_name": "Magdeburg Hbf",
-      "display_name": "Magdeburg Hauptbahnhof, 69, Bahnhofstraße, Bahnhofsviertel, Altstadt, Magdeburg, Sachsen-Anhalt, 39104, Deutschland",
-      "query_used": "Magdeburg Hbf, Germany",
-      "stop_count": 224
-    },
-    "08000253": {
-      "latitude": 51.1968567,
-      "longitude": 6.4452964,
-      "xml_station_name": "Mönchengladbach Hbf",
-      "station_name": "Mönchengladbach Hbf",
-      "display_name": "Mönchengladbach Hbf, Europaplatz, Gladbach, Nord, Mönchengladbach, Nordrhein-Westfalen, 41061, Deutschland",
-      "query_used": "Mönchengladbach Hbf, Germany",
-      "stop_count": 182
-    },
-    "08010405": {
-      "latitude": 52.421199,
-      "longitude": 13.1800603,
-      "xml_station_name": "Berlin-Wannsee",
-      "station_name": "Berlin-Wannsee",
-      "display_name": "Berlin-Wannsee, 250, Kronprinzessinnenweg, Wannsee, Steglitz-Zehlendorf, Berlin, 14109, Deutschland",
-      "query_used": "Berlin-Wannsee, Germany",
-      "stop_count": 168
-    },
-    "08012666": {
-      "latitude": 52.3917908,
-      "longitude": 13.0672397,
-      "xml_station_name": "Potsdam Hbf",
-      "station_name": "Potsdam Hbf",
-      "display_name": "Potsdam Hauptbahnhof, Friedrich-List-Straße, Hauptbahnhof und Brauhausberg Nord, Potsdam, Brandenburg, 14473, Deutschland",
-      "query_used": "Potsdam Hbf, Germany",
-      "stop_count": 167
-    },
-    "08003368": {
+      "status": "success",
       "latitude": 50.9412305,
       "longitude": 6.9754558,
-      "xml_station_name": "Köln Messe/Deutz",
-      "station_name": "Köln Messe/Deutz",
       "display_name": "Köln Messe/Deutz, Luise-Straus-Ernst-Straße, Zurich Campus Köln, Deutz, Innenstadt, Köln, Nordrhein-Westfalen, 50679, Deutschland",
       "query_used": "Köln Messe/Deutz, Germany",
-      "stop_count": 164
+      "stop_count": 4366,
+      "from_cache": true
     },
-    "08000316": {
-      "latitude": 52.2797707,
-      "longitude": 7.4373615,
+    {
+      "eva": "08000050",
+      "xml_station_name": "Bremen Hbf",
+      "station_name": "Bremen Hbf",
+      "status": "success",
+      "latitude": 53.0831456,
+      "longitude": 8.8135421,
+      "display_name": "Bremen Hauptbahnhof, 15, 16, Bahnhofsplatz, Bahnhofsvorstadt, Mitte, Bremen-Mitte, Bremen, 28195, Deutschland",
+      "query_used": "Bremen Hbf, Germany",
+      "stop_count": 4341,
+      "from_cache": true
+    },
+    {
+      "eva": "08000036",
+      "xml_station_name": "Bielefeld Hbf",
+      "station_name": "Bielefeld Hbf",
+      "status": "success",
+      "latitude": 52.0293323,
+      "longitude": 8.5327135,
+      "display_name": "Bielefeld Hauptbahnhof, Am Bahnhof, Bahnhofsviertel, Mitte, Bielefeld, Nordrhein-Westfalen, 33602, Deutschland",
+      "query_used": "Bielefeld Hbf, Germany",
+      "stop_count": 4332,
+      "from_cache": true
+    },
+    {
+      "eva": "08000068",
+      "xml_station_name": "Darmstadt Hbf",
+      "station_name": "Darmstadt Hbf",
+      "status": "success",
+      "latitude": 49.872636,
+      "longitude": 8.6307431,
+      "display_name": "Darmstadt Hauptbahnhof, 20, Am Hauptbahnhof, Mornewegviertel, Darmstadt-Nord, Darmstadt, Hessen, 64293, Deutschland",
+      "query_used": "Darmstadt Hbf, Germany",
+      "stop_count": 3940,
+      "from_cache": true
+    },
+    {
+      "eva": "08010159",
+      "xml_station_name": "Halle(Saale)Hbf",
+      "station_name": "Halle (Saale) Hbf",
+      "status": "success",
+      "latitude": 51.4774872,
+      "longitude": 11.9872964,
+      "display_name": "Halle (Saale) Hauptbahnhof, 1, Hans-Dietrich-Genscher-Platz, Freiimfelde/Kanenaer Weg, Halle (Saale), Sachsen-Anhalt, 06112, Deutschland",
+      "query_used": "Halle(Saale)Hbf, Germany",
+      "stop_count": 3937,
+      "from_cache": true
+    },
+    {
+      "eva": "08000263",
+      "xml_station_name": "Münster(Westf)Hbf",
+      "station_name": "Münster (Westf) Hbf",
+      "status": "success",
+      "latitude": 51.9564055,
+      "longitude": 7.635792,
+      "display_name": "Münster (Westf) Hauptbahnhof, Hamburger Straße, Bahnhof, Innenstadtring, Münster-Mitte, Münster, Nordrhein-Westfalen, 48143, Deutschland",
+      "query_used": "Münster(Westf)Hbf, Germany",
+      "stop_count": 3923,
+      "from_cache": true
+    },
+    {
+      "eva": "08000142",
+      "xml_station_name": "Hagen Hbf",
+      "station_name": "Hagen Hbf",
+      "status": "success",
+      "latitude": 51.36296,
+      "longitude": 7.4606062,
+      "display_name": "Hagen Hbf, 1, Berliner Platz, Oberhagen, Mittelstadt, Hagen-Mitte, Hagen, Nordrhein-Westfalen, 58089, Deutschland",
+      "query_used": "Hagen Hbf, Germany",
+      "stop_count": 3896,
+      "from_cache": true
+    },
+    {
+      "eva": "08000266",
+      "xml_station_name": "Wuppertal Hbf",
+      "station_name": "Wuppertal Hbf",
+      "status": "success",
+      "latitude": 51.2544211,
+      "longitude": 7.1501208,
+      "display_name": "Wuppertal Hauptbahnhof, Distelbeck, Südstadt, Gemarkung Elberfeld, Elberfeld, Wuppertal, Nordrhein-Westfalen, 42119, Deutschland",
+      "query_used": "Wuppertal Hbf, Germany",
+      "stop_count": 3872,
+      "from_cache": true
+    },
+    {
+      "eva": "08000183",
+      "xml_station_name": "Ingolstadt Hbf",
+      "station_name": "Ingolstadt Hbf",
+      "status": "success",
+      "latitude": 48.7441209,
+      "longitude": 11.4374252,
+      "display_name": "Ingolstadt Hbf, Elisabethstraße, Antonviertel, Münchener Straße, Ingolstadt, Bayern, 85051, Deutschland",
+      "query_used": "Ingolstadt Hbf, Germany",
+      "stop_count": 3826,
+      "from_cache": true
+    },
+    {
+      "eva": "08000010",
+      "xml_station_name": "Aschaffenburg Hbf",
+      "station_name": "Aschaffenburg Hbf",
+      "status": "success",
+      "latitude": 49.9806657,
+      "longitude": 9.1438818,
+      "display_name": "Aschaffenburg Hbf, Nordring, Damm, Aschaffenburg, Bayern, 63741, Deutschland",
+      "query_used": "Aschaffenburg Hbf, Germany",
+      "stop_count": 3693,
+      "from_cache": true
+    },
+    {
+      "eva": "08000107",
+      "xml_station_name": "Freiburg(Breisgau) Hbf",
+      "station_name": "Freiburg (Breisgau) Hbf",
+      "status": "success",
+      "latitude": 47.9977308,
+      "longitude": 7.8412948,
+      "display_name": "Freiburg (Breisgau) Hauptbahnhof, 5-7, Bismarckallee, Altstadt-Ring, Altstadt, Freiburg im Breisgau, Baden-Württemberg, 79098, Deutschland",
+      "query_used": "Freiburg(Breisgau) Hbf, Germany",
+      "stop_count": 3507,
+      "from_cache": true
+    },
+    {
+      "eva": "08000294",
+      "xml_station_name": "Osnabrück Hbf",
+      "station_name": "Osnabrück Hbf",
+      "status": "success",
+      "latitude": 52.2729063,
+      "longitude": 8.0615665,
+      "display_name": "Osnabrück Hauptbahnhof, 2, Theodor-Heuss-Platz, Neustadt, Innenstadt, Osnabrück, Niedersachsen, 49074, Deutschland",
+      "query_used": "Osnabrück Hbf, Germany",
+      "stop_count": 3377,
+      "from_cache": true
+    },
+    {
+      "eva": "08011102",
+      "xml_station_name": "Berlin Gesundbrunnen",
+      "station_name": "Berlin Gesundbrunnen",
+      "status": "success",
+      "latitude": 52.5486453,
+      "longitude": 13.3902169,
+      "display_name": "Berlin Gesundbrunnen, Ramlerstraße, Brunnenviertel, Gesundbrunnen, Mitte, Berlin, 13355, Deutschland",
+      "query_used": "Berlin Gesundbrunnen, Germany",
+      "stop_count": 3039,
+      "from_cache": true
+    },
+    {
+      "eva": "08000049",
+      "xml_station_name": "Braunschweig Hbf",
+      "station_name": "Braunschweig Hbf",
+      "status": "success",
+      "latitude": 52.2527621,
+      "longitude": 10.5398097,
+      "display_name": "Braunschweig Hauptbahnhof, 1, Willy-Brandt-Platz, Mitte, Braunschweig, Niedersachsen, 38102, Deutschland",
+      "query_used": "Braunschweig Hbf, Germany",
+      "stop_count": 2912,
+      "from_cache": true
+    },
+    {
+      "eva": "08000290",
+      "xml_station_name": "Offenburg",
+      "station_name": "Offenburg",
+      "status": "success",
+      "latitude": 48.4695984,
+      "longitude": 7.9429235,
+      "display_name": "Offenburg, VVG der Stadt Offenburg, Ortenaukreis, Baden-Württemberg, Deutschland",
+      "query_used": "Offenburg, Germany",
+      "stop_count": 2835,
+      "from_cache": true
+    },
+    {
+      "eva": "08000238",
+      "xml_station_name": "Lüneburg",
+      "station_name": "Lüneburg",
+      "status": "success",
+      "latitude": 53.248706,
+      "longitude": 10.407855,
+      "display_name": "Lüneburg, Landkreis Lüneburg, Niedersachsen, Deutschland",
+      "query_used": "Lüneburg, Germany",
+      "stop_count": 2774,
+      "from_cache": true
+    },
+    {
+      "eva": "08000168",
+      "xml_station_name": "Uelzen",
+      "station_name": "Uelzen",
+      "status": "success",
+      "latitude": 52.9840746,
+      "longitude": 10.5385869,
+      "display_name": "Landkreis Uelzen, Niedersachsen, Deutschland",
+      "query_used": "Uelzen, Germany",
+      "stop_count": 2659,
+      "from_cache": true
+    },
+    {
+      "eva": "08000169",
+      "xml_station_name": "Hildesheim Hbf",
+      "station_name": "Hildesheim Hbf",
+      "status": "success",
+      "latitude": 52.1597233,
+      "longitude": 9.9526525,
+      "display_name": "Hildesheim Hauptbahnhof, Bahnhofsunterführung, Nordstadt, Stadtmitte/Neustadt, Hildesheim, Landkreis Hildesheim, Niedersachsen, 31137, Deutschland",
+      "query_used": "Hildesheim Hbf, Germany",
+      "stop_count": 2628,
+      "from_cache": true
+    },
+    {
+      "eva": "08000206",
+      "xml_station_name": "Koblenz Hbf",
+      "station_name": "Koblenz Hbf",
+      "status": "success",
+      "latitude": 50.3508227,
+      "longitude": 7.5892636,
+      "display_name": "Koblenz Hbf, Bahnhofplatz, Mitte, Koblenz, Rheinland-Pfalz, 56068, Deutschland",
+      "query_used": "Koblenz Hbf, Germany",
+      "stop_count": 2455,
+      "from_cache": true
+    },
+    {
+      "eva": "08000250",
+      "xml_station_name": "Wiesbaden Hbf",
+      "station_name": "Wiesbaden Hbf",
+      "status": "success",
+      "latitude": 50.0698313,
+      "longitude": 8.2439848,
+      "display_name": "Wiesbaden Hauptbahnhof, Bahnhofsplatz, Südost, Wiesbaden, Hessen, 65189, Deutschland",
+      "query_used": "Wiesbaden Hbf, Germany",
+      "stop_count": 2385,
+      "from_cache": true
+    },
+    {
+      "eva": "08000025",
+      "xml_station_name": "Bamberg",
+      "station_name": "Bamberg",
+      "status": "success",
+      "latitude": 49.8916044,
+      "longitude": 10.8868478,
+      "display_name": "Bamberg, Bayern, Deutschland",
+      "query_used": "Bamberg, Germany",
+      "stop_count": 2358,
+      "from_cache": true
+    },
+    {
+      "eva": "08000082",
+      "xml_station_name": "Düsseldorf Flughafen",
+      "station_name": "Düsseldorf Flughafen",
+      "status": "success",
+      "latitude": 51.2915724,
+      "longitude": 6.7869558,
+      "display_name": "Düsseldorf Flughafen, Tiefenbroicher Weg, Lohausen, Stadtbezirk 5, Düsseldorf, Nordrhein-Westfalen, 40474, Deutschland",
+      "query_used": "Düsseldorf Flughafen, Germany",
+      "stop_count": 2324,
+      "from_cache": true
+    },
+    {
+      "eva": "08000156",
+      "xml_station_name": "Heidelberg Hbf",
+      "station_name": "Heidelberg Hbf",
+      "status": "success",
+      "latitude": 49.4034737,
+      "longitude": 8.6754223,
+      "display_name": "Heidelberg Hauptbahnhof, 5, Willy-Brandt-Platz, Weststadt, Heidelberg, Baden-Württemberg, 69115, Deutschland",
+      "query_used": "Heidelberg Hbf, Germany",
+      "stop_count": 2298,
+      "from_cache": true
+    },
+    {
+      "eva": "08000044",
+      "xml_station_name": "Bonn Hbf",
+      "station_name": "Bonn Hbf",
+      "status": "success",
+      "latitude": 50.7320436,
+      "longitude": 7.0967647,
+      "display_name": "Bonn Hauptbahnhof, 1, Am Hauptbahnhof, Bonn-Zentrum, Stadtbezirk Bonn, Bonn, Nordrhein-Westfalen, 53111, Deutschland",
+      "query_used": "Bonn Hbf, Germany",
+      "stop_count": 2141,
+      "from_cache": true
+    },
+    {
+      "eva": "08000001",
+      "xml_station_name": "Aachen Hbf",
+      "station_name": "Aachen Hbf",
+      "status": "success",
+      "latitude": 50.7677663,
+      "longitude": 6.0913818,
+      "display_name": "Aachen Hauptbahnhof, 2a, Bahnhofstraße, Kaiserplatz, Burtscheid, Aachen-Mitte, Aachen, Städteregion Aachen, Nordrhein-Westfalen, 52064, Deutschland",
+      "query_used": "Aachen Hbf, Germany",
+      "stop_count": 1738,
+      "from_cache": true
+    },
+    {
+      "eva": "08000309",
+      "xml_station_name": "Regensburg Hbf",
+      "station_name": "Regensburg Hbf",
+      "status": "success",
+      "latitude": 49.0122056,
+      "longitude": 12.0997326,
+      "display_name": "Regensburg Hauptbahnhof, 18, Bahnhofstraße, Galgenberg, Regensburg, Bayern, 93047, Deutschland",
+      "query_used": "Regensburg Hbf, Germany",
+      "stop_count": 1730,
+      "from_cache": true
+    },
+    {
+      "eva": "08000087",
+      "xml_station_name": "Solingen Hbf",
+      "station_name": "Solingen Hbf",
+      "status": "success",
+      "latitude": 51.1611221,
+      "longitude": 7.004223,
+      "display_name": "Solingen Hauptbahnhof, Bahnhofstunnel, Keldersquartier, Nassenweg, Ohligs/Aufderhöhe/Merscheid, Solingen, Nordrhein-Westfalen, 42697, Deutschland",
+      "query_used": "Solingen Hbf, Germany",
+      "stop_count": 1653,
+      "from_cache": true
+    },
+    {
+      "eva": "08002041",
+      "xml_station_name": "Frankfurt(Main)Süd",
+      "station_name": "Frankfurt (Main) Süd",
+      "status": "success",
+      "latitude": 50.099356,
+      "longitude": 8.6863016,
+      "display_name": "Frankfurt (Main) Süd, Diesterwegplatz, Sachsenhausen Nord, Sachsenhausen, Süd, Frankfurt am Main, Hessen, 60594, Deutschland",
+      "query_used": "Frankfurt(Main)Süd, Germany",
+      "stop_count": 1406,
+      "from_cache": true
+    },
+    {
+      "eva": "08000055",
+      "xml_station_name": "Bruchsal",
+      "station_name": "Bruchsal",
+      "status": "success",
+      "latitude": 49.124118,
+      "longitude": 8.5980244,
+      "display_name": "Bruchsal, VVG der Stadt Bruchsal, Landkreis Karlsruhe, Baden-Württemberg, Deutschland",
+      "query_used": "Bruchsal, Germany",
+      "stop_count": 1330,
+      "from_cache": true
+    },
+    {
+      "eva": "08010085",
+      "xml_station_name": "Dresden Hbf",
+      "station_name": "Dresden Hbf",
+      "status": "success",
+      "latitude": 51.0402452,
+      "longitude": 13.7320768,
+      "display_name": "Dresden Hbf, 4, Wiener Platz, Seevorstadt-Ost/Großer Garten, Seevorstadt, Altstadt, Dresden, Sachsen, 01069, Deutschland",
+      "query_used": "Dresden Hbf, Germany",
+      "stop_count": 1285,
+      "from_cache": true
+    },
+    {
+      "eva": "08010089",
+      "xml_station_name": "Dresden-Neustadt",
+      "station_name": "Dresden-Neustadt",
+      "status": "success",
+      "latitude": 51.0658669,
+      "longitude": 13.7405404,
+      "display_name": "Dresden-Neustadt, 1, Schlesischer Platz, Innere Neustadt, Neustadt, Dresden, Sachsen, 01097, Deutschland",
+      "query_used": "Dresden-Neustadt, Germany",
+      "stop_count": 1281,
+      "from_cache": true
+    },
+    {
+      "eva": "08000286",
+      "xml_station_name": "Oberhausen Hbf",
+      "station_name": "Oberhausen Hbf",
+      "status": "success",
+      "latitude": 51.4749062,
+      "longitude": 6.8516806,
+      "display_name": "Oberhausen Hbf, Gepäcktunnel Oberhausen Hbf, Lirich, Alt-Oberhausen, Oberhausen, Nordrhein-Westfalen, 46045, Deutschland",
+      "query_used": "Oberhausen Hbf, Germany",
+      "stop_count": 1256,
+      "from_cache": true
+    },
+    {
+      "eva": "08000271",
+      "xml_station_name": "Neumünster",
+      "station_name": "Neumünster",
+      "status": "success",
+      "latitude": 54.0703296,
+      "longitude": 9.9884451,
+      "display_name": "Neumünster, Schleswig-Holstein, Deutschland",
+      "query_used": "Neumünster, Germany",
+      "stop_count": 1141,
+      "from_cache": true
+    },
+    {
+      "eva": "08000199",
+      "xml_station_name": "Kiel Hbf",
+      "station_name": "Kiel Hbf",
+      "status": "success",
+      "latitude": 54.3134725,
+      "longitude": 10.130965,
+      "display_name": "Kiel Hauptbahnhof, 25-27, Sophienblatt, Südfriedhof, Kiel, Schleswig-Holstein, 24114, Deutschland",
+      "query_used": "Kiel Hbf, Germany",
+      "stop_count": 1141,
+      "from_cache": true
+    },
+    {
+      "eva": "08000189",
+      "xml_station_name": "Kaiserslautern Hbf",
+      "station_name": "Kaiserslautern Hbf",
+      "status": "success",
+      "latitude": 49.4359636,
+      "longitude": 7.7680865,
+      "display_name": "Kaiserslautern Hauptbahnhof, Guimarães-Platz, Lämmchesberg, Kaiserslautern, Rheinland-Pfalz, 67655, Deutschland",
+      "query_used": "Kaiserslautern Hbf, Germany",
+      "stop_count": 889,
+      "from_cache": true
+    },
+    {
+      "eva": "08000323",
+      "xml_station_name": "Saarbrücken Hbf",
+      "station_name": "Saarbrücken Hbf",
+      "status": "success",
+      "latitude": 49.2411972,
+      "longitude": 6.990794,
+      "display_name": "Saarbrücken Hauptbahnhof, Am Hauptbahnhof, Hauptbahnhof, St. Johann, Bezirk Mitte, Saarbrücken, Regionalverband Saarbrücken, Saarland, 66111, Deutschland",
+      "query_used": "Saarbrücken Hbf, Germany",
+      "stop_count": 887,
+      "from_cache": true
+    },
+    {
+      "eva": "08000124",
+      "xml_station_name": "Gießen",
+      "station_name": "Gießen",
+      "status": "success",
+      "latitude": 50.5862066,
+      "longitude": 8.6742306,
+      "display_name": "Gießen, Landkreis Gießen, Hessen, Deutschland",
+      "query_used": "Gießen, Germany",
+      "stop_count": 788,
+      "from_cache": true
+    },
+    {
+      "eva": "08010304",
+      "xml_station_name": "Rostock Hbf",
+      "station_name": "Rostock Hbf",
+      "status": "success",
+      "latitude": 54.0781503,
+      "longitude": 12.1311246,
+      "display_name": "Rostock Hauptbahnhof, Bahnhofvorplatz, Steintor-Vorstadt, Stadtmitte, Ortsbeirat 14 : Stadtmitte, Rostock, Mecklenburg-Vorpommern, 18055, Deutschland",
+      "query_used": "Rostock Hbf, Germany",
+      "stop_count": 622,
+      "from_cache": true
+    },
+    {
+      "eva": "08000162",
+      "xml_station_name": "Herford",
+      "station_name": "Herford",
+      "status": "success",
+      "latitude": 52.1152245,
+      "longitude": 8.6711118,
+      "display_name": "Herford, Kreis Herford, Nordrhein-Westfalen, Deutschland",
+      "query_used": "Herford, Germany",
+      "stop_count": 485,
+      "from_cache": true
+    },
+    {
+      "eva": "08000291",
+      "xml_station_name": "Oldenburg(Oldb)Hbf",
+      "station_name": "Oldenburg (Oldb) Hbf",
+      "status": "success",
+      "latitude": 53.144191,
+      "longitude": 8.2231132,
+      "display_name": "Oldenburg (Oldb) Hbf, Bahnhofsplatz, Bahnhofsviertel, Oldenburg, Niedersachsen, 26122, Deutschland",
+      "query_used": "Oldenburg(Oldb)Hbf, Germany",
+      "stop_count": 426,
+      "from_cache": true
+    },
+    {
+      "eva": "08010406",
+      "xml_station_name": "Berlin Zoologischer Garten",
+      "station_name": "Berlin Zoologischer Garten",
+      "status": "success",
+      "latitude": 52.5074342,
+      "longitude": 13.3325608,
+      "display_name": "Berlin Zoologischer Garten, Hardenbergplatz, City West, Charlottenburg, Charlottenburg-Wilmersdorf, Berlin, 10623, Deutschland",
+      "query_used": "Berlin Zoologischer Garten, Germany",
+      "stop_count": 388,
+      "from_cache": true
+    },
+    {
+      "eva": "08000118",
+      "xml_station_name": "Gelsenkirchen Hbf",
+      "station_name": "Gelsenkirchen Hbf",
+      "status": "success",
+      "latitude": 51.5047677,
+      "longitude": 7.1022983,
+      "display_name": "Gelsenkirchen Hauptbahnhof, Hiberniastraße, Altstadt, Gelsenkirchen-Mitte, Gelsenkirchen, Nordrhein-Westfalen, 45879, Deutschland",
+      "query_used": "Gelsenkirchen Hbf, Germany",
+      "stop_count": 378,
+      "from_cache": true
+    },
+    {
+      "eva": "08000275",
+      "xml_station_name": "Neustadt(Weinstr)Hbf",
+      "station_name": "Neustadt (Weinstr) Hbf",
+      "status": "success",
+      "latitude": 49.3495669,
+      "longitude": 8.1403886,
+      "display_name": "Neustadt (Weinstraße) Hauptbahnhof, Schillerstraße, Neustadt an der Weinstraße, Rheinland-Pfalz, 67434, Deutschland",
+      "query_used": "Neustadt(Weinstr)Hbf, Germany",
+      "stop_count": 327,
+      "from_cache": true
+    },
+    {
+      "eva": "08000320",
+      "xml_station_name": "Rosenheim",
+      "station_name": "Rosenheim",
+      "status": "success",
+      "latitude": 47.8557873,
+      "longitude": 12.1272983,
+      "display_name": "Rosenheim, Bayern, Deutschland",
+      "query_used": "Rosenheim, Germany",
+      "stop_count": 284,
+      "from_cache": true
+    },
+    {
+      "eva": "08000262",
+      "xml_station_name": "München Ost",
+      "station_name": "München Ost",
+      "status": "success",
+      "latitude": 48.1277214,
+      "longitude": 11.6055187,
+      "display_name": "München Ost, Orleansplatz, Haidhausen-Nord, Haidhausen, Au-Haidhausen, München, Bayern, 81667, Deutschland",
+      "query_used": "München Ost, Germany",
+      "stop_count": 256,
+      "from_cache": true
+    },
+    {
+      "eva": "08000237",
+      "xml_station_name": "Lübeck Hbf",
+      "station_name": "Lübeck Hbf",
+      "status": "success",
+      "latitude": 53.8671234,
+      "longitude": 10.6704782,
+      "display_name": "Lübeck Hauptbahnhof, 2-6, Am Bahnhof, Sankt Lorenz Süd, Lübeck, Schleswig-Holstein, 23558, Deutschland",
+      "query_used": "Lübeck Hbf, Germany",
+      "stop_count": 238,
+      "from_cache": true
+    },
+    {
+      "eva": "08010224",
+      "xml_station_name": "Magdeburg Hbf",
+      "station_name": "Magdeburg Hbf",
+      "status": "success",
+      "latitude": 52.1305167,
+      "longitude": 11.6267187,
+      "display_name": "Magdeburg Hauptbahnhof, 69, Bahnhofstraße, Bahnhofsviertel, Altstadt, Magdeburg, Sachsen-Anhalt, 39104, Deutschland",
+      "query_used": "Magdeburg Hbf, Germany",
+      "stop_count": 224,
+      "from_cache": true
+    },
+    {
+      "eva": "08000253",
+      "xml_station_name": "Mönchengladbach Hbf",
+      "station_name": "Mönchengladbach Hbf",
+      "status": "success",
+      "latitude": 51.1968567,
+      "longitude": 6.4452964,
+      "display_name": "Mönchengladbach Hbf, Europaplatz, Gladbach, Nord, Mönchengladbach, Nordrhein-Westfalen, 41061, Deutschland",
+      "query_used": "Mönchengladbach Hbf, Germany",
+      "stop_count": 182,
+      "from_cache": true
+    },
+    {
+      "eva": "08010405",
+      "xml_station_name": "Berlin-Wannsee",
+      "station_name": "Berlin-Wannsee",
+      "status": "success",
+      "latitude": 52.421199,
+      "longitude": 13.1800603,
+      "display_name": "Berlin-Wannsee, 250, Kronprinzessinnenweg, Wannsee, Steglitz-Zehlendorf, Berlin, 14109, Deutschland",
+      "query_used": "Berlin-Wannsee, Germany",
+      "stop_count": 168,
+      "from_cache": true
+    },
+    {
+      "eva": "08012666",
+      "xml_station_name": "Potsdam Hbf",
+      "station_name": "Potsdam Hbf",
+      "status": "success",
+      "latitude": 52.3917908,
+      "longitude": 13.0672397,
+      "display_name": "Potsdam Hauptbahnhof, Friedrich-List-Straße, Hauptbahnhof und Brauhausberg Nord, Potsdam, Brandenburg, 14473, Deutschland",
+      "query_used": "Potsdam Hbf, Germany",
+      "stop_count": 167,
+      "from_cache": true
+    },
+    {
+      "eva": "08003368",
+      "xml_station_name": "Köln Messe/Deutz",
+      "station_name": "Köln Messe/Deutz",
+      "status": "success",
+      "latitude": 50.9412305,
+      "longitude": 6.9754558,
+      "display_name": "Köln Messe/Deutz, Luise-Straus-Ernst-Straße, Zurich Campus Köln, Deutz, Innenstadt, Köln, Nordrhein-Westfalen, 50679, Deutschland",
+      "query_used": "Köln Messe/Deutz, Germany",
+      "stop_count": 164,
+      "from_cache": true
+    },
+    {
+      "eva": "08000316",
       "xml_station_name": "Rheine",
       "station_name": "Rheine",
+      "status": "success",
+      "latitude": 52.2797707,
+      "longitude": 7.4373615,
       "display_name": "Rheine, Kreis Steinfurt, Nordrhein-Westfalen, Deutschland",
       "query_used": "Rheine, Germany",
-      "stop_count": 156
+      "stop_count": 156,
+      "from_cache": true
     },
-    "08000157": {
-      "latitude": 49.1431403,
-      "longitude": 9.2076637,
+    {
+      "eva": "08000157",
       "xml_station_name": "Heilbronn Hbf",
       "station_name": "Heilbronn Hbf",
+      "status": "success",
+      "latitude": 49.1431403,
+      "longitude": 9.2076637,
       "display_name": "Heilbronn Hauptbahnhof, Willy-Brandt-Platz, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
       "query_used": "Heilbronn Hbf, Germany",
-      "stop_count": 139
+      "stop_count": 139,
+      "from_cache": true
     },
-    "08000257": {
-      "latitude": 49.6351798,
-      "longitude": 8.3566466,
+    {
+      "eva": "08000257",
       "xml_station_name": "Worms Hbf",
       "station_name": "Worms Hbf",
+      "status": "success",
+      "latitude": 49.6351798,
+      "longitude": 8.3566466,
       "display_name": "Worms Hauptbahnhof, Saint-Albans-Platz, Worms-Zentrum, Innenstadt, Worms, Rheinland-Pfalz, 67547, Deutschland",
       "query_used": "Worms Hbf, Germany",
-      "stop_count": 104
+      "stop_count": 104,
+      "from_cache": true
     },
-    "08098262": {
-      "latitude": 48.1400866,
-      "longitude": 11.5531716,
+    {
+      "eva": "08098262",
       "xml_station_name": "München Hbf Gl.5-10",
       "station_name": "München Hbf",
+      "status": "success",
+      "latitude": 48.1400866,
+      "longitude": 11.5531716,
       "display_name": "München Hauptbahnhof, Bayerstraße, Klinikviertel, Ludwigsvorstadt, Ludwigsvorstadt-Isarvorstadt, München, Bayern, 80335, Deutschland",
       "query_used": "München Hbf Gl.5-10, Germany",
-      "stop_count": 99
+      "stop_count": 99,
+      "from_cache": true
     },
-    "08000274": {
-      "latitude": 51.2044376,
-      "longitude": 6.6846709,
+    {
+      "eva": "08000274",
       "xml_station_name": "Neuss Hbf",
       "station_name": "Neuss Hbf",
+      "status": "success",
+      "latitude": 51.2044376,
+      "longitude": 6.6846709,
       "display_name": "Neuss Hbf, Theodor-Heuss-Platz, Marienviertel, Innenstadt, Neuss, Rhein-Kreis Neuss, Nordrhein-Westfalen, 41460, Deutschland",
       "query_used": "Neuss Hbf, Germany",
-      "stop_count": 54
+      "stop_count": 54,
+      "from_cache": true
     },
-    "08000297": {
-      "latitude": 51.7128598,
-      "longitude": 8.7404385,
+    {
+      "eva": "08000297",
       "xml_station_name": "Paderborn Hbf",
       "station_name": "Paderborn Hbf",
+      "status": "success",
+      "latitude": 51.7128598,
+      "longitude": 8.7404385,
       "display_name": "Paderborn Hauptbahnhof, Bahnhofstraße, Paderborn, Kreis Paderborn, Nordrhein-Westfalen, 33102, Deutschland",
       "query_used": "Paderborn Hbf, Germany",
-      "stop_count": 26
+      "stop_count": 26,
+      "from_cache": true
     },
-    "08098261": {
-      "latitude": 48.1417281,
-      "longitude": 11.5558398,
+    {
+      "eva": "08098261",
       "xml_station_name": "München Hbf Gl.27-36",
       "station_name": "München Hbf",
+      "status": "success",
+      "latitude": 48.1417281,
+      "longitude": 11.5558398,
       "display_name": "München Hbf Gleis 27-36, Paul-Heyse-Unterführung, Klinikviertel, Ludwigsvorstadt, Ludwigsvorstadt-Isarvorstadt, München, Bayern, 80335, Deutschland",
       "query_used": "München Hbf Gl.27-36, Germany",
-      "stop_count": 18
+      "stop_count": 18,
+      "from_cache": true
     },
-    "08011201": {
-      "latitude": 52.3642841,
-      "longitude": 13.5081573,
+    {
+      "eva": "08011201",
       "xml_station_name": "Flughafen BER",
       "station_name": "Flughafen BER",
+      "status": "success",
+      "latitude": 52.3642841,
+      "longitude": 13.5081573,
       "display_name": "Flughafen BER, Melli-Beese-Ring, Schönefeld, Schenkendorf-Krummensee, Dahme-Spreewald, Brandenburg, 12529, Deutschland",
       "query_used": "Flughafen BER, Germany",
-      "stop_count": 10
+      "stop_count": 10,
+      "from_cache": true
     },
-    "08010036": {
-      "latitude": 52.5097832,
-      "longitude": 13.4961404,
+    {
+      "eva": "08010036",
       "xml_station_name": "Berlin-Lichtenberg",
       "station_name": "Berlin-Lichtenberg",
+      "status": "success",
+      "latitude": 52.5097832,
+      "longitude": 13.4961404,
       "display_name": "Berlin-Lichtenberg, 22, Weitlingstraße, Weitlingkiez, Rummelsburg, Lichtenberg, Berlin, 10317, Deutschland",
       "query_used": "Berlin-Lichtenberg, Germany",
-      "stop_count": 2
+      "stop_count": 2,
+      "from_cache": true
     },
-    "08000302": {
-      "latitude": 48.7214582,
-      "longitude": 9.41643,
+    {
+      "eva": "08000302",
       "xml_station_name": "Plochingen",
       "station_name": "Plochingen",
+      "status": "success",
+      "latitude": 48.7214582,
+      "longitude": 9.41643,
       "display_name": "Plochingen, GVV Plochingen, Landkreis Esslingen, Baden-Württemberg, 73207, Deutschland",
+      "osm_class": "boundary",
+      "osm_type": "administrative",
       "query_used": "Plochingen, Germany",
+      "is_railway_match": false,
+      "from_cache": false,
       "stop_count": 32
     },
-    "08000114": {
-      "latitude": 49.4697537,
-      "longitude": 10.9899358,
+    {
+      "eva": "08000114",
       "xml_station_name": "Fürth(Bay)Hbf",
       "station_name": "Fürth (Bay) Hbf",
+      "status": "success",
+      "latitude": 49.4697537,
+      "longitude": 10.9899358,
       "display_name": "Fürth (Bayern) Hauptbahnhof, Karolinenstraße, Südstadt, Süd, Fürth, Bayern, 90763, Deutschland",
+      "osm_class": "railway",
+      "osm_type": "station",
       "query_used": "Fürth(Bay)Hbf, Germany",
+      "is_railway_match": true,
+      "from_cache": false,
       "stop_count": 29
     },
-    "08011306": {
-      "latitude": 52.5201744,
-      "longitude": 13.3869884,
+    {
+      "eva": "08011306",
       "xml_station_name": "Berlin Friedrichstraße",
       "station_name": "Berlin Friedrichstraße",
+      "status": "success",
+      "latitude": 52.5201744,
+      "longitude": 13.3869884,
       "display_name": "Berlin Friedrichstraße, 14-18, Georgenstraße, Dorotheenstadt, Mitte, Berlin, 10117, Deutschland",
+      "osm_class": "railway",
+      "osm_type": "station",
       "query_used": "Berlin Friedrichstraße, Germany",
+      "is_railway_match": true,
+      "from_cache": false,
       "stop_count": 9
     }
-  },
-  "failed_stations": []
+  ],
+  "success_rate_pct": 100.0,
+  "ready_for_section_2": true
 }

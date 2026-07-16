@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "notebook": "05_Exploratory_Data_Analysis",
+    "section": "Section 1",
+    "created_at_utc": "2026-07-16T21:53:23.239342+00:00",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "loaded_from_disk": [
+      "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
+      "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-08.parquet",
+      "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-09.parquet"
+    ],
+    "note": "Classification is not in scope; late≥6% is descriptive only."
+  },
+  "subsets": {
+    "all_rows": 418257,
+    "mergeable_rows": 377055,
+    "weather_matched_rows": 377026
+  },
+  "delay_stats_overall": {
+    "count": 377026,
+    "mean": 10.85,
+    "median": 4.0,
+    "std": 18.53,
+    "min": -66,
+    "max": 391,
+    "p25": 1.0,
+    "p75": 13.0,
+    "p90": 30.0,
+    "p95": 45.0,
+    "early_pct": 1.68,
+    "zero_pct": 19.35,
+    "late_pct": 78.97,
+    "late_ge_6_pct": 42.7
+  },
+  "delay_stats_by_month": {
+    "2024-07": {
+      "count": 132268,
+      "mean": 10.57,
+      "median": 4.0,
+      "std": 17.56,
+      "min": -17,
+      "max": 298,
+      "p25": 1.0,
+      "p75": 13.0,
+      "p90": 30.0,
+      "p95": 44.65,
+      "early_pct": 1.97,
+      "zero_pct": 19.52,
+      "late_pct": 78.51,
+      "late_ge_6_pct": 42.32
+    },
+    "2024-08": {
+      "count": 122794,
+      "mean": 11.54,
+      "median": 4.0,
+      "std": 19.53,
+      "min": -66,
+      "max": 391,
+      "p25": 1.0,
+      "p75": 14.0,
+      "p90": 31.0,
+      "p95": 47.0,
+      "early_pct": 1.37,
+      "zero_pct": 18.95,
+      "late_pct": 79.67,
+      "late_ge_6_pct": 44.5
+    },
+    "2024-09": {
+      "count": 121964,
+      "mean": 10.46,
+      "median": 4.0,
+      "std": 18.49,
+      "min": -52,
+      "max": 338,
+      "p25": 1.0,
+      "p75": 12.0,
+      "p90": 29.0,
+      "p95": 44.0,
+      "early_pct": 1.68,
+      "zero_pct": 19.57,
+      "late_pct": 78.75,
+      "late_ge_6_pct": 41.3
+    }
+  },
+  "naive_mae_reference": {
+    "mae_mean_predictor": 11.56,
+    "mae_median_predictor": 9.82,
+    "note": {
+      "mean_predictor": "always predict mean delay_in_min on the training period",
+      "median_predictor": "always predict median delay_in_min on the training period"
+    }
+  },
+  "figures": {
+    "histogram": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_histogram_multi_month.png",
+    "by_month": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_by_month.png"
+  }
+}

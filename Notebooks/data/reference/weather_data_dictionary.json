@@ -2,9 +2,16 @@
   "metadata": {
     "notebook": "01_Project_Definition_and_Data_Understanding",
     "section": "Section 4",
-    "created_at_utc": "2026-07-05T11:44:09.285139+00:00",
+    "created_at_utc": "2026-07-16T20:28:17.956458+00:00",
     "api_url": "https://archive-api.open-meteo.com/v1/archive",
     "docs_url": "https://open-meteo.com/en/docs/historical-weather-api",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
     "demo_request": {
       "latitude": 52.525,
       "longitude": 13.369,
@@ -21,7 +28,7 @@
         "weather_code",
         "visibility"
       ],
-      "note": "Demo only — Notebook 04 uses per-station geocoded coordinates."
+      "note": "Demo only — Notebook 04 uses per-station geocoded coordinates for all target months."
     },
     "sample_response_path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\open_meteo_sample_response.json",
     "sample_rows": 24
@@ -29,13 +36,13 @@
   "required_request_parameters": {
     "latitude": "WGS84 latitude — obtained by geocoding eva in Notebook 04",
     "longitude": "WGS84 longitude — obtained by geocoding eva in Notebook 04",
-    "start_date": "YYYY-MM-DD — match railway date range being processed",
-    "end_date": "YYYY-MM-DD — match railway date range being processed",
+    "start_date": "YYYY-MM-DD — match railway month being processed",
+    "end_date": "YYYY-MM-DD — match railway month being processed",
     "hourly": "Comma-separated list of weather variables",
     "timezone": "Europe/Berlin — aligns with German rail timestamps"
   },
   "response_top_level_keys": {
-    "latitude": "Grid-snapped latitude returned by API (may differ from request)",
+    "latitude": "Grid-snapped latitude returned by API",
     "longitude": "Grid-snapped longitude returned by API",
     "timezone": "Timezone used for hourly.time",
     "hourly_units": "Unit for each hourly variable",
@@ -46,55 +53,55 @@
       "unit": "°C",
       "valid_time": "instant",
       "description": "Air temperature at 2 metres above ground.",
-      "relevance": "Extreme heat/cold may affect infrastructure and operations."
+      "relevance": "May relate to delay magnitude (infrastructure / operations)."
     },
     "precipitation": {
       "unit": "mm",
       "valid_time": "preceding_hour_sum",
-      "description": "Total precipitation (rain, showers, snow) in the preceding hour.",
-      "relevance": "Wet tracks, reduced adhesion, visibility issues."
+      "description": "Total precipitation in the preceding hour.",
+      "relevance": "Wet conditions may increase expected delay minutes."
     },
     "rain": {
       "unit": "mm",
       "valid_time": "preceding_hour_sum",
       "description": "Liquid rain in the preceding hour.",
-      "relevance": "Component of total precipitation affecting operations."
+      "relevance": "Often redundant with precipitation — check in EDA/features."
     },
     "snowfall": {
       "unit": "cm",
       "valid_time": "preceding_hour_sum",
       "description": "Snowfall in the preceding hour.",
-      "relevance": "Winter disruption risk on ICE corridors."
+      "relevance": "May be near-zero in summer months; still requested for completeness."
     },
     "windspeed_10m": {
       "unit": "km/h",
       "valid_time": "instant",
-      "description": "Wind speed at 10 metres above ground.",
-      "relevance": "Strong winds affect high-speed running."
+      "description": "Wind speed at 10 metres.",
+      "relevance": "Strong wind may affect high-speed running."
     },
     "windgusts_10m": {
       "unit": "km/h",
       "valid_time": "instant",
       "description": "Maximum wind gusts at 10 metres.",
-      "relevance": "Captures short severe weather events."
+      "relevance": "Short severe wind events."
     },
     "weather_code": {
       "unit": "wmo_code",
       "valid_time": "instant",
       "description": "WMO weather interpretation code (categorical).",
-      "relevance": "Encodes fog, thunderstorm, snow conditions in one field."
+      "relevance": "Encodes fog, thunderstorm, snow in one field."
     },
     "visibility": {
       "unit": "m",
       "valid_time": "instant",
       "description": "Horizontal visibility distance.",
-      "relevance": "Fog and low visibility can cause speed restrictions."
+      "relevance": "Low visibility can cause speed restrictions."
     }
   },
   "hourly_time_format": {
     "example": "2024-07-01 00:00:00",
     "pattern": "YYYY-MM-DDTHH:00 in requested timezone",
-    "merge_rule": "Round railway departure_planned_time to nearest hour, then join on (latitude, longitude, hour)"
+    "merge_rule": "Floor railway departure_planned_time to hour, then join on (eva/station coords + hour)"
   },
   "merge_plan": {
     "railway_keys": {
@@ -106,7 +113,12 @@
       "time": "hourly.time (hour-rounded)"
     },
     "join_type": "left join (keep all ICE railway rows; weather may be null if missing)",
-    "implemented_in": "Notebook 04"
+    "implemented_in": "Notebook 04",
+    "months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ]
   },
   "verified_response_units": {
     "time": "iso8601",

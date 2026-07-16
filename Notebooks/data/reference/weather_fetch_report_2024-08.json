@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "notebook": "04_Data_Integration",
+    "section": "Section 2",
+    "created_at_utc": "2026-07-16T21:44:33.418111+00:00",
+    "target_month": "2024-08",
+    "api_url": "https://archive-api.open-meteo.com/v1/archive",
+    "date_range": {
+      "start": "2024-08-01",
+      "end": "2024-08-31"
+    },
+    "timezone": "Europe/Berlin",
+    "hourly_variables": [
+      "temperature_2m",
+      "precipitation",
+      "rain",
+      "snowfall",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "visibility"
+    ],
+    "primary_metric": "mae"
+  },
+  "weather_summary": {
+    "total_rows": 72912,
+    "unique_stations": 98,
+    "unique_hours": 744,
+    "date_min": "2024-08-01 00:00:00",
+    "date_max": "2024-08-31 23:00:00",
+    "temperature_2m_mean": 20.57,
+    "precipitation_total_mm": 6078.7
+  },
+  "fetch_log": [
+    {
+      "eva": "08000105",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000261",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000152",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08002549",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010404",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000284",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000207",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08003200",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000128",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000085",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000115",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08098160",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000244",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000096",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000260",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08011160",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000086",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010255",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010101",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08011113",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000080",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000147",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000013",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000098",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08006552",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08002553",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000191",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08002548",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000170",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08004158",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000041",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000240",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010205",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000150",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000149",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08073368",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000050",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000036",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000068",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010159",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000263",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000142",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000266",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000183",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000010",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000107",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000294",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08011102",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000049",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000290",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000238",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000168",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000169",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000206",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000250",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000025",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000082",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000156",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000044",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000001",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000309",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000087",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08002041",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000055",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010085",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010089",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000286",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000271",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000199",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000189",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000323",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000124",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010304",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000162",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000291",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010406",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000118",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000275",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000320",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000262",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000237",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010224",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000253",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010405",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08012666",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08003368",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000316",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000157",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000257",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08098262",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000274",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000297",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08098261",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08011201",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08010036",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000302",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08000114",
+      "status": "success",
+      "rows": 744
+    },
+    {
+      "eva": "08011306",
+      "status": "success",
+      "rows": 744
+    }
+  ],
+  "failed_count": 0,
+  "output_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\weather_by_station_2024-08.parquet",
+  "ready_for_section_3": true
+}

@@ -2,10 +2,10 @@
   "metadata": {
     "notebook": "02_Data_Acquisition_and_Initial_Inspection",
     "section": "Section 3",
-    "created_at_utc": "2026-07-16T21:15:09.069716+00:00",
-    "target_month": "2024-07",
-    "ice_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-07.parquet",
-    "weather_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\weather_sample_2024-07.parquet",
+    "created_at_utc": "2026-07-16T21:15:09.458020+00:00",
+    "target_month": "2024-08",
+    "ice_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-08.parquet",
+    "weather_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\weather_sample_2024-08.parquet",
     "primary_target": "delay_in_min",
     "primary_metric": "mae"
   },
@@ -13,8 +13,8 @@
     "url": "https://archive-api.open-meteo.com/v1/archive",
     "latitude": 52.525,
     "longitude": 13.369,
-    "start_date": "2024-07-01",
-    "end_date": "2024-07-31",
+    "start_date": "2024-08-01",
+    "end_date": "2024-08-31",
     "timezone": "Europe/Berlin",
     "hourly_variables": [
       "temperature_2m",
@@ -47,74 +47,74 @@
   "time_format_comparison": {
     "railway_raw": {
       "column": "departure_planned_time",
-      "example": "2024-07-01 00:01:00",
+      "example": "2024-08-01 00:01:00",
       "precision": "minute-level",
       "timezone": "naive in raw parquet — localized Europe/Berlin in Notebook 03"
     },
     "railway_merge_key": {
       "column": "departure_planned_hour / departure_planned_hour_naive",
-      "example": "2024-07-01 00:00:00",
+      "example": "2024-08-01 00:00:00",
       "precision": "hour-level (floored)"
     },
     "weather_merge_key": {
       "column": "hourly.time",
-      "example": "2024-07-01 00:00:00",
+      "example": "2024-08-01 00:00:00",
       "precision": "hour-level",
       "timezone": "Europe/Berlin"
     },
     "merge_rule": "Join on eva + departure_planned_hour_naive == weather_time (after geocoding in Notebook 04)"
   },
   "alignment_stats": {
-    "ice_rows_with_departure": 142434,
-    "unique_railway_hours": 744,
+    "ice_rows_with_departure": 135126,
+    "unique_railway_hours": 747,
     "unique_weather_hours": 744,
-    "unique_eva_stations": 95
+    "unique_eva_stations": 98
   },
   "weather_summary": {
     "rows": 744,
     "expected_hours_approx": 744,
-    "date_min": "2024-07-01 00:00:00",
-    "date_max": "2024-07-31 23:00:00",
-    "temperature_2m_mean": 20.37,
-    "temperature_2m_min": 10.8,
-    "temperature_2m_max": 32.2,
-    "precipitation_total_mm": 58.7
+    "date_min": "2024-08-01 00:00:00",
+    "date_max": "2024-08-31 23:00:00",
+    "temperature_2m_mean": 21.46,
+    "temperature_2m_min": 12.3,
+    "temperature_2m_max": 34.1,
+    "precipitation_total_mm": 18.3
   },
   "alignment_sample_rows": [
     {
-      "eva": "08000049",
-      "xml_station_name": "Braunschweig Hbf",
-      "departure_planned_time": "2024-07-01 00:01:00",
-      "departure_planned_hour": "2024-07-01",
-      "delay_in_min": 0
-    },
-    {
-      "eva": "08000240",
-      "xml_station_name": "Mainz Hbf",
-      "departure_planned_time": "2024-07-01 00:01:00",
-      "departure_planned_hour": "2024-07-01",
-      "delay_in_min": 0
-    },
-    {
-      "eva": "08000261",
-      "xml_station_name": "München Hbf",
-      "departure_planned_time": "2024-07-01 00:01:00",
-      "departure_planned_hour": "2024-07-01",
-      "delay_in_min": 1
-    },
-    {
-      "eva": "08000098",
-      "xml_station_name": "Essen Hbf",
-      "departure_planned_time": "2024-07-01 00:02:00",
-      "departure_planned_hour": "2024-07-01",
-      "delay_in_min": 1
-    },
-    {
-      "eva": "08000147",
-      "xml_station_name": "Hamburg-Harburg",
-      "departure_planned_time": "2024-07-01 00:03:00",
-      "departure_planned_hour": "2024-07-01",
+      "eva": "08000170",
+      "xml_station_name": "Ulm Hbf",
+      "departure_planned_time": "2024-08-01 00:01:00",
+      "departure_planned_hour": "2024-08-01 00:00:00",
       "delay_in_min": 2
+    },
+    {
+      "eva": "08000142",
+      "xml_station_name": "Hagen Hbf",
+      "departure_planned_time": "2024-07-31 23:57:00",
+      "departure_planned_hour": "2024-07-31 23:00:00",
+      "delay_in_min": 6
+    },
+    {
+      "eva": "08004158",
+      "xml_station_name": "München-Pasing",
+      "departure_planned_time": "2024-07-31 21:06:00",
+      "departure_planned_hour": "2024-07-31 21:00:00",
+      "delay_in_min": 177
+    },
+    {
+      "eva": "08000068",
+      "xml_station_name": "Darmstadt Hbf",
+      "departure_planned_time": "2024-07-31 23:23:00",
+      "departure_planned_hour": "2024-07-31 23:00:00",
+      "delay_in_min": 41
+    },
+    {
+      "eva": "08010159",
+      "xml_station_name": "Halle(Saale)Hbf",
+      "departure_planned_time": "2024-07-31 23:14:00",
+      "departure_planned_hour": "2024-07-31 23:00:00",
+      "delay_in_min": 51
     }
   ],
   "documented_variables": [

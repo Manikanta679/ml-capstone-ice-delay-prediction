@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "notebook": "04_Data_Integration",
+    "section": "Section 3",
+    "created_at_utc": "2026-07-16T21:48:09.227906+00:00",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae"
+  },
+  "months": [
+    {
+      "month": "2024-07",
+      "rows": 146389,
+      "mergeable_rate_pct": 100.0,
+      "overall_rate_pct": 90.35,
+      "delay_mean": 10.92,
+      "output_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
+      "report": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\merge_validation_report_2024-07.json"
+    },
+    {
+      "month": "2024-08",
+      "rows": 136321,
+      "mergeable_rate_pct": 99.99,
+      "overall_rate_pct": 90.08,
+      "delay_mean": 12.08,
+      "output_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-08.parquet",
+      "report": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\merge_validation_report_2024-08.json"
+    },
+    {
+      "month": "2024-09",
+      "rows": 135547,
+      "mergeable_rate_pct": 99.99,
+      "overall_rate_pct": 89.98,
+      "delay_mean": 10.86,
+      "output_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-09.parquet",
+      "report": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\merge_validation_report_2024-09.json"
+    }
+  ],
+  "totals": {
+    "merged_rows_all": 418257
+  },
+  "merged_files_on_disk": [
+    "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
+    "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-08.parquet",
+    "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-09.parquet"
+  ]
+}

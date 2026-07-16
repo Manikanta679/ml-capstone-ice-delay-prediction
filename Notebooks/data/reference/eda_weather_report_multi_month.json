@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "notebook": "05_Exploratory_Data_Analysis",
+    "section": "Section 2",
+    "created_at_utc": "2026-07-16T22:34:33.753232+00:00",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "n_rows_analyzed": 377026,
+    "note": "No classification; correlations vs delay_in_min only."
+  },
+  "weather_correlations": {
+    "temperature_2m": {
+      "vs_delay_in_min": 0.0928,
+      "abs_corr": 0.0928
+    },
+    "precipitation": {
+      "vs_delay_in_min": 0.0021,
+      "abs_corr": 0.0021
+    },
+    "rain": {
+      "vs_delay_in_min": 0.0021,
+      "abs_corr": 0.0021
+    },
+    "snowfall": {
+      "vs_delay_in_min": null,
+      "abs_corr": 0.0
+    },
+    "windspeed_10m": {
+      "vs_delay_in_min": -0.0115,
+      "abs_corr": 0.0115
+    },
+    "windgusts_10m": {
+      "vs_delay_in_min": 0.0019,
+      "abs_corr": 0.0019
+    },
+    "weather_code": {
+      "vs_delay_in_min": 0.0015,
+      "abs_corr": 0.0015
+    },
+    "visibility": {
+      "vs_delay_in_min": null,
+      "abs_corr": 0.0
+    }
+  },
+  "ranked_by_abs_corr": [
+    "temperature_2m",
+    "windspeed_10m",
+    "precipitation",
+    "rain",
+    "windgusts_10m",
+    "weather_code",
+    "snowfall",
+    "visibility"
+  ],
+  "bin_summaries": {
+    "precipitation": [
+      {
+        "n": 377026,
+        "mean_delay": 10.85,
+        "median_delay": 4.0,
+        "mean_feature": 0.112,
+        "bin_label": "(-0.001, 17.2]"
+      }
+    ],
+    "windgusts_10m": [
+      {
+        "n": 94912,
+        "mean_delay": 10.71,
+        "median_delay": 3.0,
+        "mean_feature": 11.528,
+        "bin_label": "(1.399, 15.5]"
+      },
+      {
+        "n": 94356,
+        "mean_delay": 11.09,
+        "median_delay": 4.0,
+        "mean_feature": 19.218,
+        "bin_label": "(15.5, 22.7]"
+      },
+      {
+        "n": 94226,
+        "mean_delay": 10.88,
+        "median_delay": 4.0,
+        "mean_feature": 27.102,
+        "bin_label": "(22.7, 31.7]"
+      },
+      {
+        "n": 93532,
+        "mean_delay": 10.72,
+        "median_delay": 4.0,
+        "mean_feature": 40.078,
+        "bin_label": "(31.7, 79.6]"
+      }
+    ],
+    "temperature_2m": [
+      {
+        "n": 94896,
+        "mean_delay": 8.89,
+        "median_delay": 3.0,
+        "mean_feature": 13.256,
+        "bin_label": "(2.6990000000000003, 16.0]"
+      },
+      {
+        "n": 95513,
+        "mean_delay": 9.71,
+        "median_delay": 3.0,
+        "mean_feature": 17.894,
+        "bin_label": "(16.0, 19.6]"
+      },
+      {
+        "n": 93223,
+        "mean_delay": 11.54,
+        "median_delay": 4.0,
+        "mean_feature": 21.385,
+        "bin_label": "(19.6, 23.1]"
+      },
+      {
+        "n": 93394,
+        "mean_delay": 13.32,
+        "median_delay": 5.0,
+        "mean_feature": 26.136,
+        "bin_label": "(23.1, 34.6]"
+      }
+    ]
+  },
+  "rain_compare": {
+    "dry_hours_mean_delay": 10.84,
+    "rainy_hours_mean_delay": 10.88,
+    "dry_n": 306720,
+    "rainy_n": 70306
+  },
+  "hypothesis_eda_hints": {
+    "H1_precipitation": {
+      "statement": "Higher hourly precipitation is associated with higher expected delay (minutes).",
+      "corr_precipitation": 0.0021,
+      "dry_vs_rainy": {
+        "dry_hours_mean_delay": 10.84,
+        "rainy_hours_mean_delay": 10.88,
+        "dry_n": 306720,
+        "rainy_n": 70306
+      },
+      "supported_hint": true
+    },
+    "H2_windgusts": {
+      "statement": "Higher wind gusts increase expected delay magnitude.",
+      "corr_windgusts": 0.0019,
+      "supported_hint": true
+    }
+  },
+  "figures": {
+    "corr_heatmap": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_weather_corr_heatmap.png",
+    "bin_bars": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_weather_bins_mean_delay.png",
+    "precip_boxplot": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_precip_boxplot_delay.png"
+  }
+}

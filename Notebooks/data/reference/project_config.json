@@ -1,27 +1,37 @@
 {
   "project": {
     "title": "ICE Train Delay Prediction Using Railway Operational Data and Historical Weather Data",
-    "author": "Your Name",
+    "authors": [
+      "Manikanta Engalligi",
+      "abhinay-sambherao"
+    ],
     "institution": "Your University",
     "notebook": "01_Project_Definition_and_Data_Understanding",
     "section": "Section 1",
-    "created_at_utc": "2026-07-05T11:23:59.580815+00:00"
+    "created_at_utc": "2026-07-16T20:19:04.086320+00:00",
+    "revision_note": "Aligned with mid-presentation feedback: regression-only, MAE primary, multi-month scope"
   },
   "scope": {
     "train_type_filter": "ICE",
     "observation_unit": "one train stop at one station (one row)",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
     "exclude_from_git": "full raw Deutsche Bahn dataset (54.8 GB)"
   },
   "ml_tasks": {
-    "classification": {
-      "question": "Will this ICE train stop be delayed?",
-      "target": "is_delayed",
-      "target_source": "derived from delay_in_min in Notebook 06"
-    },
-    "regression": {
+    "primary": {
+      "task_type": "regression",
       "question": "How many minutes late will this ICE train stop be?",
       "target": "delay_in_min",
-      "target_source": "column in Deutsche Bahn dataset"
+      "target_source": "column in Deutsche Bahn dataset",
+      "primary_metric": "mae",
+      "metric_rationale": "MAE is the average absolute error in minutes — easy to interpret and sufficient as the single optimization metric."
+    },
+    "not_in_scope": {
+      "classification": "Binary delayed/not-delayed modeling removed after mid-presentation feedback; delay magnitude is the primary objective."
     }
   },
   "data_sources": {
@@ -161,18 +171,19 @@
   },
   "notebook_roadmap": [
     "01 — Project Definition & Data Understanding",
-    "02 — Data Acquisition & Initial Inspection",
-    "03 — Data Cleaning & Standardization",
-    "04 — Data Integration (Merge Deutsche Bahn + Weather)",
-    "05 — Exploratory Data Analysis",
+    "02 — Data Acquisition & Initial Inspection (multi-month)",
+    "03 — Data Cleaning & Standardization (multi-month)",
+    "04 — Data Integration: Merge Deutsche Bahn + Weather (multi-month)",
+    "05 — Exploratory Data Analysis (delay minutes + weather)",
     "06 — Feature Engineering",
-    "07 — Baseline Machine Learning Models",
-    "08 — Advanced Machine Learning Models",
-    "09 — Model Evaluation & Hyperparameter Tuning",
+    "07 — Baseline Regression Models (MAE)",
+    "08 — Advanced Regression Models",
+    "09 — Model Evaluation, Tuning & Weather Ablation",
     "10 — Final Prediction Pipeline & Conclusion"
   ],
   "reproducibility": {
     "rule": "Each notebook is self-contained; load shared config and data from disk.",
-    "config_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\project_config.json"
+    "config_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\project_config.json",
+    "merged_data_pattern": "data/processed/ice_weather_merged_YYYY-MM.parquet"
   }
 }

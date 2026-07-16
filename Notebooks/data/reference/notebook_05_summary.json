@@ -1,185 +1,108 @@
 {
   "metadata": {
     "notebook": "05_Exploratory_Data_Analysis",
-    "section": "Section 3 — Close-Out",
-    "created_at_utc": "2026-07-05T15:03:34.659032+00:00",
-    "target_month": "2024-07",
-    "status": "COMPLETE"
+    "section": "Section 3",
+    "created_at_utc": "2026-07-16T22:45:38.805821+00:00",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression"
   },
-  "eda_sections": [
+  "checklist": [
     {
-      "section": "Section 1",
-      "focus": "Delay distribution & class balance",
-      "analysis_rows": 132268,
-      "output": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\eda_delay_report_2024-07.json"
+      "label": "ice_weather_merged_2024-07.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
+      "exists": true,
+      "size_mb": 6.25
     },
     {
-      "section": "Section 2",
-      "focus": "Weather vs delay (RQ3)",
-      "analysis_rows": 132268,
-      "output": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\eda_weather_report_2024-07.json"
+      "label": "ice_weather_merged_2024-08.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-08.parquet",
+      "exists": true,
+      "size_mb": 5.82
+    },
+    {
+      "label": "ice_weather_merged_2024-09.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-09.parquet",
+      "exists": true,
+      "size_mb": 5.81
+    },
+    {
+      "label": "eda_delay_report_multi_month.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\eda_delay_report_multi_month.json",
+      "exists": true,
+      "size_mb": 0.0
+    },
+    {
+      "label": "eda_weather_report_multi_month.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\eda_weather_report_multi_month.json",
+      "exists": true,
+      "size_mb": 0.0
+    },
+    {
+      "label": "eda_delay_histogram_multi_month.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_histogram_multi_month.png",
+      "exists": true,
+      "size_mb": 0.04
+    },
+    {
+      "label": "eda_delay_by_month.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_by_month.png",
+      "exists": true,
+      "size_mb": 0.03
+    },
+    {
+      "label": "eda_weather_corr_heatmap.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_weather_corr_heatmap.png",
+      "exists": true,
+      "size_mb": 0.04
+    },
+    {
+      "label": "eda_weather_bins_mean_delay.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_weather_bins_mean_delay.png",
+      "exists": true,
+      "size_mb": 0.03
+    },
+    {
+      "label": "eda_precip_boxplot_delay.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_precip_boxplot_delay.png",
+      "exists": true,
+      "size_mb": 0.03
     }
   ],
+  "all_files_ok": true,
   "key_findings": {
-    "delay_distribution": {
-      "finding": "Delays are right-skewed: median 4 min, mean 10.57 min",
-      "implication": "Use median/percentiles in report; RMSE sensitive to outliers"
+    "weather_matched_rows": 377026,
+    "delay_mean": 10.85,
+    "delay_median": 4.0,
+    "naive_mae_median_predictor": 9.82,
+    "naive_mae_mean_predictor": 11.56,
+    "top_weather_variable": "temperature_2m",
+    "top_weather_corr": 0.0928,
+    "rain_compare": {
+      "dry_hours_mean_delay": 10.84,
+      "rainy_hours_mean_delay": 10.88,
+      "dry_n": 306720,
+      "rainy_n": 70306
     },
-    "class_balance": {
-      "finding": "42.32% delayed (≥6 min) vs 57.68% on-time",
-      "implication": "Manageable imbalance — use F1/ROC-AUC; consider class_weight"
+    "hypothesis_hints": {
+      "H1_precip": true,
+      "H2_wind": true
     },
-    "weather_correlation": {
-      "finding": "Linear Pearson correlations between weather and delay are weak (<0.15)",
-      "implication": "Weather effect may be non-linear — include in models and test via ablation (RQ2)"
-    },
-    "precipitation_bins": {
-      "finding": "Delay rate varies across precipitation bins",
-      "implication": "Supports including precipitation as a feature"
-    },
-    "hypotheses": {
-      "H1": {
-        "statement": "Higher precipitation increases ICE delay probability",
-        "dry_delay_rate_pct": 41.59,
-        "heavy_rain_delay_rate_pct": 44.36,
-        "supported": true
-      },
-      "H2": {
-        "statement": "Higher wind gusts increase expected delay magnitude",
-        "correlation_windgusts_vs_delay_in_min": 0.0079,
-        "supported": true
-      }
-    },
-    "redundant_features": {
-      "finding": "precipitation and rain are perfectly correlated (r=1.0)",
-      "implication": "Drop rain in feature engineering — keep precipitation only"
-    },
-    "july_snowfall": {
-      "finding": "No snowfall variation in July",
-      "implication": "snowfall column has no variance — exclude from features"
-    }
+    "summary_sentence": "Jul–Sep EDA shows right-skewed delays (median ~4, mean ~11); weather correlations are weak; temperature is the strongest linear signal; models must beat ~9.8 min median-baseline MAE."
   },
-  "delay_stats": {
-    "count": 132268,
-    "mean": 10.57,
-    "median": 4.0,
-    "std": 17.56,
-    "min": -17,
-    "max": 298,
-    "percentile_25": 1.0,
-    "percentile_75": 13.0,
-    "percentile_90": 30.0,
-    "percentile_95": 44.64999999999418,
-    "percentile_99": 84.0,
-    "early_arrivals_lt_0": 2602,
-    "on_time_eq_0": 25818,
-    "late_gt_0": 103848,
-    "late_gte_threshold": 55972
-  },
-  "class_balance": {
-    "threshold_minutes": 6,
-    "on_time_count": 76296,
-    "delayed_count": 55972,
-    "on_time_pct": 57.68,
-    "delayed_pct": 42.32,
-    "imbalance_ratio": 1.36
-  },
-  "top_weather_correlations": {
-    "vs_is_delayed": [
-      "temperature_2m",
-      "weather_code",
-      "visibility"
-    ],
-    "vs_delay_in_min": [
-      "temperature_2m",
-      "precipitation",
-      "rain"
+  "next_notebook": {
+    "id": "06",
+    "goal": "Feature engineering for regression on delay_in_min (time/station/weather; avoid leakage)",
+    "inputs": [
+      "ice_weather_merged_2024-07.parquet",
+      "ice_weather_merged_2024-08.parquet",
+      "ice_weather_merged_2024-09.parquet"
     ]
   },
-  "precipitation_bin_analysis": [
-    {
-      "precip_bin": "0 mm (dry)",
-      "stops": 102686,
-      "delay_rate_pct": 41.59,
-      "mean_delay_min": 10.5,
-      "median_delay_min": 4.0
-    },
-    {
-      "precip_bin": "0–0.5 mm (light)",
-      "stops": 22547,
-      "delay_rate_pct": 44.97,
-      "mean_delay_min": 10.89,
-      "median_delay_min": 4.0
-    },
-    {
-      "precip_bin": "0.5–2 mm (moderate)",
-      "stops": 5378,
-      "delay_rate_pct": 44.55,
-      "mean_delay_min": 10.7,
-      "median_delay_min": 4.0
-    },
-    {
-      "precip_bin": ">2 mm (heavy)",
-      "stops": 1657,
-      "delay_rate_pct": 44.36,
-      "mean_delay_min": 10.11,
-      "median_delay_min": 4.0
-    }
-  ],
-  "artifacts": {
-    "eda_delay_report": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\eda_delay_report_2024-07.json",
-      "size_mb": 0.0
-    },
-    "eda_weather_report": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\eda_weather_report_2024-07.json",
-      "size_mb": 0.0
-    },
-    "delay_histogram": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_histogram_2024-07.png",
-      "size_mb": 0.06
-    },
-    "class_balance": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_class_balance_2024-07.png",
-      "size_mb": 0.06
-    },
-    "delay_rate_precip": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_rate_by_precipitation_2024-07.png",
-      "size_mb": 0.07
-    },
-    "boxplot_precip": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_by_precipitation_2024-07.png",
-      "size_mb": 0.08
-    },
-    "boxplot_temp": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_delay_by_temperature_2024-07.png",
-      "size_mb": 0.05
-    },
-    "correlation_heatmap": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\eda_correlation_heatmap_2024-07.png",
-      "size_mb": 0.13
-    },
-    "merged_parquet": {
-      "status": "OK",
-      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
-      "size_mb": 6.21
-    }
-  },
-  "ready_for_notebook_06": true,
-  "notebook_06_tasks": [
-    "Define final feature columns (operational + weather)",
-    "Drop leaky columns (arrival_change_time, departure_change_time)",
-    "Drop redundant/zero-variance columns (rain, snowfall)",
-    "Derive is_delayed target",
-    "Time-based train/test split",
-    "Save modeling_ready_2024-07.parquet"
-  ]
+  "ready_for_notebook_06": true
 }

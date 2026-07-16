@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "notebook": "02_Data_Acquisition_and_Initial_Inspection",
+    "section": "Section 1",
+    "created_at_utc": "2026-07-16T20:39:09.782264+00:00",
+    "target_month": "2024-08",
+    "hf_dataset_id": "piebro/deutsche-bahn-data",
+    "source_file": "monthly_processed_data/data-2024-08.parquet",
+    "local_parquet_cache": "C:\\Users\\Manikanta\\.cache\\huggingface\\hub\\datasets--piebro--deutsche-bahn-data\\snapshots\\d1bcb820f41454eafe221b8cd91cfe3fee9b5f30\\monthly_processed_data\\data-2024-08.parquet",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae"
+  },
+  "processing": {
+    "ice_filter": "ICE",
+    "chunk_size": 100000,
+    "total_rows_scanned": 1888035,
+    "ice_rows_saved": 150289,
+    "ice_pct_of_month": 7.96,
+    "download_seconds": 23.0,
+    "filter_seconds": 2.1
+  },
+  "output_files": {
+    "ice_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-08.parquet",
+    "load_report": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\ice_load_report_2024-08.json"
+  },
+  "inspection_summary": {
+    "rows": 150289,
+    "columns": 17,
+    "unique_stations_eva": 98,
+    "unique_train_numbers": 795,
+    "unique_rides": 1041,
+    "canceled_stops": 13968,
+    "canceled_pct": 9.29,
+    "date_range_time_col": {
+      "min": "2024-08-01 00:01:00",
+      "max": "2024-08-31 23:59:00"
+    },
+    "delay_stats": {
+      "min": -67,
+      "max": 704,
+      "mean": 11.91,
+      "median": 4.0,
+      "early_count": 3649,
+      "on_time_count": 34225,
+      "late_count": 112415
+    }
+  },
+  "columns": [
+    "station_name",
+    "xml_station_name",
+    "eva",
+    "train_number",
+    "line_number",
+    "final_destination_station",
+    "delay_in_min",
+    "time",
+    "is_canceled",
+    "train_type",
+    "train_line_ride_id",
+    "train_line_station_num",
+    "arrival_planned_time",
+    "arrival_change_time",
+    "departure_planned_time",
+    "departure_change_time",
+    "id"
+  ]
+}

@@ -2,58 +2,58 @@
   "metadata": {
     "notebook": "02_Data_Acquisition_and_Initial_Inspection",
     "section": "Section 2",
-    "created_at_utc": "2026-07-16T21:12:31.715720+00:00",
-    "target_month": "2024-07",
-    "source_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-07.parquet",
+    "created_at_utc": "2026-07-16T21:12:32.159994+00:00",
+    "target_month": "2024-08",
+    "source_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-08.parquet",
     "primary_target": "delay_in_min",
     "primary_metric": "mae"
   },
   "dataset_shape": {
-    "rows": 157886,
+    "rows": 150289,
     "columns": 17
   },
   "column_profile": [
     {
       "column": "line_number",
       "dtype": "object",
-      "null_count": 157886,
+      "null_count": 150289,
       "null_pct": 100.0,
       "n_unique": 0
     },
     {
       "column": "departure_planned_time",
       "dtype": "datetime64[ns]",
-      "null_count": 15452,
-      "null_pct": 9.79,
-      "n_unique": 37610
+      "null_count": 15163,
+      "null_pct": 10.09,
+      "n_unique": 37030
     },
     {
       "column": "departure_change_time",
       "dtype": "datetime64[ns]",
-      "null_count": 15441,
-      "null_pct": 9.78,
-      "n_unique": 38066
+      "null_count": 15130,
+      "null_pct": 10.07,
+      "n_unique": 37549
     },
     {
       "column": "arrival_planned_time",
       "dtype": "datetime64[ns]",
-      "null_count": 15310,
-      "null_pct": 9.7,
-      "n_unique": 37765
+      "null_count": 15073,
+      "null_pct": 10.03,
+      "n_unique": 37027
     },
     {
       "column": "arrival_change_time",
       "dtype": "datetime64[ns]",
-      "null_count": 15307,
-      "null_pct": 9.69,
-      "n_unique": 38099
+      "null_count": 15058,
+      "null_pct": 10.02,
+      "n_unique": 37660
     },
     {
       "column": "station_name",
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 91
+      "n_unique": 94
     },
     {
       "column": "train_type",
@@ -67,14 +67,14 @@
       "dtype": "int32",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 38
+      "n_unique": 30
     },
     {
       "column": "train_line_ride_id",
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 1065
+      "n_unique": 1041
     },
     {
       "column": "is_canceled",
@@ -88,92 +88,96 @@
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 94
+      "n_unique": 97
     },
     {
       "column": "time",
       "dtype": "datetime64[ns]",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 39062
+      "n_unique": 38619
     },
     {
       "column": "delay_in_min",
       "dtype": "int32",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 255
+      "n_unique": 310
     },
     {
       "column": "final_destination_station",
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 83
+      "n_unique": 88
     },
     {
       "column": "train_number",
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 812
+      "n_unique": 795
     },
     {
       "column": "eva",
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 95
+      "n_unique": 98
     },
     {
       "column": "id",
       "dtype": "object",
       "null_count": 0,
       "null_pct": 0.0,
-      "n_unique": 157886
+      "n_unique": 150289
     }
   ],
   "delay_distribution": {
-    "count": 157886,
-    "min": -46,
-    "max": 299,
-    "mean": 10.9,
+    "count": 150289,
+    "min": -67,
+    "max": 704,
+    "mean": 11.91,
     "median": 4.0,
-    "std": 18.8,
+    "std": 20.97,
     "p25": 0.0,
-    "p75": 13.0,
-    "p90": 31.0,
-    "p95": 47.0,
-    "early_arrivals_lt_0": 4728,
-    "on_time_eq_0": 35024,
-    "late_gt_0": 118134,
+    "p75": 15.0,
+    "p90": 33.0,
+    "p95": 50.0,
+    "early_arrivals_lt_0": 3649,
+    "on_time_eq_0": 34225,
+    "late_gt_0": 112415,
     "note": "delay_in_min is the regression target; MAE will measure average absolute error in minutes."
   },
   "cancellation": {
-    "canceled_count": 11497,
-    "canceled_pct": 7.28,
+    "canceled_count": 13968,
+    "canceled_pct": 9.29,
     "action": "Drop canceled stops in Notebook 03 (no valid delay outcome)."
   },
   "station_summary": {
-    "unique_eva_stations": 95,
-    "unique_station_name": 91,
-    "unique_xml_station_name": 94,
+    "unique_eva_stations": 98,
+    "unique_station_name": 94,
+    "unique_xml_station_name": 97,
     "station_name_null_pct": 0.0
   },
   "train_summary": {
-    "unique_train_numbers": 812,
-    "unique_rides": 1065,
+    "unique_train_numbers": 795,
+    "unique_rides": 1041,
     "line_number_null_pct": 100.0,
     "note": "line_number often 100% null for ICE — expected."
   },
   "time_range": {
-    "time_min": "2024-07-01 00:01:00",
-    "time_max": "2024-07-31 23:59:00",
-    "departure_planned_null_pct": 9.79
+    "time_min": "2024-08-01 00:01:00",
+    "time_max": "2024-08-31 23:59:00",
+    "departure_planned_null_pct": 10.09
   },
   "quality_flags": {
     "high_null_columns_gt_10pct": [
-      "line_number"
+      "line_number",
+      "departure_planned_time",
+      "departure_change_time",
+      "arrival_planned_time",
+      "arrival_change_time"
     ],
     "only_ice": true,
     "has_negative_delays": true,

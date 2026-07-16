@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "notebook": "02_Data_Acquisition_and_Initial_Inspection",
+    "section": "Section 1",
+    "created_at_utc": "2026-07-16T20:39:30.731715+00:00",
+    "target_month": "2024-09",
+    "hf_dataset_id": "piebro/deutsche-bahn-data",
+    "source_file": "monthly_processed_data/data-2024-09.parquet",
+    "local_parquet_cache": "C:\\Users\\Manikanta\\.cache\\huggingface\\hub\\datasets--piebro--deutsche-bahn-data\\snapshots\\d1bcb820f41454eafe221b8cd91cfe3fee9b5f30\\monthly_processed_data\\data-2024-09.parquet",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae"
+  },
+  "processing": {
+    "ice_filter": "ICE",
+    "chunk_size": 100000,
+    "total_rows_scanned": 1904404,
+    "ice_rows_saved": 149218,
+    "ice_pct_of_month": 7.84,
+    "download_seconds": 18.2,
+    "filter_seconds": 2.4
+  },
+  "output_files": {
+    "ice_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-09.parquet",
+    "load_report": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\ice_load_report_2024-09.json"
+  },
+  "inspection_summary": {
+    "rows": 149218,
+    "columns": 17,
+    "unique_stations_eva": 98,
+    "unique_train_numbers": 697,
+    "unique_rides": 902,
+    "canceled_stops": 13671,
+    "canceled_pct": 9.16,
+    "date_range_time_col": {
+      "min": "2024-09-01 00:00:00",
+      "max": "2024-09-30 23:59:00"
+    },
+    "delay_stats": {
+      "min": -77,
+      "max": 338,
+      "mean": 10.86,
+      "median": 3.0,
+      "early_count": 4238,
+      "on_time_count": 34735,
+      "late_count": 110245
+    }
+  },
+  "columns": [
+    "station_name",
+    "xml_station_name",
+    "eva",
+    "train_number",
+    "line_number",
+    "final_destination_station",
+    "delay_in_min",
+    "time",
+    "is_canceled",
+    "train_type",
+    "train_line_ride_id",
+    "train_line_station_num",
+    "arrival_planned_time",
+    "arrival_change_time",
+    "departure_planned_time",
+    "departure_change_time",
+    "id"
+  ]
+}
