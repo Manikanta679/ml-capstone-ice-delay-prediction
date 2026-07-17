@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "notebook": "06_Feature_Engineering",
+    "section": "Section 2",
+    "created_at_utc": "2026-07-17T20:36:19.971674+00:00",
+    "split_method": "time_based_by_month",
+    "no_random_shuffle": true,
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression"
+  },
+  "split": {
+    "train_months": [
+      "2024-07",
+      "2024-08"
+    ],
+    "test_months": [
+      "2024-09"
+    ],
+    "train_rows": 255062,
+    "test_rows": 121964,
+    "train_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
+    "test_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet"
+  },
+  "dropped_features": [
+    "visibility"
+  ],
+  "drop_reason": "visibility had 100% nulls in Jul–Sep Open-Meteo archive data",
+  "feature_sets_for_ablation": {
+    "operational_only": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station"
+    ],
+    "full_with_weather": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station",
+      "temperature_2m",
+      "precipitation",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "is_raining"
+    ],
+    "note": "Notebook 07 trains both sets to answer RQ1/RQ2 with MAE."
+  },
+  "columns": {
+    "all_features": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station",
+      "temperature_2m",
+      "precipitation",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "is_raining"
+    ],
+    "target": "delay_in_min",
+    "id_column": "id",
+    "time_column_for_audit": "departure_planned_time"
+  },
+  "ready_for_notebook_07": true
+}

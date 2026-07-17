@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "notebook": "08_Model_Tuning_and_Evaluation",
+    "section": "Section 1",
+    "created_at_utc": "2026-07-17T22:06:09.474737+00:00",
+    "primary_metric": "mae",
+    "tuning_method": "manual_grid + cross_val_score on train sample",
+    "use_train_sample": true,
+    "train_sample_size": 80000,
+    "cv_folds": 3,
+    "param_grid": [
+      {
+        "n_estimators": 50,
+        "max_depth": 12,
+        "min_samples_leaf": 50,
+        "max_samples": 0.3
+      },
+      {
+        "n_estimators": 50,
+        "max_depth": 20,
+        "min_samples_leaf": 10,
+        "max_samples": 0.3
+      },
+      {
+        "n_estimators": 100,
+        "max_depth": 12,
+        "min_samples_leaf": 50,
+        "max_samples": 0.3
+      },
+      {
+        "n_estimators": 100,
+        "max_depth": 20,
+        "min_samples_leaf": 10,
+        "max_samples": 0.5
+      }
+    ]
+  },
+  "tuning_results": [
+    {
+      "feature_set_name": "operational_only",
+      "feature_cols": [
+        "dep_hour",
+        "dep_day_of_week",
+        "dep_month",
+        "is_weekend",
+        "is_rush_hour",
+        "eva",
+        "train_number",
+        "train_line_station_num",
+        "final_destination_station"
+      ],
+      "cv_results": [
+        {
+          "params": {
+            "n_estimators": 50,
+            "max_depth": 12,
+            "min_samples_leaf": 50,
+            "max_samples": 0.3
+          },
+          "cv_mae_mean": 10.5474,
+          "cv_mae_std": 0.0582
+        },
+        {
+          "params": {
+            "n_estimators": 50,
+            "max_depth": 20,
+            "min_samples_leaf": 10,
+            "max_samples": 0.3
+          },
+          "cv_mae_mean": 10.2468,
+          "cv_mae_std": 0.0413
+        },
+        {
+          "params": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 50,
+            "max_samples": 0.3
+          },
+          "cv_mae_mean": 10.544,
+          "cv_mae_std": 0.0536
+        },
+        {
+          "params": {
+            "n_estimators": 100,
+            "max_depth": 20,
+            "min_samples_leaf": 10,
+            "max_samples": 0.5
+          },
+          "cv_mae_mean": 10.1959,
+          "cv_mae_std": 0.0616
+        }
+      ],
+      "best_params": {
+        "n_estimators": 100,
+        "max_depth": 20,
+        "min_samples_leaf": 10,
+        "max_samples": 0.5
+      },
+      "best_cv_mae": 10.1959,
+      "test_mae": 10.4222,
+      "train_rows_for_final_fit": 120000,
+      "tune_sample_rows": 80000
+    },
+    {
+      "feature_set_name": "full_with_weather",
+      "feature_cols": [
+        "dep_hour",
+        "dep_day_of_week",
+        "dep_month",
+        "is_weekend",
+        "is_rush_hour",
+        "eva",
+        "train_number",
+        "train_line_station_num",
+        "final_destination_station",
+        "temperature_2m",
+        "precipitation",
+        "windspeed_10m",
+        "windgusts_10m",
+        "weather_code",
+        "is_raining"
+      ],
+      "cv_results": [
+        {
+          "params": {
+            "n_estimators": 50,
+            "max_depth": 12,
+            "min_samples_leaf": 50,
+            "max_samples": 0.3
+          },
+          "cv_mae_mean": 10.5561,
+          "cv_mae_std": 0.0504
+        },
+        {
+          "params": {
+            "n_estimators": 50,
+            "max_depth": 20,
+            "min_samples_leaf": 10,
+            "max_samples": 0.3
+          },
+          "cv_mae_mean": 10.2845,
+          "cv_mae_std": 0.0466
+        },
+        {
+          "params": {
+            "n_estimators": 100,
+            "max_depth": 12,
+            "min_samples_leaf": 50,
+            "max_samples": 0.3
+          },
+          "cv_mae_mean": 10.548,
+          "cv_mae_std": 0.0481
+        },
+        {
+          "params": {
+            "n_estimators": 100,
+            "max_depth": 20,
+            "min_samples_leaf": 10,
+            "max_samples": 0.5
+          },
+          "cv_mae_mean": 10.2153,
+          "cv_mae_std": 0.0551
+        }
+      ],
+      "best_params": {
+        "n_estimators": 100,
+        "max_depth": 20,
+        "min_samples_leaf": 10,
+        "max_samples": 0.5
+      },
+      "best_cv_mae": 10.2153,
+      "test_mae": 10.4196,
+      "train_rows_for_final_fit": 120000,
+      "tune_sample_rows": 80000
+    }
+  ],
+  "comparison": {
+    "weather_gain_test_mae": 0.0026,
+    "untuned_rf_operational_test_mae": 10.4758,
+    "untuned_rf_full_test_mae": 10.498,
+    "naive_median_test_mae": 9.4813
+  },
+  "best_overall_tuned": {
+    "feature_set_name": "full_with_weather",
+    "feature_cols": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station",
+      "temperature_2m",
+      "precipitation",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "is_raining"
+    ],
+    "cv_results": [
+      {
+        "params": {
+          "n_estimators": 50,
+          "max_depth": 12,
+          "min_samples_leaf": 50,
+          "max_samples": 0.3
+        },
+        "cv_mae_mean": 10.5561,
+        "cv_mae_std": 0.0504
+      },
+      {
+        "params": {
+          "n_estimators": 50,
+          "max_depth": 20,
+          "min_samples_leaf": 10,
+          "max_samples": 0.3
+        },
+        "cv_mae_mean": 10.2845,
+        "cv_mae_std": 0.0466
+      },
+      {
+        "params": {
+          "n_estimators": 100,
+          "max_depth": 12,
+          "min_samples_leaf": 50,
+          "max_samples": 0.3
+        },
+        "cv_mae_mean": 10.548,
+        "cv_mae_std": 0.0481
+      },
+      {
+        "params": {
+          "n_estimators": 100,
+          "max_depth": 20,
+          "min_samples_leaf": 10,
+          "max_samples": 0.5
+        },
+        "cv_mae_mean": 10.2153,
+        "cv_mae_std": 0.0551
+      }
+    ],
+    "best_params": {
+      "n_estimators": 100,
+      "max_depth": 20,
+      "min_samples_leaf": 10,
+      "max_samples": 0.5
+    },
+    "best_cv_mae": 10.2153,
+    "test_mae": 10.4196,
+    "train_rows_for_final_fit": 120000,
+    "tune_sample_rows": 80000
+  }
+}

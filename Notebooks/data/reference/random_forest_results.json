@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "notebook": "07_Baseline_Models",
+    "section": "Section 2",
+    "created_at_utc": "2026-07-17T21:41:21.525567+00:00",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "model_family": "RandomForestRegressor",
+    "note": "Boosting skipped by design — one tree-based advanced model only."
+  },
+  "rf_params": {
+    "n_estimators": 100,
+    "max_depth": 20,
+    "min_samples_leaf": 10,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "results": [
+    {
+      "model": "RandomForest",
+      "feature_set": "operational_only",
+      "train_mae": 9.6226,
+      "test_mae": 10.4758,
+      "metric": "mae",
+      "rf_params": {
+        "n_estimators": 100,
+        "max_depth": 20,
+        "min_samples_leaf": 10,
+        "random_state": 42,
+        "n_jobs": -1
+      },
+      "top_feature_importances": [
+        {
+          "feature": "num__train_line_station_num",
+          "importance": 0.2970898004535358
+        },
+        {
+          "feature": "num__dep_hour",
+          "importance": 0.11988174460671613
+        },
+        {
+          "feature": "num__dep_day_of_week",
+          "importance": 0.11612704562203684
+        },
+        {
+          "feature": "num__dep_month",
+          "importance": 0.047473389248147736
+        },
+        {
+          "feature": "cat__train_number_22",
+          "importance": 0.016564273278274335
+        },
+        {
+          "feature": "num__is_weekend",
+          "importance": 0.013807911862186759
+        },
+        {
+          "feature": "num__is_rush_hour",
+          "importance": 0.0111740166359117
+        },
+        {
+          "feature": "cat__train_number_2554",
+          "importance": 0.010801705575757251
+        },
+        {
+          "feature": "cat__final_destination_station_Hamburg-Harburg",
+          "importance": 0.008806996854716621
+        },
+        {
+          "feature": "cat__final_destination_station_Dortmund Hbf",
+          "importance": 0.008375979154451341
+        },
+        {
+          "feature": "cat__eva_08000152",
+          "importance": 0.008372809765953688
+        },
+        {
+          "feature": "cat__final_destination_station_Hamburg-Altona",
+          "importance": 0.008367242785000041
+        },
+        {
+          "feature": "cat__final_destination_station_München Hbf",
+          "importance": 0.00804169029104932
+        },
+        {
+          "feature": "cat__train_number_5201",
+          "importance": 0.006122662029053999
+        },
+        {
+          "feature": "cat__train_number_2400",
+          "importance": 0.006041388914428587
+        }
+      ]
+    },
+    {
+      "model": "RandomForest",
+      "feature_set": "full_with_weather",
+      "train_mae": 9.2731,
+      "test_mae": 10.498,
+      "metric": "mae",
+      "rf_params": {
+        "n_estimators": 100,
+        "max_depth": 20,
+        "min_samples_leaf": 10,
+        "random_state": 42,
+        "n_jobs": -1
+      },
+      "top_feature_importances": [
+        {
+          "feature": "num__train_line_station_num",
+          "importance": 0.2408316559229171
+        },
+        {
+          "feature": "num__temperature_2m",
+          "importance": 0.10011500770112894
+        },
+        {
+          "feature": "num__dep_hour",
+          "importance": 0.09236100874927537
+        },
+        {
+          "feature": "num__dep_day_of_week",
+          "importance": 0.06119268801438199
+        },
+        {
+          "feature": "num__windgusts_10m",
+          "importance": 0.05815967070422611
+        },
+        {
+          "feature": "num__windspeed_10m",
+          "importance": 0.057914755990652406
+        },
+        {
+          "feature": "num__dep_month",
+          "importance": 0.031064426692110274
+        },
+        {
+          "feature": "num__weather_code",
+          "importance": 0.021456338584447492
+        },
+        {
+          "feature": "cat__train_number_22",
+          "importance": 0.013660086791457051
+        },
+        {
+          "feature": "num__is_weekend",
+          "importance": 0.009660973939195605
+        },
+        {
+          "feature": "cat__train_number_2554",
+          "importance": 0.008629908490678191
+        },
+        {
+          "feature": "num__is_rush_hour",
+          "importance": 0.008449583188716761
+        },
+        {
+          "feature": "cat__final_destination_station_Hamburg-Harburg",
+          "importance": 0.0074143226708357265
+        },
+        {
+          "feature": "cat__eva_08000152",
+          "importance": 0.007396716164588329
+        },
+        {
+          "feature": "cat__final_destination_station_Dortmund Hbf",
+          "importance": 0.007013085321930809
+        }
+      ]
+    }
+  ],
+  "best_rf": {
+    "feature_set": "operational_only",
+    "test_mae": 10.4758
+  },
+  "comparison": {
+    "naive_median_test_mae": 9.4813,
+    "best_ridge_test_mae_section1": 10.5879,
+    "weather_gain_operational_minus_full": -0.0222,
+    "beats_naive_median": false
+  },
+  "rq_notes": {
+    "RQ1_rf_operational_test_mae": 10.4758,
+    "RQ2_rf_full_test_mae": 10.498,
+    "RQ2_weather_improves_mae": false
+  }
+}

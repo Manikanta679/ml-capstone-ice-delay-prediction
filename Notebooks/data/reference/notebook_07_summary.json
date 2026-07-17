@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "notebook": "07_Baseline_Models",
+    "section": "Section 3",
+    "created_at_utc": "2026-07-17T21:52:49.397645+00:00",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression"
+  },
+  "checklist": [
+    {
+      "label": "ice_train.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
+      "exists": true,
+      "size_mb": 6.5301
+    },
+    {
+      "label": "ice_test.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet",
+      "exists": true,
+      "size_mb": 3.122
+    },
+    {
+      "label": "train_test_split_config.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\train_test_split_config.json",
+      "exists": true,
+      "size_mb": 0.0022
+    },
+    {
+      "label": "baseline_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\baseline_results.json",
+      "exists": true,
+      "size_mb": 0.0026
+    },
+    {
+      "label": "random_forest_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\random_forest_results.json",
+      "exists": true,
+      "size_mb": 0.0053
+    }
+  ],
+  "all_files_ok": true,
+  "split": {
+    "train_months": [
+      "2024-07",
+      "2024-08"
+    ],
+    "test_months": [
+      "2024-09"
+    ],
+    "train_rows": 255062,
+    "test_rows": 121964,
+    "train_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
+    "test_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet"
+  },
+  "leaderboard": [
+    {
+      "model": "NaiveMean",
+      "feature_set": "none",
+      "test_mae": 11.5078,
+      "section": "Section 1"
+    },
+    {
+      "model": "NaiveMedian",
+      "feature_set": "none",
+      "test_mae": 9.4813,
+      "section": "Section 1"
+    },
+    {
+      "model": "LinearRegression",
+      "feature_set": "operational_only",
+      "test_mae": 11.2068,
+      "section": "Section 1"
+    },
+    {
+      "model": "Ridge",
+      "feature_set": "operational_only",
+      "test_mae": 11.2051,
+      "section": "Section 1"
+    },
+    {
+      "model": "LinearRegression",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.5935,
+      "section": "Section 1"
+    },
+    {
+      "model": "Ridge",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.5879,
+      "section": "Section 1"
+    },
+    {
+      "model": "RandomForest",
+      "feature_set": "operational_only",
+      "test_mae": 10.4758,
+      "section": "Section 2"
+    },
+    {
+      "model": "RandomForest",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.498,
+      "section": "Section 2"
+    }
+  ],
+  "best_overall": {
+    "model": "NaiveMedian",
+    "feature_set": "none",
+    "test_mae": 9.4813
+  },
+  "best_ml_model": {
+    "model": "RandomForest",
+    "feature_set": "operational_only",
+    "test_mae": 10.4758
+  },
+  "key_findings": {
+    "naive_median_test_mae": 9.4813,
+    "best_ridge_test_mae": 10.5879,
+    "best_rf_test_mae": 10.4758,
+    "rf_beats_linear": true,
+    "rf_beats_naive_median": false,
+    "weather_helps_linear": true,
+    "weather_helps_rf": false,
+    "summary_sentence": "Random Forest (10.48 min MAE) beat linear models but not the naive median (9.48 min). Weather helped linear models slightly; RF gains came mainly from operational/time features."
+  },
+  "next_notebook": {
+    "id": "08",
+    "goal": "Optional tuning / ablation / final pipeline documentation"
+  },
+  "ready_for_notebook_08": true
+}

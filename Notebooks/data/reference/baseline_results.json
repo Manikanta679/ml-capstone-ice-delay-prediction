@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "notebook": "07_Baseline_Models",
+    "section": "Section 1",
+    "created_at_utc": "2026-07-17T20:44:48.965780+00:00",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "train_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
+    "test_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet"
+  },
+  "naive_reference": {
+    "mean_predictor": 11.036508770416605,
+    "median_predictor": 4.0,
+    "naive_mean_test_mae": 11.5078,
+    "naive_median_test_mae": 9.4813
+  },
+  "feature_sets": {
+    "operational_only": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station"
+    ],
+    "full_with_weather": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station",
+      "temperature_2m",
+      "precipitation",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "is_raining"
+    ]
+  },
+  "results": [
+    {
+      "model": "NaiveMean",
+      "feature_set": "none",
+      "train_mae": 11.6948,
+      "test_mae": 11.5078,
+      "metric": "mae"
+    },
+    {
+      "model": "NaiveMedian",
+      "feature_set": "none",
+      "train_mae": 9.9773,
+      "test_mae": 9.4813,
+      "metric": "mae"
+    },
+    {
+      "model": "LinearRegression",
+      "feature_set": "operational_only",
+      "train_mae": 10.1942,
+      "test_mae": 11.2068,
+      "metric": "mae"
+    },
+    {
+      "model": "Ridge",
+      "feature_set": "operational_only",
+      "train_mae": 10.1931,
+      "test_mae": 11.2051,
+      "metric": "mae"
+    },
+    {
+      "model": "LinearRegression",
+      "feature_set": "full_with_weather",
+      "train_mae": 10.187,
+      "test_mae": 10.5935,
+      "metric": "mae"
+    },
+    {
+      "model": "Ridge",
+      "feature_set": "full_with_weather",
+      "train_mae": 10.1858,
+      "test_mae": 10.5879,
+      "metric": "mae"
+    }
+  ],
+  "best_model": {
+    "model": "NaiveMedian",
+    "feature_set": "none",
+    "test_mae": 9.4813
+  },
+  "rq_notes": {
+    "RQ1_operational_best_test_mae": 11.2051,
+    "RQ2_weather_ridge_gain_vs_operational": 0.6172
+  }
+}

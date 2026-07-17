@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "notebook": "08_Model_Tuning_and_Evaluation",
+    "section": "Section 2",
+    "created_at_utc": "2026-07-17T22:14:05.231257+00:00",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "test_month": "2024-09",
+    "train_months": [
+      "2024-07",
+      "2024-08"
+    ]
+  },
+  "final_model": {
+    "algorithm": "RandomForestRegressor",
+    "feature_set": "full_with_weather",
+    "best_params": {
+      "n_estimators": 100,
+      "max_depth": 20,
+      "min_samples_leaf": 10,
+      "max_samples": 0.5
+    },
+    "test_mae": 10.4196,
+    "feature_columns": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station",
+      "temperature_2m",
+      "precipitation",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "is_raining"
+    ],
+    "tuned": true
+  },
+  "benchmarks": {
+    "naive_median_test_mae": 9.4813,
+    "beats_naive_median": false,
+    "best_untuned_rf_test_mae": 10.4758,
+    "tuning_improvement_vs_untuned": 0.0562
+  },
+  "leaderboard_top5": [
+    {
+      "stage": "Naive",
+      "model": "NaiveMedian",
+      "feature_set": "none",
+      "test_mae": 9.4813
+    },
+    {
+      "stage": "NB07-S1 Linear",
+      "model": "NaiveMedian",
+      "feature_set": "none",
+      "test_mae": 9.4813
+    },
+    {
+      "stage": "NB08 Tuned RF",
+      "model": "RandomForest",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.4196
+    },
+    {
+      "stage": "NB08 Tuned RF",
+      "model": "RandomForest",
+      "feature_set": "operational_only",
+      "test_mae": 10.4222
+    },
+    {
+      "stage": "NB07-S2 RF untuned",
+      "model": "RandomForest",
+      "feature_set": "operational_only",
+      "test_mae": 10.4758
+    }
+  ],
+  "rq_answers": {
+    "RQ1": {
+      "question": "Can operational features predict delay in minutes?",
+      "answer": "Partially — tuned RF operational MAE = 10.4222 min (better than linear ~11.2 min, but not better than naive median 9.4813 min).",
+      "operational_tuned_test_mae": 10.4222
+    },
+    "RQ2": {
+      "question": "Does weather improve prediction?",
+      "answer": "Weather gain after tuning = 0.0026 min. No meaningful improvement — weather adds little for RF.",
+      "operational_mae": 10.4222,
+      "full_weather_mae": 10.4196,
+      "weather_gain_min": 0.0026
+    },
+    "RQ3": {
+      "question": "Which weather variables matter most?",
+      "answer": "From NB07 RF importances: temperature_2m, windgusts_10m, windspeed_10m — but overall weather effect on MAE is small in Jul–Sep."
+    }
+  },
+  "honest_conclusion": "Final tuned Random Forest achieves 10.42 min MAE on September. It is our best ML model and beats linear baselines, but does not beat the naive median (9.48 min). Weather adds minimal MAE gain (0.0026 min) in this summer period."
+}

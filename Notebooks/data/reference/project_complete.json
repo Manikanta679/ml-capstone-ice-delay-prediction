@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE",
+  "completed_at_utc": "2026-07-17T22:40:24.544330+00:00",
+  "project_title": "ICE Train Delay Prediction Using Railway Operational Data and Historical Weather Data",
+  "authors": [
+    "Manikanta Engalligi",
+    "abhinay-sambherao"
+  ],
+  "notebooks": "01 through 09",
+  "primary_task": "regression on delay_in_min",
+  "primary_metric": "mae",
+  "months": [
+    "2024-07",
+    "2024-08",
+    "2024-09"
+  ],
+  "final_ml_test_mae_min": 10.4196,
+  "best_overall_test_mae_min": 9.4813,
+  "best_overall_method": "NaiveMedian",
+  "final_ml_model": "Tuned RandomForestRegressor (full_with_weather)",
+  "data_root": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed",
+  "master_summary": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\full_project_pipeline_summary.json",
+  "one_line_conclusion": "Final tuned Random Forest achieves 10.42 min MAE on September. It is our best ML model and beats linear baselines, but does not beat the naive median (9.48 min). Weather adds minimal MAE gain (0.0026 min) in this summer period."
+}

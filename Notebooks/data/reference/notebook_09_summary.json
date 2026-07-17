@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "notebook": "09_Final_Pipeline_Export",
+    "section": "Section 3",
+    "created_at_utc": "2026-07-17T22:40:24.541894+00:00",
+    "status": "PROJECT COMPLETE"
+  },
+  "checklist": [
+    {
+      "label": "ice_weather_merged_2024-07.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
+      "exists": true
+    },
+    {
+      "label": "ice_weather_merged_2024-08.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-08.parquet",
+      "exists": true
+    },
+    {
+      "label": "ice_weather_merged_2024-09.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-09.parquet",
+      "exists": true
+    },
+    {
+      "label": "ice_train.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
+      "exists": true
+    },
+    {
+      "label": "ice_test.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet",
+      "exists": true
+    },
+    {
+      "label": "final_rf_model.joblib",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\models\\final_rf_model.joblib",
+      "exists": true
+    },
+    {
+      "label": "final_model_selection.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\final_model_selection.json",
+      "exists": true
+    },
+    {
+      "label": "weather_ablation_report.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\weather_ablation_report.json",
+      "exists": true
+    },
+    {
+      "label": "full_project_pipeline_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\full_project_pipeline_summary.json",
+      "exists": true
+    },
+    {
+      "label": "final_model_mae_comparison.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\final_model_mae_comparison.png",
+      "exists": true
+    },
+    {
+      "label": "notebook_02_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_02_summary.json",
+      "exists": true
+    },
+    {
+      "label": "notebook_03_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_03_summary.json",
+      "exists": true
+    },
+    {
+      "label": "notebook_04_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_04_summary.json",
+      "exists": true
+    },
+    {
+      "label": "notebook_05_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_05_summary.json",
+      "exists": true
+    },
+    {
+      "label": "notebook_06_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_06_summary.json",
+      "exists": true
+    },
+    {
+      "label": "notebook_07_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_07_summary.json",
+      "exists": true
+    },
+    {
+      "label": "notebook_08_summary.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\notebook_08_summary.json",
+      "exists": true
+    }
+  ],
+  "all_core_deliverables_ok": true,
+  "final_model_test_mae": 10.4196,
+  "naive_median_test_mae": 9.4813,
+  "pipeline_summary_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\full_project_pipeline_summary.json",
+  "model_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\models\\final_rf_model.joblib"
+}

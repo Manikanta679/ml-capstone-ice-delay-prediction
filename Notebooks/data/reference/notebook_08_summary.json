@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "notebook": "08_Model_Tuning_and_Evaluation",
+    "section": "Section 3",
+    "created_at_utc": "2026-07-17T22:24:15.604489+00:00",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "target_months": [
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ]
+  },
+  "checklist": [
+    {
+      "label": "rf_tuning_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\rf_tuning_results.json",
+      "exists": true
+    },
+    {
+      "label": "weather_ablation_report.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\weather_ablation_report.json",
+      "exists": true
+    },
+    {
+      "label": "final_model_selection.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\final_model_selection.json",
+      "exists": true
+    },
+    {
+      "label": "baseline_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\baseline_results.json",
+      "exists": true
+    },
+    {
+      "label": "random_forest_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\random_forest_results.json",
+      "exists": true
+    },
+    {
+      "label": "final_model_mae_comparison.png",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\final_model_mae_comparison.png",
+      "exists": true
+    },
+    {
+      "label": "ice_train.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
+      "exists": true
+    },
+    {
+      "label": "ice_test.parquet",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet",
+      "exists": true
+    }
+  ],
+  "all_files_ok": true,
+  "final_model": {
+    "algorithm": "RandomForestRegressor",
+    "feature_set": "full_with_weather",
+    "best_params": {
+      "n_estimators": 100,
+      "max_depth": 20,
+      "min_samples_leaf": 10,
+      "max_samples": 0.5
+    },
+    "test_mae": 10.4196,
+    "feature_columns": [
+      "dep_hour",
+      "dep_day_of_week",
+      "dep_month",
+      "is_weekend",
+      "is_rush_hour",
+      "eva",
+      "train_number",
+      "train_line_station_num",
+      "final_destination_station",
+      "temperature_2m",
+      "precipitation",
+      "windspeed_10m",
+      "windgusts_10m",
+      "weather_code",
+      "is_raining"
+    ],
+    "tuned": true
+  },
+  "benchmarks": {
+    "naive_median_test_mae": 9.4813,
+    "beats_naive_median": false,
+    "best_untuned_rf_test_mae": 10.4758,
+    "tuning_improvement_vs_untuned": 0.0562
+  },
+  "rq_answers": {
+    "RQ1": {
+      "question": "Can operational features predict delay in minutes?",
+      "answer": "Partially — tuned RF operational MAE = 10.4222 min (better than linear ~11.2 min, but not better than naive median 9.4813 min).",
+      "operational_tuned_test_mae": 10.4222
+    },
+    "RQ2": {
+      "question": "Does weather improve prediction?",
+      "answer": "Weather gain after tuning = 0.0026 min. No meaningful improvement — weather adds little for RF.",
+      "operational_mae": 10.4222,
+      "full_weather_mae": 10.4196,
+      "weather_gain_min": 0.0026
+    },
+    "RQ3": {
+      "question": "Which weather variables matter most?",
+      "answer": "From NB07 RF importances: temperature_2m, windgusts_10m, windspeed_10m — but overall weather effect on MAE is small in Jul–Sep."
+    }
+  },
+  "weather_ablation_gain_min": 0.0026,
+  "pipeline_complete": {
+    "notebooks_done": "01-08",
+    "merged_data_on_disk": "ice_weather_merged_YYYY-MM.parquet",
+    "modeling_data": "ice_train.parquet / ice_test.parquet",
+    "final_result_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\final_model_selection.json"
+  },
+  "ready_for_report_and_viva": true
+}

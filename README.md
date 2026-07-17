@@ -4,61 +4,123 @@ Predict **how many minutes late** an ICE train stop will be, using Deutsche Bahn
 
 **Team:** Manikanta Engalligi · abhinay-sambherao
 
+**Status:** Complete (Notebooks 01–09)
+
+---
+
 ## Problem
 
-- **Task:** Regression  
-- **Target:** `delay_in_min`  
-- **Primary metric:** MAE (Mean Absolute Error, in minutes)  
-- **Scope:** ICE trains only · months **2024-07, 2024-08, 2024-09**
+| Item | Value |
+|------|--------|
+| **Task** | Regression |
+| **Target** | `delay_in_min` (minutes; negative = early) |
+| **Primary metric** | **MAE** (Mean Absolute Error, in minutes) |
+| **Scope** | ICE trains only · **2024-07, 2024-08, 2024-09** |
 
-Classification (delayed / not delayed) is **not** a primary modeling goal for this project.
+Classification (delayed / not delayed) is **not** a primary modeling goal. RMSE is not used as a required metric.
+
+---
+
+## Results (September 2024 test set)
+
+| Model | Test MAE |
+|-------|----------|
+| Naive median (always 4 min) | **9.48 min** ← best overall |
+| **Final ML: Tuned Random Forest + weather** | **10.42 min** ← best ML model |
+| Ridge + weather (baseline) | 10.59 min |
+| Linear / Ridge (operational only) | ~11.21 min |
+
+**Train / test split (time-based, no random shuffle):**
+- **Train:** July + August 2024 (255,062 rows)
+- **Test:** September 2024 (121,964 rows)
+
+**Weather ablation (RQ2):** Same tuned Random Forest with vs without weather → **+0.0026 min** MAE gain (no meaningful improvement in Jul–Sep).
+
+Full details: `Notebooks/data/reference/final_model_selection.json`
+
+---
+
+## Research questions
+
+| RQ | Question | Finding |
+|----|----------|---------|
+| **RQ1** | Can operational features predict delay in minutes? | Partially — RF (~10.42 min) beats linear models, not naive median (9.48 min) |
+| **RQ2** | Does weather improve prediction? | No meaningful gain for tuned RF (+0.003 min MAE) |
+| **RQ3** | Which weather variables matter most? | Temperature & wind — weak overall effect in summer |
+
+---
 
 ## Data sources
 
-| Source | Link |
-|--------|------|
-| Deutsche Bahn | [piebro/deutsche-bahn-data](https://huggingface.co/datasets/piebro/deutsche-bahn-data) |
-| Weather | [Open-Meteo Historical API](https://open-meteo.com/en/docs/historical-weather-api) |
+| Source | Role | Link |
+|--------|------|------|
+| Deutsche Bahn | ICE delays, stations, times | [piebro/deutsche-bahn-data](https://huggingface.co/datasets/piebro/deutsche-bahn-data) |
+| Open-Meteo | Hourly weather | [Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api) |
+| Nominatim / OSM | Station geocoding (`eva` → lat/lon) | [OpenStreetMap](https://nominatim.openstreetmap.org/) |
 
-Raw DB data (~54 GB) is **not** in this repo. Notebooks download monthly Parquet shards from Hugging Face and save filtered ICE files locally.
+Raw DB data (~54 GB) is **not** in this repo. Notebooks download monthly Parquet from Hugging Face and save ICE subsets locally.
+
+---
+
+## Merge strategy
+
+Left join railway → weather on:
+1. **Station:** `eva`
+2. **Time:** planned departure floored to hour (`departure_planned_hour_naive`)
+
+Merged data saved as **`ice_weather_merged_YYYY-MM.parquet`** on disk.
+
+---
 
 ## Notebooks
 
-| # | Notebook | Status |
-|---|----------|--------|
-| 01 | Project Definition & Data Understanding | Updating (regression + MAE + multi-month) |
-| 02 | Data Acquisition & Initial Inspection | Updating (3 months) |
-| 03 | Data Cleaning & Standardization | Updating (3 months) |
-| 04 | Data Integration (Merge DB + Weather) | Updating (3 months) |
-| 05 | Exploratory Data Analysis | Updating (delay minutes focus) |
-| 06 | Feature Engineering | Planned |
-| 07 | Baseline Regression Models (MAE) | Planned |
-| 08 | Advanced Regression Models | Planned |
-| 09 | Evaluation, Tuning & Weather Ablation | Planned |
-| 10 | Final Pipeline & Conclusion | Planned |
+| # | File | Status |
+|---|------|--------|
+| 01 | `01_Project_Definition.ipynb` | Done |
+| 02 | `02_Data_Acquisition.ipynb` | Done |
+| 03 | `03_Data_Cleaning.ipynb` | Done |
+| 04 | `04_Data_Integration.ipynb` | Done |
+| 05 | `05_Exploratory_Data_Analysis.ipynb` | Done |
+| 06 | `06_Feature_Engineering.ipynb` | Done |
+| 07 | `07_Baseline_Models.ipynb` | Done |
+| 08 | `08_Model_Tuning_and_Evaluation.ipynb` | Done |
+| 09 | `09_Final_Pipeline_Export.ipynb` | Done |
+
+Run in order from `Notebooks/`. Each notebook loads `data/reference/*.json` and reads/writes Parquet in `data/processed/`.
+
+---
+
+## Data on disk (Parquet)
+
+**Why Parquet?** Compressed, fast, keeps column types, reloadable across notebooks — proves merged data exists on disk (not only in memory).
+
+### `Notebooks/data/processed/` (gitignored — regenerate locally)
+
+| File | Description |
+|------|-------------|
+| `ice_raw_YYYY-MM.parquet` | ICE-only raw data |
+| `ice_standardized_YYYY-MM.parquet` | Timestamps → Europe/Berlin |
+| `ice_cleaned_YYYY-MM.parquet` | Canceled stops removed |
+| `weather_by_station_YYYY-MM.parquet` | Hourly weather per station |
+| **`ice_weather_merged_YYYY-MM.parquet`** | **Merged ICE + weather** |
+| `ice_modeling_ready_YYYY-MM.parquet` | ML-ready features |
+| `ice_train.parquet` | Train (Jul + Aug) |
+| `ice_test.parquet` | Test (Sep) |
+| `models/final_rf_model.joblib` | Saved final model |
+
+### `Notebooks/data/reference/` (JSON — commit to git)
+
+| File | Description |
+|------|-------------|
+| `project_config.json` | Scope, target, MAE, months |
+| `final_model_selection.json` | Final model + MAE + RQ answers |
+| `weather_ablation_report.json` | With vs without weather |
+| `full_project_pipeline_summary.json` | Master pipeline summary |
+| `project_complete.json` | Completion flag |
+
+---
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
-```
-
-Run notebooks from the `Notebooks/` folder in order. Each notebook loads shared config from `Notebooks/data/reference/*.json` and writes Parquet / JSON artifacts to disk.
-
-## Project structure
-
-```
-ML Project/
-├── Notebooks/           # Jupyter notebooks (01–10)
-│   └── data/
-│       ├── reference/   # JSON configs & reports (committed)
-│       └── processed/   # Parquet files (gitignored — regenerate locally)
-├── requirements.txt
-└── README.md
-```
-
-## License & attribution
-
-- Deutsche Bahn data: CC BY 4.0  
-- Open-Meteo: open API with attribution  
-- OpenStreetMap/Nominatim: ODbL (station geocoding)
