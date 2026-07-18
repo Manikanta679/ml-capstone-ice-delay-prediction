@@ -2,15 +2,8 @@
   "metadata": {
     "notebook": "08_Model_Tuning_and_Evaluation",
     "section": "Section 3",
-    "created_at_utc": "2026-07-17T22:24:15.604489+00:00",
-    "primary_target": "delay_in_min",
-    "primary_metric": "mae",
-    "task_type": "regression",
-    "target_months": [
-      "2024-07",
-      "2024-08",
-      "2024-09"
-    ]
+    "created_at_utc": "2026-07-18T13:32:32.677881+00:00",
+    "status": "COMPLETE"
   },
   "checklist": [
     {
@@ -39,6 +32,11 @@
       "exists": true
     },
     {
+      "label": "boosting_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\boosting_results.json",
+      "exists": true
+    },
+    {
       "label": "final_model_mae_comparison.png",
       "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures\\final_model_mae_comparison.png",
       "exists": true
@@ -56,15 +54,21 @@
   ],
   "all_files_ok": true,
   "final_model": {
-    "algorithm": "RandomForestRegressor",
+    "algorithm": "XGBoost",
+    "export_name": "XGBoost",
     "feature_set": "full_with_weather",
     "best_params": {
       "n_estimators": 100,
-      "max_depth": 20,
-      "min_samples_leaf": 10,
-      "max_samples": 0.5
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "objective": "reg:squarederror",
+      "random_state": 42,
+      "n_jobs": -1,
+      "tree_method": "hist"
     },
-    "test_mae": 10.4196,
+    "test_mae": 10.3111,
     "feature_columns": [
       "dep_hour",
       "dep_day_of_week",
@@ -82,38 +86,20 @@
       "weather_code",
       "is_raining"
     ],
-    "tuned": true
+    "tuned": false,
+    "source": "NB07 Section 3",
+    "train_rows_used": 80000
   },
   "benchmarks": {
     "naive_median_test_mae": 9.4813,
     "beats_naive_median": false,
     "best_untuned_rf_test_mae": 10.4758,
-    "tuning_improvement_vs_untuned": 0.0562
+    "best_boosting_test_mae": 10.3111,
+    "tuned_rf_best_test_mae": 10.4196
   },
-  "rq_answers": {
-    "RQ1": {
-      "question": "Can operational features predict delay in minutes?",
-      "answer": "Partially — tuned RF operational MAE = 10.4222 min (better than linear ~11.2 min, but not better than naive median 9.4813 min).",
-      "operational_tuned_test_mae": 10.4222
-    },
-    "RQ2": {
-      "question": "Does weather improve prediction?",
-      "answer": "Weather gain after tuning = 0.0026 min. No meaningful improvement — weather adds little for RF.",
-      "operational_mae": 10.4222,
-      "full_weather_mae": 10.4196,
-      "weather_gain_min": 0.0026
-    },
-    "RQ3": {
-      "question": "Which weather variables matter most?",
-      "answer": "From NB07 RF importances: temperature_2m, windgusts_10m, windspeed_10m — but overall weather effect on MAE is small in Jul–Sep."
-    }
-  },
-  "weather_ablation_gain_min": 0.0026,
-  "pipeline_complete": {
-    "notebooks_done": "01-08",
-    "merged_data_on_disk": "ice_weather_merged_YYYY-MM.parquet",
-    "modeling_data": "ice_train.parquet / ice_test.parquet",
-    "final_result_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\final_model_selection.json"
-  },
-  "ready_for_report_and_viva": true
+  "honest_conclusion": "Best ML model is XGBoost (full_with_weather) with 10.31 min MAE on September. Naive median benchmark is 9.48 min. RF weather ablation gain = 0.0026 min.",
+  "next_notebook": {
+    "id": "09",
+    "goal": "Export selected final model + full pipeline summary"
+  }
 }

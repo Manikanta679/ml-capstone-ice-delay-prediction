@@ -5,7 +5,7 @@
       "Manikanta Engalligi",
       "abhinay-sambherao"
     ],
-    "created_at_utc": "2026-07-17T22:39:17.040649+00:00",
+    "created_at_utc": "2026-07-18T13:37:30.978036+00:00",
     "notebook": "09_Final_Pipeline_Export",
     "section": "Section 2",
     "status": "PROJECT COMPLETE"
@@ -14,300 +14,32 @@
     "regression_only": true,
     "target": "delay_in_min",
     "primary_metric": "mae",
-    "no_classification_models": true,
-    "no_rmse_required": true,
-    "data_saved_on_disk_parquet": true
+    "models_compared": [
+      "Naive",
+      "Linear/Ridge/Lasso/ElasticNet",
+      "RandomForest",
+      "GradientBoosting",
+      "XGBoost",
+      "LightGBM"
+    ]
   },
-  "data_storage": {
-    "root": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed",
-    "reference_configs": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference",
-    "models": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\models",
-    "figures": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\figures",
-    "parquet_inventory": {
-      "raw_ice": {
-        "ice_raw_2024-07.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-07.parquet",
-          "size_mb": 5.5,
-          "rows": 157886
-        },
-        "ice_raw_2024-08.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-08.parquet",
-          "size_mb": 5.3,
-          "rows": 150289
-        },
-        "ice_raw_2024-09.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_raw_2024-09.parquet",
-          "size_mb": 5.29,
-          "rows": 149218
-        }
-      },
-      "standardized": {
-        "ice_standardized_2024-07.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-07.parquet",
-          "size_mb": 5.67,
-          "rows": 157886
-        },
-        "ice_standardized_2024-08.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-08.parquet",
-          "size_mb": 5.46,
-          "rows": 150289
-        },
-        "ice_standardized_2024-09.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_standardized_2024-09.parquet",
-          "size_mb": 5.44,
-          "rows": 149218
-        }
-      },
-      "cleaned": {
-        "ice_cleaned_2024-07.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-07.parquet",
-          "size_mb": 5.46,
-          "rows": 146389
-        },
-        "ice_cleaned_2024-08.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-08.parquet",
-          "size_mb": 5.1,
-          "rows": 136321
-        },
-        "ice_cleaned_2024-09.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_cleaned_2024-09.parquet",
-          "size_mb": 5.06,
-          "rows": 135547
-        }
-      },
-      "weather": {
-        "weather_by_station_2024-07.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\weather_by_station_2024-07.parquet",
-          "size_mb": 0.31,
-          "rows": 70680
-        },
-        "weather_by_station_2024-08.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\weather_by_station_2024-08.parquet",
-          "size_mb": 0.31,
-          "rows": 72912
-        },
-        "weather_by_station_2024-09.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\weather_by_station_2024-09.parquet",
-          "size_mb": 0.32,
-          "rows": 70560
-        }
-      },
-      "merged": {
-        "ice_weather_merged_2024-07.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-07.parquet",
-          "size_mb": 6.25,
-          "rows": 146389
-        },
-        "ice_weather_merged_2024-08.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-08.parquet",
-          "size_mb": 5.82,
-          "rows": 136321
-        },
-        "ice_weather_merged_2024-09.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_weather_merged_2024-09.parquet",
-          "size_mb": 5.81,
-          "rows": 135547
-        }
-      },
-      "modeling_ready": {
-        "ice_modeling_ready_2024-07.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_modeling_ready_2024-07.parquet",
-          "size_mb": 3.36,
-          "rows": 132268
-        },
-        "ice_modeling_ready_2024-08.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_modeling_ready_2024-08.parquet",
-          "size_mb": 3.14,
-          "rows": 122794
-        },
-        "ice_modeling_ready_2024-09.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_modeling_ready_2024-09.parquet",
-          "size_mb": 3.12,
-          "rows": 121964
-        }
-      },
-      "train_test": {
-        "ice_train.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
-          "size_mb": 6.53,
-          "rows": 255062
-        },
-        "ice_test.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet",
-          "size_mb": 3.12,
-          "rows": 121964
-        }
-      },
-      "combined": {
-        "ice_modeling_ready_all_months.parquet": {
-          "exists": true,
-          "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_modeling_ready_all_months.parquet",
-          "size_mb": 9.58,
-          "rows": 377026
-        }
-      }
-    },
-    "why_parquet": "Compressed, fast, preserves types, reloadable across notebooks"
-  },
-  "pipeline_steps": [
-    {
-      "notebook": "01",
-      "title": "Project Definition & Data Understanding",
-      "actions": [
-        "Define scope: ICE only, regression on delay_in_min, MAE, Jul-Sep 2024",
-        "Save project_config.json, research_framework.json, merge_strategy.json"
-      ],
-      "outputs": [
-        "data/reference/*.json"
-      ]
-    },
-    {
-      "notebook": "02",
-      "title": "Data Acquisition",
-      "actions": [
-        "Download ICE data from Hugging Face (3 months)",
-        "Profile delays, cancellations, weather demo"
-      ],
-      "outputs": [
-        "ice_raw_YYYY-MM.parquet"
-      ]
-    },
-    {
-      "notebook": "03",
-      "title": "Cleaning & Standardization",
-      "actions": [
-        "Timestamps → Europe/Berlin + hour merge key",
-        "Drop canceled stops, fill station names"
-      ],
-      "outputs": [
-        "ice_standardized_*.parquet",
-        "ice_cleaned_*.parquet"
-      ]
-    },
-    {
-      "notebook": "04",
-      "title": "Data Integration",
-      "actions": [
-        "Geocode eva → lat/lon (Nominatim)",
-        "Fetch Open-Meteo hourly weather",
-        "Left join on eva + departure hour"
-      ],
-      "outputs": [
-        "station_coordinates.json",
-        "weather_by_station_*.parquet",
-        "ice_weather_merged_*.parquet"
-      ]
-    },
-    {
-      "notebook": "05",
-      "title": "Exploratory Data Analysis",
-      "actions": [
-        "Delay distribution (median ~4, mean ~11 min)",
-        "Weather vs delay correlations (weak in summer)"
-      ],
-      "outputs": [
-        "eda_*_report_multi_month.json",
-        "figures/*.png"
-      ]
-    },
-    {
-      "notebook": "06",
-      "title": "Feature Engineering",
-      "actions": [
-        "Build time + operational + weather features",
-        "Drop visibility (100% null), time split train/test"
-      ],
-      "outputs": [
-        "ice_modeling_ready_*.parquet",
-        "ice_train.parquet (Jul+Aug)",
-        "ice_test.parquet (Sep)",
-        "feature_manifest.json"
-      ]
-    },
-    {
-      "notebook": "07",
-      "title": "Baseline Models",
-      "actions": [
-        "Naive mean/median + Linear/Ridge + Random Forest",
-        "Compare operational vs +weather feature sets"
-      ],
-      "outputs": [
-        "baseline_results.json",
-        "random_forest_results.json"
-      ]
-    },
-    {
-      "notebook": "08",
-      "title": "Tuning & Evaluation",
-      "actions": [
-        "RF hyperparameter tuning (CV on train)",
-        "Formal weather ablation + final model selection"
-      ],
-      "outputs": [
-        "rf_tuning_results.json",
-        "weather_ablation_report.json",
-        "final_model_selection.json"
-      ]
-    },
-    {
-      "notebook": "09",
-      "title": "Final Pipeline Export",
-      "actions": [
-        "Save final_rf_model.joblib",
-        "Full pipeline summary for report/viva"
-      ],
-      "outputs": [
-        "final_rf_model.joblib",
-        "full_project_pipeline_summary.json"
-      ]
-    }
-  ],
   "key_results": {
-    "primary_task": "regression on delay_in_min",
-    "primary_metric": "mae",
-    "target_months": [
-      "2024-07",
-      "2024-08",
-      "2024-09"
-    ],
-    "train_months": [
-      "2024-07",
-      "2024-08"
-    ],
-    "test_month": "2024-09",
-    "merged_rows_total": 418257,
-    "train_rows": 255062,
-    "test_rows": 121964,
     "final_model": {
-      "algorithm": "RandomForestRegressor",
+      "algorithm": "XGBoost",
+      "export_name": "XGBoost",
       "feature_set": "full_with_weather",
       "best_params": {
         "n_estimators": 100,
-        "max_depth": 20,
-        "min_samples_leaf": 10,
-        "max_samples": 0.5
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "n_jobs": -1,
+        "tree_method": "hist"
       },
-      "test_mae": 10.4196,
+      "test_mae": 10.3111,
       "feature_columns": [
         "dep_hour",
         "dep_day_of_week",
@@ -325,76 +57,79 @@
         "weather_code",
         "is_raining"
       ],
-      "tuned": true
+      "tuned": false,
+      "source": "NB07 Section 3",
+      "train_rows_used": 80000
     },
     "naive_median_test_mae": 9.4813,
     "weather_ablation_gain_min": 0.0026,
-    "rq_answers": {
-      "RQ1": {
-        "question": "Can operational features predict delay in minutes?",
-        "answer": "Partially — tuned RF operational MAE = 10.4222 min (better than linear ~11.2 min, but not better than naive median 9.4813 min).",
-        "operational_tuned_test_mae": 10.4222
-      },
-      "RQ2": {
-        "question": "Does weather improve prediction?",
-        "answer": "Weather gain after tuning = 0.0026 min. No meaningful improvement — weather adds little for RF.",
-        "operational_mae": 10.4222,
-        "full_weather_mae": 10.4196,
-        "weather_gain_min": 0.0026
-      },
-      "RQ3": {
-        "question": "Which weather variables matter most?",
-        "answer": "From NB07 RF importances: temperature_2m, windgusts_10m, windspeed_10m — but overall weather effect on MAE is small in Jul–Sep."
-      }
-    }
+    "train_rows": 255062,
+    "test_rows": 121964,
+    "merged_rows_total": 418257
   },
+  "pipeline_steps": [
+    {
+      "notebook": "01-06",
+      "title": "Data → Features",
+      "outputs": [
+        "ice_train.parquet",
+        "ice_test.parquet"
+      ]
+    },
+    {
+      "notebook": "07",
+      "title": "Models",
+      "outputs": [
+        "baseline_results.json",
+        "random_forest_results.json",
+        "boosting_results.json"
+      ]
+    },
+    {
+      "notebook": "08",
+      "title": "Tuning & Selection",
+      "outputs": [
+        "rf_tuning_results.json",
+        "final_model_selection.json"
+      ]
+    },
+    {
+      "notebook": "09",
+      "title": "Export",
+      "outputs": [
+        "final_model.joblib",
+        "full_project_pipeline_summary.json"
+      ]
+    }
+  ],
   "research_questions": {
     "RQ1": {
       "question": "Can operational features predict delay in minutes?",
-      "answer": "Partially — tuned RF operational MAE = 10.4222 min (better than linear ~11.2 min, but not better than naive median 9.4813 min).",
-      "operational_tuned_test_mae": 10.4222
+      "answer": "Partially — best ML = XGBoost (full_with_weather) MAE = 10.3111 min vs naive median 9.4813 min.",
+      "best_ml_test_mae": 10.3111,
+      "operational_tuned_rf_test_mae": 10.4222
     },
     "RQ2": {
       "question": "Does weather improve prediction?",
-      "answer": "Weather gain after tuning = 0.0026 min. No meaningful improvement — weather adds little for RF.",
+      "answer": "Weather gain after RF tuning = 0.0026 min. No meaningful improvement — weather adds little for RF.",
       "operational_mae": 10.4222,
       "full_weather_mae": 10.4196,
       "weather_gain_min": 0.0026
     },
     "RQ3": {
       "question": "Which weather variables matter most?",
-      "answer": "From NB07 RF importances: temperature_2m, windgusts_10m, windspeed_10m — but overall weather effect on MAE is small in Jul–Sep."
+      "answer": "From RF importances: temperature_2m, windgusts_10m, windspeed_10m — but overall weather effect on MAE is small in Jul–Sep."
     }
   },
-  "honest_conclusion": "Final tuned Random Forest achieves 10.42 min MAE on September. It is our best ML model and beats linear baselines, but does not beat the naive median (9.48 min). Weather adds minimal MAE gain (0.0026 min) in this summer period.",
+  "honest_conclusion": "Best ML model is XGBoost (full_with_weather) with 10.31 min MAE on September. Naive median benchmark is 9.48 min. RF weather ablation gain = 0.0026 min.",
   "reproduce_guide": {
-    "step_1": "Run Notebooks 01-09 in order from Notebooks/ folder",
-    "step_2": "All data reloads from data/processed/*.parquet (not from memory)",
-    "step_3": "Merged data: ice_weather_merged_YYYY-MM.parquet",
-    "step_4": "Modeling: ice_train.parquet → train, ice_test.parquet → test",
-    "step_5": "Load saved model: joblib.load('data/processed/models/final_rf_model.joblib')",
-    "merge_key": "eva + departure_planned_hour_naive (planned departure floored to hour)",
-    "professor_requirements": {
-      "regression_only": true,
-      "mae_only": true,
-      "merged_data_on_disk": true,
-      "weather_ablation_done": true,
-      "time_based_split": "train Jul+Aug, test Sep"
-    }
+    "step_1": "Run Notebooks 01-09 in order",
+    "step_2": "pip install xgboost lightgbm",
+    "step_3": "Load model: joblib.load('data/processed/models/final_model.joblib')"
   },
   "important_files_for_viva": {
-    "merged_data": [
-      "data/processed/ice_weather_merged_2024-07.parquet",
-      "data/processed/ice_weather_merged_2024-08.parquet",
-      "data/processed/ice_weather_merged_2024-09.parquet"
-    ],
-    "train_test": [
-      "data/processed/ice_train.parquet",
-      "data/processed/ice_test.parquet"
-    ],
-    "final_model": "data/processed/models/final_rf_model.joblib",
+    "final_model": "data/processed/models/final_model.joblib",
     "final_results": "data/reference/final_model_selection.json",
-    "weather_ablation": "data/reference/weather_ablation_report.json",
-    "this_summary": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\full_project_pipeline_summary.json"
+    "boosting_results": "data/reference/boosting_results.json"
   }
 }

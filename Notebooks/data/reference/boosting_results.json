@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "notebook": "07_Baseline_Models",
+    "section": "Section 3",
+    "created_at_utc": "2026-07-18T13:18:19.642610+00:00",
+    "primary_target": "delay_in_min",
+    "primary_metric": "mae",
+    "task_type": "regression",
+    "model_family": "boosting",
+    "use_train_sample": true,
+    "train_sample_size": 80000,
+    "train_rows_used": 80000
+  },
+  "params": {
+    "GradientBoosting": {
+      "n_estimators": 100,
+      "max_depth": 5,
+      "learning_rate": 0.1,
+      "subsample": 0.8,
+      "random_state": 42
+    },
+    "XGBoost": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "objective": "reg:squarederror",
+      "random_state": 42,
+      "n_jobs": -1,
+      "tree_method": "hist"
+    },
+    "LightGBM": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "random_state": 42,
+      "n_jobs": -1,
+      "verbosity": -1
+    }
+  },
+  "results": [
+    {
+      "model": "GradientBoosting",
+      "feature_set": "operational_only",
+      "train_mae": 10.0904,
+      "test_mae": 10.5635,
+      "metric": "mae",
+      "train_rows_used": 80000
+    },
+    {
+      "model": "GradientBoosting",
+      "feature_set": "full_with_weather",
+      "train_mae": 10.0181,
+      "test_mae": 10.375,
+      "metric": "mae",
+      "train_rows_used": 80000
+    },
+    {
+      "model": "XGBoost",
+      "feature_set": "operational_only",
+      "train_mae": 9.9585,
+      "test_mae": 10.5492,
+      "metric": "mae",
+      "train_rows_used": 80000
+    },
+    {
+      "model": "XGBoost",
+      "feature_set": "full_with_weather",
+      "train_mae": 9.8496,
+      "test_mae": 10.3111,
+      "metric": "mae",
+      "train_rows_used": 80000
+    },
+    {
+      "model": "LightGBM",
+      "feature_set": "operational_only",
+      "train_mae": 10.1006,
+      "test_mae": 10.5526,
+      "metric": "mae",
+      "train_rows_used": 80000
+    },
+    {
+      "model": "LightGBM",
+      "feature_set": "full_with_weather",
+      "train_mae": 10.0163,
+      "test_mae": 10.3389,
+      "metric": "mae",
+      "train_rows_used": 80000
+    }
+  ],
+  "best_boosting": {
+    "model": "XGBoost",
+    "feature_set": "full_with_weather",
+    "test_mae": 10.3111
+  },
+  "comparison": {
+    "naive_median_test_mae": 9.4813,
+    "best_rf_test_mae_section2": 10.4758,
+    "beats_rf": true,
+    "beats_naive_median": false
+  }
+}

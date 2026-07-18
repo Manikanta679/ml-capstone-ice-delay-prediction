@@ -2,12 +2,12 @@
   "metadata": {
     "notebook": "07_Baseline_Models",
     "section": "Section 2",
-    "created_at_utc": "2026-07-17T21:41:21.525567+00:00",
+    "created_at_utc": "2026-07-18T12:55:29.476647+00:00",
     "primary_target": "delay_in_min",
     "primary_metric": "mae",
     "task_type": "regression",
     "model_family": "RandomForestRegressor",
-    "note": "Boosting skipped by design — one tree-based advanced model only."
+    "note": "Bagging ensemble. Boosting models are in Section 3."
   },
   "rf_params": {
     "n_estimators": 100,

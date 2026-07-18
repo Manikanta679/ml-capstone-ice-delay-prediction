@@ -21,20 +21,39 @@ Classification (delayed / not delayed) is **not** a primary modeling goal. RMSE 
 
 ---
 
+## Models compared
+
+| Group | Models |
+|-------|--------|
+| **Naive baselines** | Naive mean, Naive median |
+| **Linear / regularisation** | Linear Regression, Ridge, Lasso, Elastic Net |
+| **Bagging ensemble** | Random Forest (untuned + tuned) |
+| **Boosting ensemble** | Gradient Boosting (sklearn), XGBoost, LightGBM |
+
+Each ML model trained on **operational only** and **operational + weather** (ablation).
+
+---
+
 ## Results (September 2024 test set)
 
 | Model | Test MAE |
 |-------|----------|
 | Naive median (always 4 min) | **9.48 min** ← best overall |
-| **Final ML: Tuned Random Forest + weather** | **10.42 min** ← best ML model |
-| Ridge + weather (baseline) | 10.59 min |
+| **Final ML: XGBoost + weather** | **10.31 min** ← best ML model |
+| LightGBM + weather | 10.34 min |
+| Gradient Boosting + weather | 10.38 min |
+| Tuned Random Forest + weather | 10.42 min |
+| Random Forest (untuned, operational) | 10.48 min |
+| Ridge + weather | 10.59 min |
 | Linear / Ridge (operational only) | ~11.21 min |
 
 **Train / test split (time-based, no random shuffle):**
 - **Train:** July + August 2024 (255,062 rows)
 - **Test:** September 2024 (121,964 rows)
 
-**Weather ablation (RQ2):** Same tuned Random Forest with vs without weather → **+0.0026 min** MAE gain (no meaningful improvement in Jul–Sep).
+**Weather ablation (RQ2):**
+- Tuned Random Forest: operational vs +weather → **~0.003 min** gain (no meaningful improvement)
+- XGBoost: operational vs +weather → **~0.24 min** gain (small improvement for boosting)
 
 Full details: `Notebooks/data/reference/final_model_selection.json`
 
@@ -44,8 +63,8 @@ Full details: `Notebooks/data/reference/final_model_selection.json`
 
 | RQ | Question | Finding |
 |----|----------|---------|
-| **RQ1** | Can operational features predict delay in minutes? | Partially — RF (~10.42 min) beats linear models, not naive median (9.48 min) |
-| **RQ2** | Does weather improve prediction? | No meaningful gain for tuned RF (+0.003 min MAE) |
+| **RQ1** | Can operational features predict delay in minutes? | Partially — XGBoost (~10.31 min) beats linear/RF models, not naive median (9.48 min) |
+| **RQ2** | Does weather improve prediction? | Small gain for XGBoost; no meaningful gain for tuned RF in Jul–Sep |
 | **RQ3** | Which weather variables matter most? | Temperature & wind — weak overall effect in summer |
 
 ---
@@ -82,9 +101,9 @@ Merged data saved as **`ice_weather_merged_YYYY-MM.parquet`** on disk.
 | 04 | `04_Data_Integration.ipynb` | Done |
 | 05 | `05_Exploratory_Data_Analysis.ipynb` | Done |
 | 06 | `06_Feature_Engineering.ipynb` | Done |
-| 07 | `07_Baseline_Models.ipynb` | Done |
-| 08 | `08_Model_Tuning_and_Evaluation.ipynb` | Done |
-| 09 | `09_Final_Pipeline_Export.ipynb` | Done |
+| 07 | `07_Baseline_Models.ipynb` | Done — naive, linear, RF, boosting |
+| 08 | `08_Model_Tuning_and_Evaluation.ipynb` | Done — RF tuning, leaderboard, final selection |
+| 09 | `09_Final_Pipeline_Export.ipynb` | Done — export final model + pipeline summary |
 
 Run in order from `Notebooks/`. Each notebook loads `data/reference/*.json` and reads/writes Parquet in `data/processed/`.
 
@@ -106,13 +125,18 @@ Run in order from `Notebooks/`. Each notebook loads `data/reference/*.json` and 
 | `ice_modeling_ready_YYYY-MM.parquet` | ML-ready features |
 | `ice_train.parquet` | Train (Jul + Aug) |
 | `ice_test.parquet` | Test (Sep) |
-| `models/final_rf_model.joblib` | Saved final model |
+| `models/final_model.joblib` | Saved final model (best ML) |
+| `models/final_rf_model.joblib` | Legacy copy (same pipeline) |
 
 ### `Notebooks/data/reference/` (JSON — commit to git)
 
 | File | Description |
 |------|-------------|
 | `project_config.json` | Scope, target, MAE, months |
+| `baseline_results.json` | Naive + linear family results |
+| `random_forest_results.json` | Random Forest results |
+| `boosting_results.json` | GradientBoosting / XGBoost / LightGBM results |
+| `rf_tuning_results.json` | Tuned Random Forest CV results |
 | `final_model_selection.json` | Final model + MAE + RQ answers |
 | `weather_ablation_report.json` | With vs without weather |
 | `full_project_pipeline_summary.json` | Master pipeline summary |
@@ -124,3 +148,4 @@ Run in order from `Notebooks/`. Each notebook loads `data/reference/*.json` and 
 
 ```bash
 pip install -r requirements.txt
+pip install xgboost lightgbm

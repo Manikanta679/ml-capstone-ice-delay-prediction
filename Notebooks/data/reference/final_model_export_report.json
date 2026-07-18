@@ -2,13 +2,14 @@
   "metadata": {
     "notebook": "09_Final_Pipeline_Export",
     "section": "Section 1",
-    "created_at_utc": "2026-07-17T22:37:47.719562+00:00",
+    "created_at_utc": "2026-07-18T13:34:15.767468+00:00",
     "primary_target": "delay_in_min",
     "primary_metric": "mae",
     "task_type": "regression"
   },
   "final_model": {
-    "algorithm": "RandomForestRegressor",
+    "algorithm": "XGBoost",
+    "export_name": "XGBoost",
     "feature_set": "full_with_weather",
     "feature_columns": [
       "dep_hour",
@@ -29,9 +30,14 @@
     ],
     "best_params": {
       "n_estimators": 100,
-      "max_depth": 20,
-      "min_samples_leaf": 10,
-      "max_samples": 0.5
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "objective": "reg:squarederror",
+      "random_state": 42,
+      "n_jobs": -1,
+      "tree_method": "hist"
     },
     "source_selection_file": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\final_model_selection.json"
   },
@@ -41,20 +47,19 @@
       "2024-07",
       "2024-08"
     ],
-    "rows_used_for_fit": 120000,
-    "use_train_sample": true,
-    "train_sample_size": 120000
+    "rows_used_for_fit": 80000,
+    "use_train_sample": true
   },
   "evaluation_on_reload": {
     "test_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet",
     "test_month": "2024-09",
-    "train_mae": 9.4993,
-    "test_mae": 10.4196,
-    "nb08_reference_test_mae": 10.4196
+    "train_mae": 9.8496,
+    "test_mae": 10.3111,
+    "nb08_reference_test_mae": 10.3111
   },
   "saved_files": {
-    "model_joblib": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\models\\final_rf_model.joblib",
+    "model_joblib": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\models\\final_model.joblib",
+    "legacy_model_joblib": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\models\\final_rf_model.joblib",
     "export_report": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\final_model_export_report.json"
-  },
-  "how_to_load": "import joblib; pipe = joblib.load('c:/Users/Manikanta/Desktop/ML Project/Notebooks/data/processed/models/final_rf_model.joblib'); pipe.predict(X[feature_columns])"
+  }
 }

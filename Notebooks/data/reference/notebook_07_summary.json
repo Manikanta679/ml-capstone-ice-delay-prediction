@@ -1,8 +1,8 @@
 {
   "metadata": {
     "notebook": "07_Baseline_Models",
-    "section": "Section 3",
-    "created_at_utc": "2026-07-17T21:52:49.397645+00:00",
+    "section": "Section 4",
+    "created_at_utc": "2026-07-18T13:21:21.752266+00:00",
     "primary_target": "delay_in_min",
     "primary_metric": "mae",
     "task_type": "regression"
@@ -30,13 +30,19 @@
       "label": "baseline_results.json",
       "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\baseline_results.json",
       "exists": true,
-      "size_mb": 0.0026
+      "size_mb": 0.0034
     },
     {
       "label": "random_forest_results.json",
       "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\random_forest_results.json",
       "exists": true,
       "size_mb": 0.0053
+    },
+    {
+      "label": "boosting_results.json",
+      "path": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\reference\\boosting_results.json",
+      "exists": true,
+      "size_mb": 0.0026
     }
   ],
   "all_files_ok": true,
@@ -79,6 +85,18 @@
       "section": "Section 1"
     },
     {
+      "model": "Lasso",
+      "feature_set": "operational_only",
+      "test_mae": 11.5309,
+      "section": "Section 1"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_set": "operational_only",
+      "test_mae": 11.5822,
+      "section": "Section 1"
+    },
+    {
       "model": "LinearRegression",
       "feature_set": "full_with_weather",
       "test_mae": 10.5935,
@@ -88,6 +106,18 @@
       "model": "Ridge",
       "feature_set": "full_with_weather",
       "test_mae": 10.5879,
+      "section": "Section 1"
+    },
+    {
+      "model": "Lasso",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.7158,
+      "section": "Section 1"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.7547,
       "section": "Section 1"
     },
     {
@@ -101,6 +131,42 @@
       "feature_set": "full_with_weather",
       "test_mae": 10.498,
       "section": "Section 2"
+    },
+    {
+      "model": "GradientBoosting",
+      "feature_set": "operational_only",
+      "test_mae": 10.5635,
+      "section": "Section 3"
+    },
+    {
+      "model": "GradientBoosting",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.375,
+      "section": "Section 3"
+    },
+    {
+      "model": "XGBoost",
+      "feature_set": "operational_only",
+      "test_mae": 10.5492,
+      "section": "Section 3"
+    },
+    {
+      "model": "XGBoost",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.3111,
+      "section": "Section 3"
+    },
+    {
+      "model": "LightGBM",
+      "feature_set": "operational_only",
+      "test_mae": 10.5526,
+      "section": "Section 3"
+    },
+    {
+      "model": "LightGBM",
+      "feature_set": "full_with_weather",
+      "test_mae": 10.3389,
+      "section": "Section 3"
     }
   ],
   "best_overall": {
@@ -109,23 +175,21 @@
     "test_mae": 9.4813
   },
   "best_ml_model": {
-    "model": "RandomForest",
-    "feature_set": "operational_only",
-    "test_mae": 10.4758
+    "model": "XGBoost",
+    "feature_set": "full_with_weather",
+    "test_mae": 10.3111
   },
   "key_findings": {
     "naive_median_test_mae": 9.4813,
-    "best_ridge_test_mae": 10.5879,
     "best_rf_test_mae": 10.4758,
-    "rf_beats_linear": true,
-    "rf_beats_naive_median": false,
-    "weather_helps_linear": true,
+    "best_boosting_test_mae": 10.3111,
+    "best_boosting_model": "XGBoost",
+    "best_ml_beats_naive_median": false,
     "weather_helps_rf": false,
-    "summary_sentence": "Random Forest (10.48 min MAE) beat linear models but not the naive median (9.48 min). Weather helped linear models slightly; RF gains came mainly from operational/time features."
+    "summary_sentence": "Best ML: XGBoost (full_with_weather) with test MAE 10.3111 min vs naive median 9.4813 min."
   },
   "next_notebook": {
     "id": "08",
-    "goal": "Optional tuning / ablation / final pipeline documentation"
-  },
-  "ready_for_notebook_08": true
+    "goal": "RF tuning + full leaderboard + weather ablation + final model selection"
+  }
 }

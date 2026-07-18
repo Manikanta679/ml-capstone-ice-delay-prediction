@@ -2,12 +2,20 @@
   "metadata": {
     "notebook": "07_Baseline_Models",
     "section": "Section 1",
-    "created_at_utc": "2026-07-17T20:44:48.965780+00:00",
+    "created_at_utc": "2026-07-18T11:19:35.637481+00:00",
     "primary_target": "delay_in_min",
     "primary_metric": "mae",
     "task_type": "regression",
     "train_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_train.parquet",
-    "test_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet"
+    "test_parquet": "c:\\Users\\Manikanta\\Desktop\\ML Project\\Notebooks\\data\\processed\\ice_test.parquet",
+    "models": [
+      "NaiveMean",
+      "NaiveMedian",
+      "LinearRegression",
+      "Ridge",
+      "Lasso",
+      "ElasticNet"
+    ]
   },
   "naive_reference": {
     "mean_predictor": 11.036508770416605,
@@ -75,6 +83,20 @@
       "metric": "mae"
     },
     {
+      "model": "Lasso",
+      "feature_set": "operational_only",
+      "train_mae": 10.4727,
+      "test_mae": 11.5309,
+      "metric": "mae"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_set": "operational_only",
+      "train_mae": 10.541,
+      "test_mae": 11.5822,
+      "metric": "mae"
+    },
+    {
       "model": "LinearRegression",
       "feature_set": "full_with_weather",
       "train_mae": 10.187,
@@ -86,6 +108,20 @@
       "feature_set": "full_with_weather",
       "train_mae": 10.1858,
       "test_mae": 10.5879,
+      "metric": "mae"
+    },
+    {
+      "model": "Lasso",
+      "feature_set": "full_with_weather",
+      "train_mae": 10.4493,
+      "test_mae": 10.7158,
+      "metric": "mae"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_set": "full_with_weather",
+      "train_mae": 10.5164,
+      "test_mae": 10.7547,
       "metric": "mae"
     }
   ],
